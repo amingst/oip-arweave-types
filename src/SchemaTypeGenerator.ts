@@ -45,7 +45,10 @@ ${fieldLines.join('\n')}
 		return str.charAt(0).toUpperCase() + str.slice(1);
 	}
 
-	public parseTemplates(jsonData: ApiResponse, keepVersions: boolean = false): string[] {
+	public parseTemplates(
+		jsonData: ApiResponse,
+		keepVersions: boolean = false
+	): string[] {
 		if (keepVersions) {
 			return this.parseTemplatesWithVersions(jsonData);
 		} else {
@@ -168,7 +171,10 @@ ${fieldLines.join('\n')}
 		return interfaces;
 	}
 
-	public generateTypeScriptFile(jsonData: ApiResponse, keepVersions: boolean = false): string {
+	public generateTypeScriptFile(
+		jsonData: ApiResponse,
+		keepVersions: boolean = false
+	): string {
 		const interfaces = this.parseTemplates(jsonData, keepVersions);
 
 		const header = `// Auto-generated TypeScript types from OIP Arweave templates
