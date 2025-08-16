@@ -12,9 +12,22 @@ type TemplateData = {
 	fieldsInTemplate: Record<string, FieldDefinition>;
 };
 
+type TemplateOipData = {
+	didTx: string;
+	inArweaveBlock: number;
+	indexedAt: string;
+	recordStatus: string;
+	ver: string;
+	creator: {
+		didAddress: string;
+		creatorSig: string;
+	};
+};
+
 type ApiResponse = {
 	templates: Array<{
 		data: TemplateData;
+		oip: TemplateOipData;
 	}>;
 };
 

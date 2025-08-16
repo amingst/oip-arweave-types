@@ -3,7 +3,7 @@ import * as path from 'path';
 import chalk from 'chalk';
 import SchemaTypeGenerator from './SchemaTypeGenerator';
 
-export async function fetchOipTemplates(outputPath?: string): Promise<void> {
+export async function fetchOipTemplates(outputPath?: string, keepVersions: boolean = false): Promise<void> {
 	console.log(chalk.cyan('🚀 Fetching templates from OIP API...'));
 	console.log(chalk.gray('   https://api.oip.onl/api/templates'));
 
@@ -22,9 +22,15 @@ export async function fetchOipTemplates(outputPath?: string): Promise<void> {
 			chalk.blue(`📦 Processing ${data.templates.length} templates...`)
 		);
 
+		if (keepVersions) {
+			console.log(chalk.yellow('   Keeping all template versions'));
+		} else {
+			console.log(chalk.gray('   Using most recent versions only'));
+		}
+
 		const generator = new SchemaTypeGenerator();
-		const typeScriptContent = generator.generateTypeScriptFile(data);
-		const interfaces = generator.parseTemplates(data);
+		const typeScriptContent = generator.generateTypeScriptFile(data, keepVersions);
+		const interfaces = generator.parseTemplates(data, keepVersions);
 
 		// Default output path logic
 		let finalOutputPath: string;

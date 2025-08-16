@@ -45,7 +45,91 @@ ${fieldLines.join('\n')}
 		return str.charAt(0).toUpperCase() + str.slice(1);
 	}
 
-	public parseTemplates(jsonData: ApiResponse): string[] {
+	public parseTemplates(jsonData: ApiResponse, keepVersions: boolean = false): string[] {
+		if (keepVersions) {
+			return this.parseTemplatesWithVersions(jsonData);
+		} else {
+			return this.parseTemplatesLatestOnly(jsonData);
+		}
+	}
+
+	private parseTemplatesLatestOnly(jsonData: ApiResponse): string[] {
+		const interfaces: string[] = [];
+		const templateMap = new Map<
+			string,
+			{
+				template: any;
+				fieldsHash: string;
+				blockNumber: number;
+			}
+		>();
+
+		// First pass: collect all templates and keep only the most recent version
+		for (const template of jsonData.templates) {
+			const { template: templateName, fieldsInTemplate } = template.data;
+			const blockNumber = template.oip.inArweaveBlock;
+
+			// Generate a hash of the fields to detect different versions
+			const fieldsHash = JSON.stringify(fieldsInTemplate);
+			const templateKey = templateName;
+
+			// Check if we already have this template name
+			const existing = templateMap.get(templateKey);
+
+			if (!existing || blockNumber > existing.blockNumber) {
+				// Keep this version if it's newer or if we don't have this template yet
+				templateMap.set(templateKey, {
+					template,
+					fieldsHash,
+					blockNumber,
+				});
+			}
+		}
+
+		// Second pass: generate interfaces from the most recent versions
+		const duplicateCount = new Map<string, number>();
+
+		for (const [templateName, templateInfo] of templateMap) {
+			const { template, fieldsHash } = templateInfo;
+			const { fieldsInTemplate } = template.data;
+
+			// Handle different field structures for the same template name
+			let interfaceName = this.toPascalCase(templateName);
+			const existingWithSameFields = Array.from(
+				templateMap.values()
+			).filter((t) => t !== templateInfo && t.fieldsHash === fieldsHash);
+
+			if (existingWithSameFields.length > 0) {
+				// Multiple templates with same field structure, use base name
+				// (we already filtered to most recent in first pass)
+			} else {
+				// Check if we have different field structures for same template name
+				const sameNameDifferentFields = Array.from(
+					templateMap.entries()
+				).filter(
+					([name, info]) =>
+						name === templateName && info.fieldsHash !== fieldsHash
+				);
+
+				if (sameNameDifferentFields.length > 0) {
+					// Version this one since it has different field structure
+					const count = duplicateCount.get(templateName) || 1;
+					duplicateCount.set(templateName, count + 1);
+					interfaceName = `${interfaceName}V${count + 1}`;
+				}
+			}
+
+			const interfaceDefinition = this.generateInterface(
+				interfaceName,
+				fieldsInTemplate
+			);
+			interfaces.push(interfaceDefinition);
+		}
+
+		return interfaces;
+	}
+
+	private parseTemplatesWithVersions(jsonData: ApiResponse): string[] {
 		const interfaces: string[] = [];
 		const seenTemplates = new Set<string>();
 		const duplicateCount = new Map<string, number>();
@@ -84,8 +168,8 @@ ${fieldLines.join('\n')}
 		return interfaces;
 	}
 
-	public generateTypeScriptFile(jsonData: ApiResponse): string {
-		const interfaces = this.parseTemplates(jsonData);
+	public generateTypeScriptFile(jsonData: ApiResponse, keepVersions: boolean = false): string {
+		const interfaces = this.parseTemplates(jsonData, keepVersions);
 
 		const header = `// Auto-generated TypeScript types from OIP Arweave templates
 // Generated on ${new Date().toISOString()}
