@@ -1,5 +1,11 @@
 # oip-arweave-types
 
+## 0.1.0
+
+### Minor Changes
+
+- 299026d: Add enum generation and union types for drefs
+
 ## 0.0.3
 
 ### Patch Changes
