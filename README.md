@@ -6,12 +6,12 @@ A CLI tool that fetches template definitions from the OIP Arweave API and genera
 
 ## Features
 
-- 🌐 **Live API Integration** - Fetches templates directly from OIP Arweave API
-- 🎯 **Clean Type Generation** - Creates readable TypeScript interfaces
-- 🔄 **Version Control** - Option to include all template versions or latest only
-- 🎨 **Colorized Output** - Beautiful CLI experience with progress indicators
-- ⚡ **Fast & Lightweight** - Built with modern tools for optimal performance
-- 🛠️ **Extensible** - Commander.js foundation for easy feature additions
+-   🌐 **Live API Integration** - Fetches templates directly from OIP Arweave API
+-   🎯 **Clean Type Generation** - Creates readable TypeScript interfaces
+-   🔄 **Version Control** - Option to include all template versions or latest only
+-   🎨 **Colorized Output** - Beautiful CLI experience with progress indicators
+-   ⚡ **Fast & Lightweight** - Built with modern tools for optimal performance
+-   🛠️ **Extensible** - Commander.js foundation for easy feature additions
 
 ## Installation
 
@@ -22,6 +22,26 @@ npm install -g oip-arweave-types
 # Or use directly with npx
 npx oip-arweave-types
 ```
+
+### Automatic Type Generation
+
+When you install this package as a dependency in your project, it will automatically generate the latest OIP Arweave types during installation:
+
+```bash
+# Install as a project dependency
+npm install oip-arweave-types
+# or
+pnpm add oip-arweave-types
+```
+
+The types will be automatically generated at `node_modules/oip-arweave-types/types/oip-arweave-types.d.ts` and can be imported in your TypeScript projects:
+
+```typescript
+// Your types are automatically available
+import type { Album, Artwork } from 'oip-arweave-types';
+```
+
+> **Note**: If the automatic generation fails during installation (e.g., no internet connection), you can manually generate types later using the CLI commands below.
 
 ## Usage
 
@@ -65,19 +85,19 @@ The tool generates clean TypeScript interfaces like:
 ```typescript
 // Latest versions only (default)
 export interface Album {
-  albumTitle: string;
-  artist: string;
-  company?: string;
-  type?: string;
-  year?: number;
+	albumTitle: string;
+	artist: string;
+	company?: string;
+	type?: string;
+	year?: number;
 }
 
 export interface Artwork {
-  title: string;
-  artist: string;
-  description?: string;
-  medium?: string;
-  year?: number;
+	title: string;
+	artist: string;
+	description?: string;
+	medium?: string;
+	year?: number;
 }
 ```
 
@@ -86,16 +106,16 @@ With `--keep-versions`, you get versioned interfaces:
 ```typescript
 // All versions included
 export interface AlbumV1 {
-  albumTitle: string;
-  artist: string;
+	albumTitle: string;
+	artist: string;
 }
 
 export interface AlbumV2 {
-  albumTitle: string;
-  artist: string;
-  company?: string;
-  type?: string;
-  year?: number;
+	albumTitle: string;
+	artist: string;
+	company?: string;
+	type?: string;
+	year?: number;
 }
 
 // Latest version alias
@@ -110,11 +130,11 @@ The tool connects to the OIP Arweave API at `https://api.oip.onl/api/templates` 
 
 OIP field types are mapped to TypeScript as follows:
 
-- `string` → `string`
-- `number` → `number`
-- `boolean` → `boolean`
-- Arrays → `T[]` (e.g., `string[]`, `number[]`)
-- Nested objects → Nested interfaces
+-   `string` → `string`
+-   `number` → `number`
+-   `boolean` → `boolean`
+-   Arrays → `T[]` (e.g., `string[]`, `number[]`)
+-   Nested objects → Nested interfaces
 
 Optional fields (not marked as required in OIP templates) are generated with the `?` optional operator.
 
@@ -153,9 +173,9 @@ MIT © [Andrew Mingst](https://github.com/amingst)
 
 ## Related
 
-- [OIP (Open Index Protocol)](https://oip.wiki/)
-- [Arweave](https://arweave.org/)
-- [TypeScript](https://www.typescriptlang.org/)
+-   [OIP (Open Index Protocol)](https://oip.wiki/)
+-   [Arweave](https://arweave.org/)
+-   [TypeScript](https://www.typescriptlang.org/)
 
 ---
 

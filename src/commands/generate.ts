@@ -18,6 +18,9 @@ export function createGenerateCommand(): Command {
 		.action(async (options) => {
 			console.log(chalk.blue.bold('🌐 OIP Arweave Type Generator'));
 
-			await fetchOipTemplates(options.output, options.keepVersions);
+			await fetchOipTemplates({
+				output: options.output,
+				keepVersions: options.keepVersions,
+			});
 		});
 }

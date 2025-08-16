@@ -5,9 +5,22 @@ import chalk from 'chalk';
 import SchemaTypeGenerator from './SchemaTypeGenerator';
 
 export async function fetchOipTemplates(
-	outputPath?: string,
-	keepVersions: boolean = false
+	options?: { output?: string; keepVersions?: boolean } | string,
+	legacyKeepVersions?: boolean
 ): Promise<void> {
+	// Handle both new options object and legacy parameter format
+	let outputPath: string | undefined;
+	let keepVersions: boolean;
+
+	if (typeof options === 'string') {
+		// Legacy format: fetchOipTemplates(outputPath, keepVersions)
+		outputPath = options;
+		keepVersions = legacyKeepVersions ?? false;
+	} else {
+		// New format: fetchOipTemplates({ output, keepVersions })
+		outputPath = options?.output;
+		keepVersions = options?.keepVersions ?? false;
+	}
 	console.log(chalk.cyan('🚀 Fetching templates from OIP API...'));
 	console.log(chalk.gray('   https://api.oip.onl/api/templates'));
 
