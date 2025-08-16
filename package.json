@@ -1,8 +1,8 @@
 {
-	"name": "@oip/arweave-typegen",
+	"name": "oip-arweave-types",
 	"version": "1.0.0",
 	"bin": {
-		"@oip/arweave-typegen": "./dist/index.js"
+		"oip-arweave-types": "./dist/index.js"
 	},
 	"scripts": {
 		"build": "tsc",
@@ -14,5 +14,8 @@
 	"devDependencies": {
 		"@types/node": "^20.0.0",
 		"typescript": "^5.0.0"
+	},
+	"dependencies": {
+		"chalk": "4"
 	}
 }

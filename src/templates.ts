@@ -1,11 +1,11 @@
 import * as fs from 'fs';
 import * as path from 'path';
+import chalk from 'chalk';
 import SchemaTypeGenerator from './SchemaTypeGenerator';
 
 export async function fetchOipTemplates(outputPath?: string): Promise<void> {
-	console.log(
-		'Fetching templates from API: https://api.oip.onl/api/templates'
-	);
+	console.log(chalk.cyan('🚀 Fetching templates from OIP API...'));
+	console.log(chalk.gray('   https://api.oip.onl/api/templates'));
 
 	try {
 		const response = await fetch('https://api.oip.onl/api/templates');
@@ -14,10 +14,15 @@ export async function fetchOipTemplates(outputPath?: string): Promise<void> {
 			throw new Error(`HTTP error! status: ${response.status}`);
 		}
 
+		console.log(chalk.green('✅ Successfully fetched templates'));
+		
 		const data: ApiResponse = (await response.json()) as ApiResponse;
+		
+		console.log(chalk.blue(`📦 Processing ${data.templates.length} templates...`));
 
 		const generator = new SchemaTypeGenerator();
 		const typeScriptContent = generator.generateTypeScriptFile(data);
+		const interfaces = generator.parseTemplates(data);
 
 		// Default output path logic
 		let finalOutputPath: string;
@@ -38,17 +43,25 @@ export async function fetchOipTemplates(outputPath?: string): Promise<void> {
 
 		fs.writeFileSync(finalOutputPath, typeScriptContent);
 
-		console.log(`TypeScript types generated at: ${finalOutputPath}`);
+		console.log(chalk.green('🎉 TypeScript types generated successfully!'));
+		console.log(chalk.cyan(`📁 Output: ${finalOutputPath}`));
+		console.log(chalk.yellow(`🔧 Generated ${interfaces.length} interfaces`));
+		
+		// Show some stats
+		const fileSize = fs.statSync(finalOutputPath).size;
+		const fileSizeKB = (fileSize / 1024).toFixed(2);
+		console.log(chalk.gray(`📊 File size: ${fileSizeKB} KB`));
+		
 	} catch (error) {
-		console.error('Failed to fetch templates from API:', error);
-		console.log('Falling back to local templates.json file...');
+		console.log(chalk.red('❌ Failed to fetch templates from API:'), error);
+		console.log(chalk.yellow('🔄 Falling back to local templates.json file...'));
 
 		// Fallback to local file
 		const localPath = path.resolve(__dirname, '../json/templates.json');
 		if (fs.existsSync(localPath)) {
 			parseOipTemplates(localPath, outputPath);
 		} else {
-			console.error('Local templates.json file not found either.');
+			console.log(chalk.red('💥 Local templates.json file not found either.'));
 			process.exit(1);
 		}
 	}
@@ -58,11 +71,17 @@ export function parseOipTemplates(
 	jsonFilePath: string,
 	outputPath?: string
 ): void {
+	console.log(chalk.cyan('📂 Reading local template file...'));
+	console.log(chalk.gray(`   ${jsonFilePath}`));
+	
 	const jsonContent = fs.readFileSync(jsonFilePath, 'utf8');
 	const data: ApiResponse = JSON.parse(jsonContent);
+	
+	console.log(chalk.blue(`📦 Processing ${data.templates.length} templates...`));
 
 	const generator = new SchemaTypeGenerator();
 	const typeScriptContent = generator.generateTypeScriptFile(data);
+	const interfaces = generator.parseTemplates(data);
 
 	// Default output path logic
 	let finalOutputPath: string;
@@ -83,5 +102,12 @@ export function parseOipTemplates(
 
 	fs.writeFileSync(finalOutputPath, typeScriptContent);
 
-	console.log(`TypeScript types generated at: ${finalOutputPath}`);
+	console.log(chalk.green('🎉 TypeScript types generated successfully!'));
+	console.log(chalk.cyan(`📁 Output: ${finalOutputPath}`));
+	console.log(chalk.yellow(`🔧 Generated ${interfaces.length} interfaces`));
+	
+	// Show some stats
+	const fileSize = fs.statSync(finalOutputPath).size;
+	const fileSizeKB = (fileSize / 1024).toFixed(2);
+	console.log(chalk.gray(`📊 File size: ${fileSizeKB} KB`));
 }
