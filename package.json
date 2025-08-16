@@ -16,6 +16,7 @@
 		"typescript": "^5.0.0"
 	},
 	"dependencies": {
-		"chalk": "4"
+		"chalk": "4",
+		"commander": "^14.0.0"
 	}
 }
