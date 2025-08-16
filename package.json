@@ -1,21 +1,18 @@
 {
-	"name": "oip-arweave-types",
+	"name": "@oip/arweave-typegen",
 	"version": "1.0.0",
 	"bin": {
-		"oip-arweave-types": "./dist/index.js"
+		"@oip/arweave-typegen": "./dist/index.js"
 	},
 	"scripts": {
 		"build": "tsc",
 		"prepublishOnly": "npm run build"
 	},
 	"keywords": [],
-	"author": "",
-	"license": "ISC",
+	"author": "Andrew Mingst",
+	"license": "MIT",
 	"devDependencies": {
-		"typescript": "^5.0.0",
-		"@types/node": "^20.0.0"
-	},
-	"dependencies": {
-		"openapi-typescript": "^7.9.1"
+		"@types/node": "^20.0.0",
+		"typescript": "^5.0.0"
 	}
 }

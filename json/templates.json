@@ -1,0 +1,3879 @@
+{
+	"message": "Templates retreived successfully",
+	"latestArweaveBlockInDB": 1711627,
+	"totalTemplates": 26,
+	"searchResults": 26,
+	"templates": [
+		{
+			"data": {
+				"TxId": "46Ui_ifw5LnrRmf_o2zWwikNxgXsXk3sswPtbcJCzlc",
+				"template": "recipe",
+				"fields": "{\"prep_time_mins\":\"uint64\",\"index_prep_time_mins\":0,\"cook_time_mins\":\"uint64\",\"index_cook_time_mins\":1,\"total_time_mins\":\"uint64\",\"index_total_time_mins\":2,\"servings\":\"uint64\",\"index_servings\":3,\"ingredient_amount\":\"repeated float\",\"index_ingredient_amount\":4,\"ingredient_unit\":\"repeated string\",\"index_ingredient_unit\":5,\"ingredient\":\"repeated dref\",\"index_ingredient\":6,\"instructions\":\"string\",\"index_instructions\":7,\"course\":\"enum\",\"courseValues\":[{\"code\":\"brk\",\"name\":\"Breakfast\"},{\"code\":\"lnc\",\"name\":\"Lunch\"},{\"code\":\"dnr\",\"name\":\"Dinner\"},{\"code\":\"snk\",\"name\":\"Snack\"},{\"code\":\"wrk\",\"name\":\"Workout Meal\"},{\"code\":\"bkt\",\"name\":\"Brunch\"},{\"code\":\"aft\",\"name\":\"Afternoon Snack\"},{\"code\":\"ntm\",\"name\":\"Nighttime Snack\"},{\"code\":\"pre\",\"name\":\"Pre-Workout Meal\"},{\"code\":\"pst\",\"name\":\"Post-Workout Meal\"}],\"index_course\":8,\"cuisine\":\"string\",\"index_cuisine\":9,\"notes\":\"string\",\"index_notes\":10,\"author\":\"string\",\"index_author\":11,\"authorDRef\":\"dref\",\"index_authorDRef\":12}",
+				"fieldsInTemplate": {
+					"prep_time_mins": {
+						"type": "uint64",
+						"index": 0
+					},
+					"cook_time_mins": {
+						"type": "uint64",
+						"index": 1
+					},
+					"total_time_mins": {
+						"type": "uint64",
+						"index": 2
+					},
+					"servings": {
+						"type": "uint64",
+						"index": 3
+					},
+					"ingredient_amount": {
+						"type": "repeated float",
+						"index": 4
+					},
+					"ingredient_unit": {
+						"type": "repeated string",
+						"index": 5
+					},
+					"ingredient": {
+						"type": "repeated dref",
+						"index": 6
+					},
+					"instructions": {
+						"type": "string",
+						"index": 7
+					},
+					"course": {
+						"type": "enum",
+						"index": 8,
+						"enumValues": [
+							{
+								"code": "brk",
+								"name": "Breakfast"
+							},
+							{
+								"code": "lnc",
+								"name": "Lunch"
+							},
+							{
+								"code": "dnr",
+								"name": "Dinner"
+							},
+							{
+								"code": "snk",
+								"name": "Snack"
+							},
+							{
+								"code": "wrk",
+								"name": "Workout Meal"
+							},
+							{
+								"code": "bkt",
+								"name": "Brunch"
+							},
+							{
+								"code": "aft",
+								"name": "Afternoon Snack"
+							},
+							{
+								"code": "ntm",
+								"name": "Nighttime Snack"
+							},
+							{
+								"code": "pre",
+								"name": "Pre-Workout Meal"
+							},
+							{
+								"code": "pst",
+								"name": "Post-Workout Meal"
+							}
+						]
+					},
+					"cuisine": {
+						"type": "string",
+						"index": 9
+					},
+					"notes": {
+						"type": "string",
+						"index": 10
+					},
+					"author": {
+						"type": "string",
+						"index": 11
+					},
+					"authorDRef": {
+						"type": "dref",
+						"index": 12
+					}
+				},
+				"fieldsInTemplateCount": 13,
+				"courseValues": [
+					{
+						"code": "brk",
+						"name": "Breakfast"
+					},
+					{
+						"code": "lnc",
+						"name": "Lunch"
+					},
+					{
+						"code": "dnr",
+						"name": "Dinner"
+					},
+					{
+						"code": "snk",
+						"name": "Snack"
+					},
+					{
+						"code": "wrk",
+						"name": "Workout Meal"
+					},
+					{
+						"code": "bkt",
+						"name": "Brunch"
+					},
+					{
+						"code": "aft",
+						"name": "Afternoon Snack"
+					},
+					{
+						"code": "ntm",
+						"name": "Nighttime Snack"
+					},
+					{
+						"code": "pre",
+						"name": "Pre-Workout Meal"
+					},
+					{
+						"code": "pst",
+						"name": "Post-Workout Meal"
+					}
+				]
+			},
+			"oip": {
+				"didTx": "did:arweave:46Ui_ifw5LnrRmf_o2zWwikNxgXsXk3sswPtbcJCzlc",
+				"inArweaveBlock": 1600127,
+				"indexedAt": "2025-07-05T21:55:52.271Z",
+				"recordStatus": "original",
+				"ver": "0.8.0",
+				"creator": {
+					"didAddress": "iZq_A50yy5YpHNZZfQ5E5Xres3fhMa-buPOlotxbEtU",
+					"creatorSig": "IbKbxyBZjHEUj8JTk07LKUQ+KNyY96s4UIdVieCDw36Yb7EZlzco4jfOgK+YKj/da8nt4MfQ0W3nsguJ6XosK7snd6bkL+cmgljgfko4rIcn6DSRNSaG+vX81yc1m0/MEDMTzd/nyAAjrZT8J9IwycpVtBzwxzfjLymfxpx6TJxWJ7KWrVz3+7y5UPZgkq2+LhqbWddOJySMkfAhzZ+851dvhm8iEdWC1TRkr53nkPJPtRfFPWpWRIr+hDEplA2RixwRRTnyaPUR3QWwnc5lj2ljsIHhiRoweX0Yte9Kf0mfpCSn88x/zZEU3jscOSDTt768b70ura3wz3wGda3frGuaMXhqrOrOqC7zEIHduFTlAIPk3JA6g0LXtiRX7HTBO2tguZ5cDu3IBTqcupsxMqnXPYJyXJjuUSCmF0Py9XUtzlEyfzv/DNKYLtVQ15f1BjKpIEv1DP69WpGTOt7K6/DZtqohJzWVbcFSv3b5Zt/op0X9VnGriPqs7dK9Az/RW5byMQrdLX1W2UMTf/Grcb62Ih2pF8t1PB3R7RXEZPKFrgoJnnSRert6jYKfSCrBTMakMU6AxEVFJlMTxUZvhN9LsIjWM3y0SBoB1f182rIrGBXxKITDCOWs+gM/P/z/2krw4OG5rUifpqFtdMtqO0k8uKUxEFhrZUM6CxQY7q0="
+				}
+			}
+		},
+		{
+			"data": {
+				"TxId": "MojoZlLKaH-cHy_HbaGBlBA7Mxzf8dJl4MQZzFQAkMY",
+				"template": "podcast",
+				"fields": "{\"show\":\"dref\",\"index_show\":0,\"episodeNum\":\"integer\",\"index_episodeNum\":1,\"seasonNum\":\"integer\",\"index_seasonNum\":2,\"duration\":\"integer\",\"index_duration\":3,\"hosts\":\"repeated dref\",\"index_hosts\":4,\"guests\":\"repeated dref\",\"index_guests\":5,\"explicit\":\"boolean\",\"index_explicit\":6,\"transcript\":\"string\",\"index_transcript\":7,\"chapters\":\"string\",\"index_chapters\":8,\"episodeArtwork\":\"repeated dref\",\"index_episodeArtwork\":9,\"podcastArtwork\":\"dref\",\"index_podcastArtwork\":10,\"license\":\"dref\",\"index_license\":11,\"copyright\":\"string\",\"index_copyright\":12,\"sponsors\":\"repeated string\",\"index_sponsors\":13,\"rssFeedUrl\":\"string\",\"index_rssFeedUrl\":14}",
+				"fieldsInTemplate": {
+					"show": {
+						"type": "dref",
+						"index": 0
+					},
+					"episodeNum": {
+						"type": "integer",
+						"index": 1
+					},
+					"seasonNum": {
+						"type": "integer",
+						"index": 2
+					},
+					"duration": {
+						"type": "integer",
+						"index": 3
+					},
+					"hosts": {
+						"type": "repeated dref",
+						"index": 4
+					},
+					"guests": {
+						"type": "repeated dref",
+						"index": 5
+					},
+					"explicit": {
+						"type": "boolean",
+						"index": 6
+					},
+					"transcript": {
+						"type": "string",
+						"index": 7
+					},
+					"chapters": {
+						"type": "string",
+						"index": 8
+					},
+					"episodeArtwork": {
+						"type": "repeated dref",
+						"index": 9
+					},
+					"podcastArtwork": {
+						"type": "dref",
+						"index": 10
+					},
+					"license": {
+						"type": "dref",
+						"index": 11
+					},
+					"copyright": {
+						"type": "string",
+						"index": 12
+					},
+					"sponsors": {
+						"type": "repeated string",
+						"index": 13
+					},
+					"rssFeedUrl": {
+						"type": "string",
+						"index": 14
+					}
+				},
+				"fieldsInTemplateCount": 15
+			},
+			"oip": {
+				"didTx": "did:arweave:MojoZlLKaH-cHy_HbaGBlBA7Mxzf8dJl4MQZzFQAkMY",
+				"inArweaveBlock": 1580595,
+				"indexedAt": "2025-07-05T21:31:57.212Z",
+				"recordStatus": "original",
+				"ver": "0.8.0",
+				"creator": {
+					"didAddress": "iZq_A50yy5YpHNZZfQ5E5Xres3fhMa-buPOlotxbEtU",
+					"creatorSig": "BDL5mR1eUx0gzezn3lZtZcrNmdS2DFHvg3rvHsbZMMbiyDKBt6Q72NfLRadyvwT1oyzmalNJoczcE+dGeJMPzvM5088WOzl95mtzmf56OHS94RRUNOo0LC6LnoIfQ+tZs4T0uCSBFP47Ozwj/RIkTvWS0ggjGM4u3m8C2YYoJ8kfOgh2A9edoczYlEs6W9igeTjooZkz++1W7n8uhWrSHO77y2tS6ukZ/tA3+Q/jdw7n4uAJxv1kqrt3rTHviOZl05QvAEAtvzOkywSKyJ/nNkctTMMbOvrtfmK9L/R8mPFNes23vulzi8HBBIZqLC8GB7/S2ItF92t29JzbZEuvg4iipxIwey200W0eTi0k6G0clsa+gr5Cii+crYc6EKv7dNsE/NJ7C79GgJ9/EosDnqodKWBHRK0+9QuMaUWqkIbNovBcj9cY+9wd4BJoix/heXuDlup11ZeKVrK9uWG10ysbrSvu3Co3B/oN7bxylpwjqBx6G/H7/N/2IA1rG7Yd64CERs7CNlJTIx0Lb19TXWvCMbH4dX332YaLB118IIiNzTjPGWMCnAuoXTwUh1ohaWpFmltgO65v4ktcdmK9N/v4mKjhqrIhqO44sRWhv966o40T9/cchXQiTKSPmggkv5i16KOu+w3K5768kkuVUy4LZ3d6L3JgE/VxJxPg/9g="
+				}
+			}
+		},
+		{
+			"data": {
+				"TxId": "op6y-d_6bqivJ2a2oWQnbylD4X_LH6eQyR6rCGqtVZ8",
+				"template": "post",
+				"fields": "{\"webUrl\":\"string\",\"index_webUrl\":0,\"bylineWriter\":\"string\",\"index_bylineWriter\":1,\"bylineWritersTitle\":\"string\",\"index_bylineWritersTitle\":2,\"bylineWritersLocation\":\"string\",\"index_bylineWritersLocation\":3,\"articleText\":\"dref\",\"index_articleText\":4,\"featuredImage\":\"dref\",\"index_featuredImage\":5,\"imageItems\":\"repeated dref\",\"index_imageItems\":6,\"imageCaptionItems\":\"repeated string\",\"index_imageCaptionItems\":7,\"videoItems\":\"repeated dref\",\"index_videoItems\":8,\"audioItems\":\"repeated dref\",\"index_audioItems\":9,\"audioCaptionItems\":\"repeated string\",\"index_audioCaptionItems\":10,\"replyTo\":\"dref\",\"index_replyTo\":11}",
+				"fieldsInTemplate": {
+					"webUrl": {
+						"type": "string",
+						"index": 0
+					},
+					"bylineWriter": {
+						"type": "string",
+						"index": 1
+					},
+					"bylineWritersTitle": {
+						"type": "string",
+						"index": 2
+					},
+					"bylineWritersLocation": {
+						"type": "string",
+						"index": 3
+					},
+					"articleText": {
+						"type": "dref",
+						"index": 4
+					},
+					"featuredImage": {
+						"type": "dref",
+						"index": 5
+					},
+					"imageItems": {
+						"type": "repeated dref",
+						"index": 6
+					},
+					"imageCaptionItems": {
+						"type": "repeated string",
+						"index": 7
+					},
+					"videoItems": {
+						"type": "repeated dref",
+						"index": 8
+					},
+					"audioItems": {
+						"type": "repeated dref",
+						"index": 9
+					},
+					"audioCaptionItems": {
+						"type": "repeated string",
+						"index": 10
+					},
+					"replyTo": {
+						"type": "dref",
+						"index": 11
+					}
+				},
+				"fieldsInTemplateCount": 12
+			},
+			"oip": {
+				"didTx": "did:arweave:op6y-d_6bqivJ2a2oWQnbylD4X_LH6eQyR6rCGqtVZ8",
+				"inArweaveBlock": 1580595,
+				"indexedAt": "2025-07-05T21:31:56.105Z",
+				"recordStatus": "original",
+				"ver": "0.8.0",
+				"creator": {
+					"didAddress": "iZq_A50yy5YpHNZZfQ5E5Xres3fhMa-buPOlotxbEtU",
+					"creatorSig": "SmMkMotToTt2k4gNNDfaRwom9d3XY9grVAYg51/ZXBSz6SOFyVs/Y+soTbKSmay3gTOscXQQnJu93Bi7re0rZJ3631LsAlQh0KxdgMFJ4Z6sc/0lsAduI1Bro5r/9FszfZubm7qaVbFvzzCsLzyxhIDH307jUgLRU1khy2vxKUcYx6SYufDSk5N6io8SJEIax5kENLh1g48qPjfLr68YUjTm7zrYxn+XcC7lLNRE6HYFwJD3QFlq3yuQ/3txvg24dyDNQWfidylxn/Kl2wTh0ob/OJpkWBROzmNYVqoEhkxakO8/euaAiEyGLjrt/rcSYA6IUZQ3yVDWr4zDpmsowOzc/ST8kugRVM1DqbSI1FEafIi7R/00sPlVE0Dg1kJzbhyl7+KqahNr6lp2a3jxfjLy15mdRkdRkJt9sAyHkE2yM9e/6VXwTdNTB0WMdP4RkHA4Qwfo5DNe6PsXaHs2QQePkbv2F2PgvpDKNarCkVSRDRk/oAlLBtjHFqIVE+jb/veRL1TdgOJWbkPchF2xKNG8rS76DS4VPvuQh0lEgEwNIHYtdRxDV+jquPZvZu0YOIyTHL9Yb31oSNmXID7hrJSPaCkG00A+vOaXYO7PE9lk1RRCYCZDPx0dNxisaq5eGWe7D5oxbboMXRJI1ulSjEHzs+OcQ3pC4/KUn8adkaE="
+				}
+			}
+		},
+		{
+			"data": {
+				"TxId": "G73WplyxpNDOgDSFO6CP3O6hZXq8kNJXxkCqx3sgd1s",
+				"template": "video",
+				"fields": "{\"webUrl\":\"string\",\"index_webUrl\":0,\"arweaveAddress\":\"string\",\"index_arweaveAddress\":1,\"ipfsAddress\":\"string\",\"index_ipfsAddress\":2,\"bittorrentAddress\":\"string\",\"index_bittorrentAddress\":3,\"filename\":\"string\",\"index_filename\":4,\"size\":\"uint64\",\"index_size\":5,\"width\":\"uint64\",\"index_width\":6,\"height\":\"uint64\",\"index_height\":7,\"duration\":\"uint64\",\"index_duration\":8,\"contentType\":\"string\",\"index_contentType\":9,\"thumbnails\":\"repeated dref\",\"index_thumbnails\":10,\"creator\":\"string\",\"index_creator\":11}",
+				"fieldsInTemplate": {
+					"webUrl": {
+						"type": "string",
+						"index": 0
+					},
+					"arweaveAddress": {
+						"type": "string",
+						"index": 1
+					},
+					"ipfsAddress": {
+						"type": "string",
+						"index": 2
+					},
+					"bittorrentAddress": {
+						"type": "string",
+						"index": 3
+					},
+					"filename": {
+						"type": "string",
+						"index": 4
+					},
+					"size": {
+						"type": "uint64",
+						"index": 5
+					},
+					"width": {
+						"type": "uint64",
+						"index": 6
+					},
+					"height": {
+						"type": "uint64",
+						"index": 7
+					},
+					"duration": {
+						"type": "uint64",
+						"index": 8
+					},
+					"contentType": {
+						"type": "string",
+						"index": 9
+					},
+					"thumbnails": {
+						"type": "repeated dref",
+						"index": 10
+					},
+					"creator": {
+						"type": "string",
+						"index": 11
+					}
+				},
+				"fieldsInTemplateCount": 12
+			},
+			"oip": {
+				"didTx": "did:arweave:G73WplyxpNDOgDSFO6CP3O6hZXq8kNJXxkCqx3sgd1s",
+				"inArweaveBlock": 1580595,
+				"indexedAt": "2025-07-05T21:31:58.118Z",
+				"recordStatus": "original",
+				"ver": "0.8.0",
+				"creator": {
+					"didAddress": "iZq_A50yy5YpHNZZfQ5E5Xres3fhMa-buPOlotxbEtU",
+					"creatorSig": "Irzfe6eQCoK8cL+yG4+QjDb0EeXBnelh5tkNDJJmCm3ssp41yIHeKdBRFBvSyiMwdJ/PPlyMmVUAbJCM2yC2XQv1+zyHlt000Dwm3r5Bj40fLv8os5vpXy33R/9t/0p/uhy7Gg8yILYQiy+XStXDQSJuHsEhNaNkXOaL90UwJddaIfjjp2jp2m7Zzi3tack661Kt/+7yqVMzIzgV2kErfg4SfIQhIPDZWlyJ2UnaCNAZaQvJGLiP0amfokGd1Rl1mbs5p1g9h3tKv5ZxjYBAw2h+8vb/A7UE0P0i7gzr3Xeb4EFPp+tj0R1I+Sggu28unR+5v7PoARRaFQcdssJfW2in5/gVR0L5VWOXcrBd5quoDvpG9vyi4L1hCMVfUE+MlOrur4JpodqfWSQRcaM2PN6b40c0fUKDJkAZQCW2DRijLn5O/jnlUhZS0RMhystzOLP2r3plo9a/5vrA9DWSE/6uOZQhtQs0IVjWUUNGqM5PyZvtfndQkgOZzbCISDr9YDllBYXJN/x8zgh1zUDbfL1IxlTypUlv5yLwwMLaTV9wCP0JPo5tN242/gE76dLlxmWMuSfVM6fAD4T75i+HPaYHMB0AuFEdYjZE6RBlnkhsnzUtzMGlT3BYodVZMOtjJk+UuysAftAeyZCw6s9B3jB8vwMBulY21/eFuqmTeJg="
+				}
+			}
+		},
+		{
+			"data": {
+				"TxId": "9MrI8kJvBJ-u7uvgngMZ-gMo5RREDwey8G7mJEUOpdo",
+				"template": "audio",
+				"fields": "{\"webUrl\":\"string\",\"index_webUrl\":0,\"arweaveAddress\":\"string\",\"index_arweaveAddress\":1,\"ipfsAddress\":\"string\",\"index_ipfsAddress\":2,\"bittorrentAddress\":\"string\",\"index_bittorrentAddress\":3,\"filename\":\"string\",\"index_filename\":4,\"size\":\"uint64\",\"index_size\":5,\"duration\":\"uint64\",\"index_duration\":6,\"contentType\":\"string\",\"index_contentType\":7,\"thumbnails\":\"repeated dref\",\"index_thumbnails\":8,\"creator\":\"string\",\"index_creator\":9}",
+				"fieldsInTemplate": {
+					"webUrl": {
+						"type": "string",
+						"index": 0
+					},
+					"arweaveAddress": {
+						"type": "string",
+						"index": 1
+					},
+					"ipfsAddress": {
+						"type": "string",
+						"index": 2
+					},
+					"bittorrentAddress": {
+						"type": "string",
+						"index": 3
+					},
+					"filename": {
+						"type": "string",
+						"index": 4
+					},
+					"size": {
+						"type": "uint64",
+						"index": 5
+					},
+					"duration": {
+						"type": "uint64",
+						"index": 6
+					},
+					"contentType": {
+						"type": "string",
+						"index": 7
+					},
+					"thumbnails": {
+						"type": "repeated dref",
+						"index": 8
+					},
+					"creator": {
+						"type": "string",
+						"index": 9
+					}
+				},
+				"fieldsInTemplateCount": 10
+			},
+			"oip": {
+				"didTx": "did:arweave:9MrI8kJvBJ-u7uvgngMZ-gMo5RREDwey8G7mJEUOpdo",
+				"inArweaveBlock": 1580593,
+				"indexedAt": "2025-07-05T21:31:55.132Z",
+				"recordStatus": "original",
+				"ver": "0.8.0",
+				"creator": {
+					"didAddress": "iZq_A50yy5YpHNZZfQ5E5Xres3fhMa-buPOlotxbEtU",
+					"creatorSig": "TC+/vcfq9cg8P8F1vcgANcsEwelbEN7ZBHVjROgFkDtXv0Srvc+r+mVPxXHm6kPviCRDw658v0GmuEJsfRAunAIFzm7fgPviKeV/7qYk6XyiQfVW/MFlB1smuWZ6oOZFA7u7zLG9acvLRGBNB/N3g4pSCOmYHSoPdmG9345pmex/VbQPt0F5yspRaadq8JVT6SbS3IDVRk1wDESFVLw+fGYfgn9L9dp6mQz0fPuDyWZqXw5RyUKZNnVhq71ZQGVII50aZ8IShOv894xj4qPxukK08dR7x6WNz6wi4rLfqHgB0dPk1VQ2y7z5jZebsKl/+pKj/KXP2i8EgM37M4vTtTfhg2c8OvPAUDRxR3PTcas7euxqXaG8EMrwF7GM/1JKExRRswdXIgpXomc9xFROQ4i9xu4jJjyU18jBYSieNmywJ8A75rGVweRFGFZ7YGaDxyUrlaK9uUBlv2LPrKNQoQcURbXkft0RM1ZHMDCCuWIfOUHeXUqxcp4R0DRaJtUrGJCH4CRFU1AH/6jmqVDfuMOJyLc8ivM1GWcHNhsFMWeD0hpaJkK9bXF8d2pbN/ySKfIt2MloXFe5a/mxGvb6TZ7hL+Jqd/BYUVpF47VzImQ/a88J86CqcgnqhShTkGC0LGzP5yvuhKq6iTSS8ojj0My/Q5ZCR1mGeAXPptpxATo="
+				}
+			}
+		},
+		{
+			"data": {
+				"TxId": "AkZnE1VckJJlRamgNJuIGE7KrYwDcCciWOMrMh68V4o",
+				"template": "image",
+				"fields": "{\"webUrl\":\"string\",\"index_webUrl\":0,\"arweaveAddress\":\"string\",\"index_arweaveAddress\":1,\"ipfsAddress\":\"string\",\"index_ipfsAddress\":2,\"bittorrentAddress\":\"string\",\"index_bittorrentAddress\":3,\"filename\":\"string\",\"index_filename\":4,\"contentType\":\"string\",\"index_contentType\":5,\"size\":\"uint64\",\"index_size\":6,\"width\":\"uint64\",\"index_width\":7,\"height\":\"uint64\",\"index_height\":8,\"creator\":\"string\",\"index_creator\":9}",
+				"fieldsInTemplate": {
+					"webUrl": {
+						"type": "string",
+						"index": 0
+					},
+					"arweaveAddress": {
+						"type": "string",
+						"index": 1
+					},
+					"ipfsAddress": {
+						"type": "string",
+						"index": 2
+					},
+					"bittorrentAddress": {
+						"type": "string",
+						"index": 3
+					},
+					"filename": {
+						"type": "string",
+						"index": 4
+					},
+					"contentType": {
+						"type": "string",
+						"index": 5
+					},
+					"size": {
+						"type": "uint64",
+						"index": 6
+					},
+					"width": {
+						"type": "uint64",
+						"index": 7
+					},
+					"height": {
+						"type": "uint64",
+						"index": 8
+					},
+					"creator": {
+						"type": "string",
+						"index": 9
+					}
+				},
+				"fieldsInTemplateCount": 10
+			},
+			"oip": {
+				"didTx": "did:arweave:AkZnE1VckJJlRamgNJuIGE7KrYwDcCciWOMrMh68V4o",
+				"inArweaveBlock": 1580593,
+				"indexedAt": "2025-07-05T21:31:53.933Z",
+				"recordStatus": "original",
+				"ver": "0.8.0",
+				"creator": {
+					"didAddress": "iZq_A50yy5YpHNZZfQ5E5Xres3fhMa-buPOlotxbEtU",
+					"creatorSig": "gqJJqlWgsj3tz4l8Arm8vY5Ba0lPqgNoTdsvfVxy5exiO+a6BkkLmxHe2ih8MKMZK3pyqwcs796lmoM3J0hrTDlJZvTjo4LGTpoTtJrf+7Sv8PV/Rz5sx2UIcaYWrBt9FYc2LsuKfiIXl9PPfSUtu6JbVtuhBgyIwra7PnLp4jpNMi7A54zU8NVEq0/46JyElMQqWgogF9XHASFpGZXMfIsc8XvcXjASHpLLwVFFe5uuDPFAFzym/1Tj5FMJKdeT7AbCH+LHk0rtTsoL4TWql6nVy4YUlyHQgpM4/YLf/7GqUw+SBo0Vp5z08kKV142AzlXMYruhmy5Nq0z63W/t6n6KjliuGbZlqL0brfudSHmqcWG3c4eiZdbzEEmfoWCOoc2e3nu51qcwXQQkYdwdQTsoZ87LZku4Ea/HpGT9b1+fNIBKfYkx5lyzvbnL1EUXhH3YEtYGM0G/W5L2AO4Dig0iBlmvPZ8ZczYPVs+5DyVyikdCoHHbLN/Qbjk1xAFSlTCOCuoBZP9tb3FYshW9t7M9hMHBvRhzZ6GcP6WzkjhlvHzey+nVzRL7K/hdJLX6EhoFwyGZrsZUnWOTboDjz/OrcdTiuAQ1DikaSeTTvk1gjPC6jkzIfpSHZ+UDaXBHFNPPCKOA7hdgeZSZv0WKttZQyoMt/cTRTZgqoLxiejQ="
+				}
+			}
+		},
+		{
+			"data": {
+				"TxId": "EaGGDUDye8EYS5QSq5RcKaV4KfOmrJUFaq-bhlOq0_A",
+				"template": "recipe",
+				"fields": "{\"prep_time_mins\":\"uint64\",\"index_prep_time_mins\":0,\"cook_time_mins\":\"uint64\",\"index_cook_time_mins\":1,\"total_time_mins\":\"uint64\",\"index_total_time_mins\":2,\"servings\":\"uint64\",\"index_servings\":3,\"ingredient_amount\":\"repeated uint64\",\"index_ingredient_amount\":4,\"ingredient_unit\":\"repeated float\",\"index_ingredient_unit\":5,\"ingredient\":\"repeated dref\",\"index_ingredient\":6,\"instructions\":\"string\",\"index_instructions\":7}",
+				"fieldsInTemplate": {
+					"prep_time_mins": {
+						"type": "uint64",
+						"index": 0
+					},
+					"cook_time_mins": {
+						"type": "uint64",
+						"index": 1
+					},
+					"total_time_mins": {
+						"type": "uint64",
+						"index": 2
+					},
+					"servings": {
+						"type": "uint64",
+						"index": 3
+					},
+					"ingredient_amount": {
+						"type": "repeated uint64",
+						"index": 4
+					},
+					"ingredient_unit": {
+						"type": "repeated float",
+						"index": 5
+					},
+					"ingredient": {
+						"type": "repeated dref",
+						"index": 6
+					},
+					"instructions": {
+						"type": "string",
+						"index": 7
+					}
+				},
+				"fieldsInTemplateCount": 8
+			},
+			"oip": {
+				"didTx": "did:arweave:EaGGDUDye8EYS5QSq5RcKaV4KfOmrJUFaq-bhlOq0_A",
+				"inArweaveBlock": 1593767,
+				"indexedAt": "2025-07-05T21:46:53.861Z",
+				"recordStatus": "original",
+				"ver": "0.8.0",
+				"creator": {
+					"didAddress": "iZq_A50yy5YpHNZZfQ5E5Xres3fhMa-buPOlotxbEtU",
+					"creatorSig": "edq+m/QX+Wkd/enu0be6F4biHd7hUWmM8QSKJCx9cppV+NQ3/rKgHGe40E+Ou3LrBHlaZM/lcqLFUN+4eZMepfpIvze3dtEtuXOVbelHTd4WyhejICoOnv5j7i3XtdUSSTq73Z6QlD/gimL0tx2mB9AL8e5YFD42EVeeNlWT6Sf2cAs+J9XcFVZiDYkEklcXGXRjCPip5LIyzq6FHkYM4zFgKVdOIiB93gY8vMM/0C4cdXwhnuPYy52pYxmsXmPz/w/u18vRCEJ/BZsMrevTMkYeOyMGEDDk9mgzH2n0fvflVsLeVsSRrLpBgGe/najcR8ifPt8EXqItgVaTWhztPFJQidBgDE+Om/KNCnExt9v3yIFvqlaekMDgSeXd+76MUkNIhoVQybJqALz5+aiX/UBlxCkHdyJSZfQdlfhf+S4IaeLfm4WAjpokTFtU/4aprrJuQ89Vi8aP3kJUDTBtjIqLw0wj1WJ6g+MK/Y/VJeaJUCsDvUy5CWJeTJqXKcHqXfG1ux4EJat+iq6zYQy3s8jruKb65w423hNU3K9TpIVPaNrrs9RpuGC3F+O+1/QUTL07sxEuhU1WJvpraM0keE2NANpJhpLeOaMcmeKsQgEp5+GBRpgWCUCk8JznWpoi90jTbXPHQLq/ZuwCL1vWUrbO1qT4futP3u1W761g9DY="
+				}
+			}
+		},
+		{
+			"data": {
+				"TxId": "gcLgs6Cloq5s-qNTWHwAl1YRmvr-tXnuEqZfskn7jq0",
+				"template": "recipe",
+				"fields": "{\"prep_time_mins\":\"uint64\",\"index_prep_time_mins\":0,\"cook_time_mins\":\"uint64\",\"index_cook_time_mins\":1,\"total_time_mins\":\"uint64\",\"index_total_time_mins\":2,\"servings\":\"uint64\",\"index_servings\":3,\"ingredient_amount\":\"repeated float\",\"index_ingredient_amount\":4,\"ingredient_unit\":\"repeated string\",\"index_ingredient_unit\":5,\"ingredient\":\"repeated dref\",\"index_ingredient\":6,\"instructions\":\"string\",\"index_instructions\":7}",
+				"fieldsInTemplate": {
+					"prep_time_mins": {
+						"type": "uint64",
+						"index": 0
+					},
+					"cook_time_mins": {
+						"type": "uint64",
+						"index": 1
+					},
+					"total_time_mins": {
+						"type": "uint64",
+						"index": 2
+					},
+					"servings": {
+						"type": "uint64",
+						"index": 3
+					},
+					"ingredient_amount": {
+						"type": "repeated float",
+						"index": 4
+					},
+					"ingredient_unit": {
+						"type": "repeated string",
+						"index": 5
+					},
+					"ingredient": {
+						"type": "repeated dref",
+						"index": 6
+					},
+					"instructions": {
+						"type": "string",
+						"index": 7
+					}
+				},
+				"fieldsInTemplateCount": 8
+			},
+			"oip": {
+				"didTx": "did:arweave:gcLgs6Cloq5s-qNTWHwAl1YRmvr-tXnuEqZfskn7jq0",
+				"inArweaveBlock": 1593791,
+				"indexedAt": "2025-07-05T21:47:03.559Z",
+				"recordStatus": "original",
+				"ver": "0.8.0",
+				"creator": {
+					"didAddress": "iZq_A50yy5YpHNZZfQ5E5Xres3fhMa-buPOlotxbEtU",
+					"creatorSig": "AVa3cxerhWQZfUm2Mrf5xKdGamsQ+umKfv90bTF4xSdetnI+l7QtSOs/fAT1+odwu4pDppsrrkwXJIZg1Rq8jRxbKjtkPSAESdTiNFbqR8mSBm/kAT9T4Yt1hTlsn0CiAZ6HxOvortHKPT5qd/qzlw98+JSkFXZQIBU16wp6Qz0/OKzPaVikSLIAiM3WMMRYeE+XS4pwDuuTxXXCGD6Qi1pItCjGasxq9Cku6mzd+vOW7dixe09w9UTPunGRvN+Cs6wIHgIrWfq0WTERbRuCRIb+QHBu9m+YEXQnuFWxqB3OEq0aYF+SZtUm3oZi9WrmHgcX8Ich4ZPw0Mv+NPA0Y6wGI7tGmbpvo4ppVQz5SEr4Gcg0snwFh+NYyoW+i13IkO7WShXoBd95dq0TLliTZbm7GCR4YRtBcrc2YxdfG/v1aiO8SiCJhBMm2ayl4sXGMltj9HkFEtxp9x4w1yNkVt8Z0s5HMoSBEsdcwv/khWo2Hp+/ENMivQSQrCHeaad8NRd1UnFOqqpwm9ZID0SNv8ZRZzXXfpznf552XS4b2Czf8jzaZf2pgNfCgh68iOkdrTbFmBFNcBxxiPKhEtAQ2XHCmaSvrUPIibPRQNINWWkEJcXwMXVnwMUqYUIXoaed3LqlcyO7kB0Acekhme3DF0MHEgUzvVVLDUuKrS/Gf18="
+				}
+			}
+		},
+		{
+			"data": {
+				"TxId": "BKVvTSXmmJni-L82irZfPFXWWJLBcdvbxS34jP1FTG8",
+				"template": "creatorRegistration",
+				"fields": "{\"address\":\"string\",\"index_address\":0,\"publicKey\":\"string\",\"index_publicKey\":1,\"handle\":\"string\",\"index_handle\":2,\"surname\":\"string\",\"index_surname\":3,\"youtube\":\"string\",\"index_youtube\":4,\"x\":\"string\",\"index_x\":5,\"instagram\":\"string\",\"index_instagram\":6,\"tiktok\":\"string\",\"index_tiktok\":7}",
+				"fieldsInTemplate": {
+					"address": {
+						"type": "string",
+						"index": 0
+					},
+					"publicKey": {
+						"type": "string",
+						"index": 1
+					},
+					"handle": {
+						"type": "string",
+						"index": 2
+					},
+					"surname": {
+						"type": "string",
+						"index": 3
+					},
+					"youtube": {
+						"type": "string",
+						"index": 4
+					},
+					"x": {
+						"type": "string",
+						"index": 5
+					},
+					"instagram": {
+						"type": "string",
+						"index": 6
+					},
+					"tiktok": {
+						"type": "string",
+						"index": 7
+					}
+				},
+				"fieldsInTemplateCount": 8
+			},
+			"oip": {
+				"didTx": "did:arweave:BKVvTSXmmJni-L82irZfPFXWWJLBcdvbxS34jP1FTG8",
+				"inArweaveBlock": 1580538,
+				"indexedAt": "2025-07-05T21:31:49.719Z",
+				"recordStatus": "original",
+				"ver": "0.8.0",
+				"creator": {
+					"didAddress": "iZq_A50yy5YpHNZZfQ5E5Xres3fhMa-buPOlotxbEtU",
+					"creatorSig": "KLNg78JaVgsfAA8yceJFGy1do5Wq8QP6brzUoN/wA2uSAMswXb3O4BhBKor0AlA7JybAUcllmJlNUk3v9/Vnq4adnLOLAb3h7jPlTyjTC4Qd3cmK6LVlM80tVATjdRIU56Gpf22DWDpoAXl4RUeXs+TSapEoiBgaA/el1NqpO9LE8ZV0A6eZh3D2Xu/wbFI1ku+vRU4HMkOs6WNt8l4cNFtwlM+7i5kSrD7H5TjvMlb7mRZuz3bYIRzQOmWhXvJZrqseukRxLB9M6esEoV23aPCKBdTUVfaDlKJ6lHo6uMVcDEXn3TSpcH2UyAhsXSrOHq2QX8Oqqze0bAxP5QzDIm9iWBbvw+JrJqSNCv0SIVOSvo87654gGE3rYZX01JY0Zn/Fbo9DDsoPrFnaLRLlUC/DBejgkShsgOCEki7Qh8gcuowUeCccofuyB93wuqaSJ7C1q60beRxTfyE0Inp4RJgC4F4NzUaCpnUJohaDOM4t5E56fYw07kLOqoNVnjismTEnNi4MgBH7fu1dkvC2rDYVc0GOxLzeBu6CBPVswB4lhlaSpULItocvSJ3x8tW3zVENG437fdt0ZdHtpRj55YkUvt2MT1sS5kxv6xUjeDT9D+3TELDqUJ6WopDS2UOR+yxoDLT2iFWysy+qqQU79Z6btkk0JMZUykx9Lv3fbl8="
+				}
+			}
+		},
+		{
+			"data": {
+				"TxId": "of_eh0kGy65uYD0xsTh7Qe6JVTfJ2oFoA7xp4H7t7YI",
+				"template": "text",
+				"fields": "{\"webUrl\":\"string\",\"index_webUrl\":0,\"arweaveAddress\":\"string\",\"index_arweaveAddress\":1,\"ipfsAddress\":\"string\",\"index_ipfsAddress\":2,\"bittorrentAddress\":\"string\",\"index_bittorrentAddress\":3,\"filename\":\"string\",\"index_filename\":4,\"size\":\"uint64\",\"index_size\":5,\"contentType\":\"string\",\"index_contentType\":6}",
+				"fieldsInTemplate": {
+					"webUrl": {
+						"type": "string",
+						"index": 0
+					},
+					"arweaveAddress": {
+						"type": "string",
+						"index": 1
+					},
+					"ipfsAddress": {
+						"type": "string",
+						"index": 2
+					},
+					"bittorrentAddress": {
+						"type": "string",
+						"index": 3
+					},
+					"filename": {
+						"type": "string",
+						"index": 4
+					},
+					"size": {
+						"type": "uint64",
+						"index": 5
+					},
+					"contentType": {
+						"type": "string",
+						"index": 6
+					}
+				},
+				"fieldsInTemplateCount": 7
+			},
+			"oip": {
+				"didTx": "did:arweave:of_eh0kGy65uYD0xsTh7Qe6JVTfJ2oFoA7xp4H7t7YI",
+				"inArweaveBlock": 1580593,
+				"indexedAt": "2025-07-05T21:31:52.016Z",
+				"recordStatus": "original",
+				"ver": "0.8.0",
+				"creator": {
+					"didAddress": "iZq_A50yy5YpHNZZfQ5E5Xres3fhMa-buPOlotxbEtU",
+					"creatorSig": "SR2jPdGSABFfceNasTqM4zzqjr6+mbR2H9ATRXVkh8yX1QoMysrl7GIiiTj3lsvjXfphYt2B2drxW8YCFDKp3STapCqnKN1ZPUrI1RrS5g5LPedOrQijYEBKjcOJrOZ/stWt+FSwnH6L8FhFcT9MUHF78dlK1ok2oSgkHGcdv6IvxtXhi2HjlmrVPtrlLR5I1Cg6wjA4/D6Egf2olfDVCRcvXBYwd1ek3mFDCTNftY2YCh9T75apDyJU1dOJTAUFfqWdRRAb0PP+01ie16AOwCUl4WAcjUmYNhl6kkjSC/8fM8x6RcsHTlvDI2sDn9x9SmInOyT0OkfqCAT1cu8eAC2S2UksE914Jk8PougUSYR9sJNHLabLP/0tmRjIcU4CilV41x0ZpnkG/tR6+B7E9sNBQgramaFSVtxjPuwYg+U5atF1Lm5wsKbbNEJ8SDKU4WraWX2PMriheteA5zAQEF1v7yx0stW5+OOcw8GBWVsh1sombw+0JcWff2Y2rlKP3oPwIEVk9snKu5SASxkeWqY6h7xdm3z22yBxLRJQzRd/XW9jpgbAeNfMrKd2l3YxUYrt2MlXarB6+vaVtIBwtdM8gOS2zIGheiDxa85GMU43UxIlPsTuRJcVLAt+RdlOChbGFZAYPM3GLV3GicfGXDbg+eGhJ974umdyokOk9iY="
+				}
+			}
+		},
+		{
+			"data": {
+				"TxId": "-9DirnjVO1FlbEW1lN8jITBESrTsQKEM_BoZ1ey_0mk",
+				"template": "basic",
+				"fields": "{\"name\":\"string\",\"index_name\":0,\"description\":\"string\",\"index_description\":1,\"date\":\"long\",\"index_date\":2,\"language\":\"enum\",\"languageValues\":[{\"code\":\"aa\",\"name\":\"Afar\"},{\"code\":\"ab\",\"name\":\"Abkhazian\"},{\"code\":\"ae\",\"name\":\"Avestan\"},{\"code\":\"af\",\"name\":\"Afrikaans\"},{\"code\":\"ak\",\"name\":\"Akan\"},{\"code\":\"am\",\"name\":\"Amharic\"},{\"code\":\"an\",\"name\":\"Aragonese\"},{\"code\":\"ar\",\"name\":\"Arabic\"},{\"code\":\"as\",\"name\":\"Assamese\"},{\"code\":\"av\",\"name\":\"Avaric\"},{\"code\":\"ay\",\"name\":\"Aymara\"},{\"code\":\"az\",\"name\":\"Azerbaijani\"},{\"code\":\"ba\",\"name\":\"Bashkir\"},{\"code\":\"be\",\"name\":\"Belarusian\"},{\"code\":\"bg\",\"name\":\"Bulgarian\"},{\"code\":\"bh\",\"name\":\"Bihari languages\"},{\"code\":\"bi\",\"name\":\"Bislama\"},{\"code\":\"bm\",\"name\":\"Bambara\"},{\"code\":\"bn\",\"name\":\"Bengali\"},{\"code\":\"bo\",\"name\":\"Tibetan\"},{\"code\":\"br\",\"name\":\"Breton\"},{\"code\":\"bs\",\"name\":\"Bosnian\"},{\"code\":\"ca\",\"name\":\"Catalan; Valencian\"},{\"code\":\"ce\",\"name\":\"Chechen\"},{\"code\":\"ch\",\"name\":\"Chamorro\"},{\"code\":\"co\",\"name\":\"Corsican\"},{\"code\":\"cr\",\"name\":\"Cree\"},{\"code\":\"cs\",\"name\":\"Czech\"},{\"code\":\"cu\",\"name\":\"Church Slavic; Old Slavonic; Church Slavonic; Old Bulgarian; Old Church Slavonic\"},{\"code\":\"cv\",\"name\":\"Chuvash\"},{\"code\":\"cy\",\"name\":\"Welsh\"},{\"code\":\"da\",\"name\":\"Danish\"},{\"code\":\"de\",\"name\":\"German\"},{\"code\":\"dv\",\"name\":\"Divehi; Dhivehi; Maldivian\"},{\"code\":\"dz\",\"name\":\"Dzongkha\"},{\"code\":\"ee\",\"name\":\"Ewe\"},{\"code\":\"el\",\"name\":\"Greek, Modern (1453-)\"},{\"code\":\"en\",\"name\":\"English\"},{\"code\":\"eo\",\"name\":\"Esperanto\"},{\"code\":\"es\",\"name\":\"Spanish; Castilian\"},{\"code\":\"et\",\"name\":\"Estonian\"},{\"code\":\"eu\",\"name\":\"Basque\"},{\"code\":\"fa\",\"name\":\"Persian\"},{\"code\":\"ff\",\"name\":\"Fulah\"},{\"code\":\"fi\",\"name\":\"Finnish\"},{\"code\":\"fj\",\"name\":\"Fijian\"},{\"code\":\"fo\",\"name\":\"Faroese\"},{\"code\":\"fr\",\"name\":\"French\"},{\"code\":\"fy\",\"name\":\"Western Frisian\"},{\"code\":\"ga\",\"name\":\"Irish\"},{\"code\":\"gd\",\"name\":\"Gaelic; Scomttish Gaelic\"},{\"code\":\"gl\",\"name\":\"Galician\"},{\"code\":\"gn\",\"name\":\"Guarani\"},{\"code\":\"gu\",\"name\":\"Gujarati\"},{\"code\":\"gv\",\"name\":\"Manx\"},{\"code\":\"ha\",\"name\":\"Hausa\"},{\"code\":\"he\",\"name\":\"Hebrew\"},{\"code\":\"hi\",\"name\":\"Hindi\"},{\"code\":\"ho\",\"name\":\"Hiri Motu\"},{\"code\":\"hr\",\"name\":\"Croatian\"},{\"code\":\"ht\",\"name\":\"Haitian; Haitian Creole\"},{\"code\":\"hu\",\"name\":\"Hungarian\"},{\"code\":\"hy\",\"name\":\"Armenian\"},{\"code\":\"hz\",\"name\":\"Herero\"},{\"code\":\"ia\",\"name\":\"Interlingua (International Auxiliary Language Association)\"},{\"code\":\"id\",\"name\":\"Indonesian\"},{\"code\":\"ie\",\"name\":\"Interlingue; Occidental\"},{\"code\":\"ig\",\"name\":\"Igbo\"},{\"code\":\"ii\",\"name\":\"Sichuan Yi; Nuosu\"},{\"code\":\"ik\",\"name\":\"Inupiaq\"},{\"code\":\"io\",\"name\":\"Ido\"},{\"code\":\"is\",\"name\":\"Icelandic\"},{\"code\":\"it\",\"name\":\"Italian\"},{\"code\":\"iu\",\"name\":\"Inuktitut\"},{\"code\":\"ja\",\"name\":\"Japanese\"},{\"code\":\"jv\",\"name\":\"Javanese\"},{\"code\":\"ka\",\"name\":\"Georgian\"},{\"code\":\"kg\",\"name\":\"Kongo\"},{\"code\":\"ki\",\"name\":\"Kikuyu; Gikuyu\"},{\"code\":\"kj\",\"name\":\"Kuanyama; Kwanyama\"},{\"code\":\"kk\",\"name\":\"Kazakh\"},{\"code\":\"kl\",\"name\":\"Kalaallisut; Greenlandic\"},{\"code\":\"km\",\"name\":\"Central Khmer\"},{\"code\":\"kn\",\"name\":\"Kannada\"},{\"code\":\"ko\",\"name\":\"Korean\"},{\"code\":\"kr\",\"name\":\"Kanuri\"},{\"code\":\"ks\",\"name\":\"Kashmiri\"},{\"code\":\"ku\",\"name\":\"Kurdish\"},{\"code\":\"kv\",\"name\":\"Komi\"},{\"code\":\"kw\",\"name\":\"Cornish\"},{\"code\":\"ky\",\"name\":\"Kirghiz; Kyrgyz\"},{\"code\":\"la\",\"name\":\"Latin\"},{\"code\":\"lb\",\"name\":\"Luxembourgish; Letzeburgesch\"},{\"code\":\"lg\",\"name\":\"Ganda\"},{\"code\":\"li\",\"name\":\"Limburgan; Limburger; Limburgish\"},{\"code\":\"ln\",\"name\":\"Lingala\"},{\"code\":\"lo\",\"name\":\"Lao\"},{\"code\":\"lt\",\"name\":\"Lithuanian\"},{\"code\":\"lu\",\"name\":\"Luba-Katanga\"},{\"code\":\"lv\",\"name\":\"Latvian\"},{\"code\":\"mg\",\"name\":\"Malagasy\"},{\"code\":\"mh\",\"name\":\"Marshallese\"},{\"code\":\"mi\",\"name\":\"Maori\"},{\"code\":\"mk\",\"name\":\"Macedonian\"},{\"code\":\"ml\",\"name\":\"Malayalam\"},{\"code\":\"mn\",\"name\":\"Mongolian\"},{\"code\":\"mr\",\"name\":\"Marathi\"},{\"code\":\"ms\",\"name\":\"Malay\"},{\"code\":\"mt\",\"name\":\"Maltese\"},{\"code\":\"my\",\"name\":\"Burmese\"},{\"code\":\"na\",\"name\":\"Nauru\"},{\"code\":\"nb\",\"name\":\"Bokmål, Norwegian; Norwegian Bokmål\"},{\"code\":\"nd\",\"name\":\"Ndebele, North; North Ndebele\"},{\"code\":\"ne\",\"name\":\"Nepali\"},{\"code\":\"ng\",\"name\":\"Ndonga\"},{\"code\":\"nl\",\"name\":\"Dutch; Flemish\"},{\"code\":\"nn\",\"name\":\"Norwegian Nynorsk; Nynorsk, Norwegian\"},{\"code\":\"no\",\"name\":\"Norwegian\"},{\"code\":\"nr\",\"name\":\"Ndebele, South; South Ndebele\"},{\"code\":\"nv\",\"name\":\"Navajo; Navaho\"},{\"code\":\"ny\",\"name\":\"Chichewa; Chewa; Nyanja\"},{\"code\":\"oc\",\"name\":\"Occitan (post 1500)\"},{\"code\":\"oj\",\"name\":\"Ojibwa\"},{\"code\":\"om\",\"name\":\"Oromo\"},{\"code\":\"or\",\"name\":\"Oriya\"},{\"code\":\"os\",\"name\":\"Ossetian; Ossetic\"},{\"code\":\"pa\",\"name\":\"Panjabi; Punjabi\"},{\"code\":\"pi\",\"name\":\"Pali\"},{\"code\":\"pl\",\"name\":\"Polish\"},{\"code\":\"ps\",\"name\":\"Pushto; Pashto\"},{\"code\":\"pt\",\"name\":\"Portuguese\"},{\"code\":\"qu\",\"name\":\"Quechua\"},{\"code\":\"rm\",\"name\":\"Romansh\"},{\"code\":\"rn\",\"name\":\"Rundi\"},{\"code\":\"ro\",\"name\":\"Romanian; Moldavian; Moldovan\"},{\"code\":\"ru\",\"name\":\"Russian\"},{\"code\":\"rw\",\"name\":\"Kinyarwanda\"},{\"code\":\"sa\",\"name\":\"Sanskrit\"},{\"code\":\"sc\",\"name\":\"Sardinian\"},{\"code\":\"sd\",\"name\":\"Sindhi\"},{\"code\":\"se\",\"name\":\"Northern Sami\"},{\"code\":\"sg\",\"name\":\"Sango\"},{\"code\":\"si\",\"name\":\"Sinhala; Sinhalese\"},{\"code\":\"sk\",\"name\":\"Slovak\"},{\"code\":\"sl\",\"name\":\"Slovenian\"},{\"code\":\"sm\",\"name\":\"Samoan\"},{\"code\":\"sn\",\"name\":\"Shona\"},{\"code\":\"so\",\"name\":\"Somali\"},{\"code\":\"sq\",\"name\":\"Albanian\"},{\"code\":\"sr\",\"name\":\"Serbian\"},{\"code\":\"ss\",\"name\":\"Swati\"},{\"code\":\"st\",\"name\":\"Sotho, Southern\"},{\"code\":\"su\",\"name\":\"Sundanese\"},{\"code\":\"sv\",\"name\":\"Swedish\"},{\"code\":\"sw\",\"name\":\"Swahili\"},{\"code\":\"ta\",\"name\":\"Tamil\"},{\"code\":\"te\",\"name\":\"Telugu\"},{\"code\":\"tg\",\"name\":\"Tajik\"},{\"code\":\"th\",\"name\":\"Thai\"},{\"code\":\"ti\",\"name\":\"Tigrinya\"},{\"code\":\"tk\",\"name\":\"Turkmen\"},{\"code\":\"tl\",\"name\":\"Tagalog\"},{\"code\":\"tn\",\"name\":\"Tswana\"},{\"code\":\"to\",\"name\":\"Tonga (Tonga Islands)\"},{\"code\":\"tr\",\"name\":\"Turkish\"},{\"code\":\"ts\",\"name\":\"Tsonga\"},{\"code\":\"tt\",\"name\":\"Tatar\"},{\"code\":\"tw\",\"name\":\"Twi\"},{\"code\":\"ty\",\"name\":\"Tahitian\"},{\"code\":\"ug\",\"name\":\"Uighur; Uyghur\"},{\"code\":\"uk\",\"name\":\"Ukrainian\"},{\"code\":\"ur\",\"name\":\"Urdu\"},{\"code\":\"uz\",\"name\":\"Uzbek\"},{\"code\":\"ve\",\"name\":\"Venda\"},{\"code\":\"vi\",\"name\":\"Vietnamese\"},{\"code\":\"vo\",\"name\":\"Volapük\"},{\"code\":\"wa\",\"name\":\"Walloon\"},{\"code\":\"wo\",\"name\":\"Wolof\"},{\"code\":\"xh\",\"name\":\"Xhosa\"},{\"code\":\"yi\",\"name\":\"Yiddish\"},{\"code\":\"yo\",\"name\":\"Yoruba\"},{\"code\":\"za\",\"name\":\"Zhuang; Chuang\"},{\"code\":\"zh\",\"name\":\"Chinese\"},{\"code\":\"zu\",\"name\":\"Zulu\"}],\"index_language\":3,\"avatar\":\"dref\",\"index_avatar\":4,\"license\":\"dref\",\"index_license\":5,\"nsfw\":\"bool\",\"index_nsfw\":6,\"creatorItems\":\"repeated dref\",\"index_creatorItems\":7,\"tagItems\":\"repeated string\",\"index_tagItems\":8,\"noteItems\":\"repeated string\",\"index_noteItems\":9,\"urlItems\":\"repeated dref\",\"index_urlItems\":10,\"citations\":\"repeated dref\",\"index_citations\":11,\"webUrl\":\"string\",\"index_webUrl\":12}",
+				"fieldsInTemplate": {
+					"name": {
+						"type": "string",
+						"index": 0
+					},
+					"description": {
+						"type": "string",
+						"index": 1
+					},
+					"date": {
+						"type": "long",
+						"index": 2
+					},
+					"language": {
+						"type": "enum",
+						"index": 3,
+						"enumValues": [
+							{
+								"code": "aa",
+								"name": "Afar"
+							},
+							{
+								"code": "ab",
+								"name": "Abkhazian"
+							},
+							{
+								"code": "ae",
+								"name": "Avestan"
+							},
+							{
+								"code": "af",
+								"name": "Afrikaans"
+							},
+							{
+								"code": "ak",
+								"name": "Akan"
+							},
+							{
+								"code": "am",
+								"name": "Amharic"
+							},
+							{
+								"code": "an",
+								"name": "Aragonese"
+							},
+							{
+								"code": "ar",
+								"name": "Arabic"
+							},
+							{
+								"code": "as",
+								"name": "Assamese"
+							},
+							{
+								"code": "av",
+								"name": "Avaric"
+							},
+							{
+								"code": "ay",
+								"name": "Aymara"
+							},
+							{
+								"code": "az",
+								"name": "Azerbaijani"
+							},
+							{
+								"code": "ba",
+								"name": "Bashkir"
+							},
+							{
+								"code": "be",
+								"name": "Belarusian"
+							},
+							{
+								"code": "bg",
+								"name": "Bulgarian"
+							},
+							{
+								"code": "bh",
+								"name": "Bihari languages"
+							},
+							{
+								"code": "bi",
+								"name": "Bislama"
+							},
+							{
+								"code": "bm",
+								"name": "Bambara"
+							},
+							{
+								"code": "bn",
+								"name": "Bengali"
+							},
+							{
+								"code": "bo",
+								"name": "Tibetan"
+							},
+							{
+								"code": "br",
+								"name": "Breton"
+							},
+							{
+								"code": "bs",
+								"name": "Bosnian"
+							},
+							{
+								"code": "ca",
+								"name": "Catalan; Valencian"
+							},
+							{
+								"code": "ce",
+								"name": "Chechen"
+							},
+							{
+								"code": "ch",
+								"name": "Chamorro"
+							},
+							{
+								"code": "co",
+								"name": "Corsican"
+							},
+							{
+								"code": "cr",
+								"name": "Cree"
+							},
+							{
+								"code": "cs",
+								"name": "Czech"
+							},
+							{
+								"code": "cu",
+								"name": "Church Slavic; Old Slavonic; Church Slavonic; Old Bulgarian; Old Church Slavonic"
+							},
+							{
+								"code": "cv",
+								"name": "Chuvash"
+							},
+							{
+								"code": "cy",
+								"name": "Welsh"
+							},
+							{
+								"code": "da",
+								"name": "Danish"
+							},
+							{
+								"code": "de",
+								"name": "German"
+							},
+							{
+								"code": "dv",
+								"name": "Divehi; Dhivehi; Maldivian"
+							},
+							{
+								"code": "dz",
+								"name": "Dzongkha"
+							},
+							{
+								"code": "ee",
+								"name": "Ewe"
+							},
+							{
+								"code": "el",
+								"name": "Greek, Modern (1453-)"
+							},
+							{
+								"code": "en",
+								"name": "English"
+							},
+							{
+								"code": "eo",
+								"name": "Esperanto"
+							},
+							{
+								"code": "es",
+								"name": "Spanish; Castilian"
+							},
+							{
+								"code": "et",
+								"name": "Estonian"
+							},
+							{
+								"code": "eu",
+								"name": "Basque"
+							},
+							{
+								"code": "fa",
+								"name": "Persian"
+							},
+							{
+								"code": "ff",
+								"name": "Fulah"
+							},
+							{
+								"code": "fi",
+								"name": "Finnish"
+							},
+							{
+								"code": "fj",
+								"name": "Fijian"
+							},
+							{
+								"code": "fo",
+								"name": "Faroese"
+							},
+							{
+								"code": "fr",
+								"name": "French"
+							},
+							{
+								"code": "fy",
+								"name": "Western Frisian"
+							},
+							{
+								"code": "ga",
+								"name": "Irish"
+							},
+							{
+								"code": "gd",
+								"name": "Gaelic; Scomttish Gaelic"
+							},
+							{
+								"code": "gl",
+								"name": "Galician"
+							},
+							{
+								"code": "gn",
+								"name": "Guarani"
+							},
+							{
+								"code": "gu",
+								"name": "Gujarati"
+							},
+							{
+								"code": "gv",
+								"name": "Manx"
+							},
+							{
+								"code": "ha",
+								"name": "Hausa"
+							},
+							{
+								"code": "he",
+								"name": "Hebrew"
+							},
+							{
+								"code": "hi",
+								"name": "Hindi"
+							},
+							{
+								"code": "ho",
+								"name": "Hiri Motu"
+							},
+							{
+								"code": "hr",
+								"name": "Croatian"
+							},
+							{
+								"code": "ht",
+								"name": "Haitian; Haitian Creole"
+							},
+							{
+								"code": "hu",
+								"name": "Hungarian"
+							},
+							{
+								"code": "hy",
+								"name": "Armenian"
+							},
+							{
+								"code": "hz",
+								"name": "Herero"
+							},
+							{
+								"code": "ia",
+								"name": "Interlingua (International Auxiliary Language Association)"
+							},
+							{
+								"code": "id",
+								"name": "Indonesian"
+							},
+							{
+								"code": "ie",
+								"name": "Interlingue; Occidental"
+							},
+							{
+								"code": "ig",
+								"name": "Igbo"
+							},
+							{
+								"code": "ii",
+								"name": "Sichuan Yi; Nuosu"
+							},
+							{
+								"code": "ik",
+								"name": "Inupiaq"
+							},
+							{
+								"code": "io",
+								"name": "Ido"
+							},
+							{
+								"code": "is",
+								"name": "Icelandic"
+							},
+							{
+								"code": "it",
+								"name": "Italian"
+							},
+							{
+								"code": "iu",
+								"name": "Inuktitut"
+							},
+							{
+								"code": "ja",
+								"name": "Japanese"
+							},
+							{
+								"code": "jv",
+								"name": "Javanese"
+							},
+							{
+								"code": "ka",
+								"name": "Georgian"
+							},
+							{
+								"code": "kg",
+								"name": "Kongo"
+							},
+							{
+								"code": "ki",
+								"name": "Kikuyu; Gikuyu"
+							},
+							{
+								"code": "kj",
+								"name": "Kuanyama; Kwanyama"
+							},
+							{
+								"code": "kk",
+								"name": "Kazakh"
+							},
+							{
+								"code": "kl",
+								"name": "Kalaallisut; Greenlandic"
+							},
+							{
+								"code": "km",
+								"name": "Central Khmer"
+							},
+							{
+								"code": "kn",
+								"name": "Kannada"
+							},
+							{
+								"code": "ko",
+								"name": "Korean"
+							},
+							{
+								"code": "kr",
+								"name": "Kanuri"
+							},
+							{
+								"code": "ks",
+								"name": "Kashmiri"
+							},
+							{
+								"code": "ku",
+								"name": "Kurdish"
+							},
+							{
+								"code": "kv",
+								"name": "Komi"
+							},
+							{
+								"code": "kw",
+								"name": "Cornish"
+							},
+							{
+								"code": "ky",
+								"name": "Kirghiz; Kyrgyz"
+							},
+							{
+								"code": "la",
+								"name": "Latin"
+							},
+							{
+								"code": "lb",
+								"name": "Luxembourgish; Letzeburgesch"
+							},
+							{
+								"code": "lg",
+								"name": "Ganda"
+							},
+							{
+								"code": "li",
+								"name": "Limburgan; Limburger; Limburgish"
+							},
+							{
+								"code": "ln",
+								"name": "Lingala"
+							},
+							{
+								"code": "lo",
+								"name": "Lao"
+							},
+							{
+								"code": "lt",
+								"name": "Lithuanian"
+							},
+							{
+								"code": "lu",
+								"name": "Luba-Katanga"
+							},
+							{
+								"code": "lv",
+								"name": "Latvian"
+							},
+							{
+								"code": "mg",
+								"name": "Malagasy"
+							},
+							{
+								"code": "mh",
+								"name": "Marshallese"
+							},
+							{
+								"code": "mi",
+								"name": "Maori"
+							},
+							{
+								"code": "mk",
+								"name": "Macedonian"
+							},
+							{
+								"code": "ml",
+								"name": "Malayalam"
+							},
+							{
+								"code": "mn",
+								"name": "Mongolian"
+							},
+							{
+								"code": "mr",
+								"name": "Marathi"
+							},
+							{
+								"code": "ms",
+								"name": "Malay"
+							},
+							{
+								"code": "mt",
+								"name": "Maltese"
+							},
+							{
+								"code": "my",
+								"name": "Burmese"
+							},
+							{
+								"code": "na",
+								"name": "Nauru"
+							},
+							{
+								"code": "nb",
+								"name": "Bokmål, Norwegian; Norwegian Bokmål"
+							},
+							{
+								"code": "nd",
+								"name": "Ndebele, North; North Ndebele"
+							},
+							{
+								"code": "ne",
+								"name": "Nepali"
+							},
+							{
+								"code": "ng",
+								"name": "Ndonga"
+							},
+							{
+								"code": "nl",
+								"name": "Dutch; Flemish"
+							},
+							{
+								"code": "nn",
+								"name": "Norwegian Nynorsk; Nynorsk, Norwegian"
+							},
+							{
+								"code": "no",
+								"name": "Norwegian"
+							},
+							{
+								"code": "nr",
+								"name": "Ndebele, South; South Ndebele"
+							},
+							{
+								"code": "nv",
+								"name": "Navajo; Navaho"
+							},
+							{
+								"code": "ny",
+								"name": "Chichewa; Chewa; Nyanja"
+							},
+							{
+								"code": "oc",
+								"name": "Occitan (post 1500)"
+							},
+							{
+								"code": "oj",
+								"name": "Ojibwa"
+							},
+							{
+								"code": "om",
+								"name": "Oromo"
+							},
+							{
+								"code": "or",
+								"name": "Oriya"
+							},
+							{
+								"code": "os",
+								"name": "Ossetian; Ossetic"
+							},
+							{
+								"code": "pa",
+								"name": "Panjabi; Punjabi"
+							},
+							{
+								"code": "pi",
+								"name": "Pali"
+							},
+							{
+								"code": "pl",
+								"name": "Polish"
+							},
+							{
+								"code": "ps",
+								"name": "Pushto; Pashto"
+							},
+							{
+								"code": "pt",
+								"name": "Portuguese"
+							},
+							{
+								"code": "qu",
+								"name": "Quechua"
+							},
+							{
+								"code": "rm",
+								"name": "Romansh"
+							},
+							{
+								"code": "rn",
+								"name": "Rundi"
+							},
+							{
+								"code": "ro",
+								"name": "Romanian; Moldavian; Moldovan"
+							},
+							{
+								"code": "ru",
+								"name": "Russian"
+							},
+							{
+								"code": "rw",
+								"name": "Kinyarwanda"
+							},
+							{
+								"code": "sa",
+								"name": "Sanskrit"
+							},
+							{
+								"code": "sc",
+								"name": "Sardinian"
+							},
+							{
+								"code": "sd",
+								"name": "Sindhi"
+							},
+							{
+								"code": "se",
+								"name": "Northern Sami"
+							},
+							{
+								"code": "sg",
+								"name": "Sango"
+							},
+							{
+								"code": "si",
+								"name": "Sinhala; Sinhalese"
+							},
+							{
+								"code": "sk",
+								"name": "Slovak"
+							},
+							{
+								"code": "sl",
+								"name": "Slovenian"
+							},
+							{
+								"code": "sm",
+								"name": "Samoan"
+							},
+							{
+								"code": "sn",
+								"name": "Shona"
+							},
+							{
+								"code": "so",
+								"name": "Somali"
+							},
+							{
+								"code": "sq",
+								"name": "Albanian"
+							},
+							{
+								"code": "sr",
+								"name": "Serbian"
+							},
+							{
+								"code": "ss",
+								"name": "Swati"
+							},
+							{
+								"code": "st",
+								"name": "Sotho, Southern"
+							},
+							{
+								"code": "su",
+								"name": "Sundanese"
+							},
+							{
+								"code": "sv",
+								"name": "Swedish"
+							},
+							{
+								"code": "sw",
+								"name": "Swahili"
+							},
+							{
+								"code": "ta",
+								"name": "Tamil"
+							},
+							{
+								"code": "te",
+								"name": "Telugu"
+							},
+							{
+								"code": "tg",
+								"name": "Tajik"
+							},
+							{
+								"code": "th",
+								"name": "Thai"
+							},
+							{
+								"code": "ti",
+								"name": "Tigrinya"
+							},
+							{
+								"code": "tk",
+								"name": "Turkmen"
+							},
+							{
+								"code": "tl",
+								"name": "Tagalog"
+							},
+							{
+								"code": "tn",
+								"name": "Tswana"
+							},
+							{
+								"code": "to",
+								"name": "Tonga (Tonga Islands)"
+							},
+							{
+								"code": "tr",
+								"name": "Turkish"
+							},
+							{
+								"code": "ts",
+								"name": "Tsonga"
+							},
+							{
+								"code": "tt",
+								"name": "Tatar"
+							},
+							{
+								"code": "tw",
+								"name": "Twi"
+							},
+							{
+								"code": "ty",
+								"name": "Tahitian"
+							},
+							{
+								"code": "ug",
+								"name": "Uighur; Uyghur"
+							},
+							{
+								"code": "uk",
+								"name": "Ukrainian"
+							},
+							{
+								"code": "ur",
+								"name": "Urdu"
+							},
+							{
+								"code": "uz",
+								"name": "Uzbek"
+							},
+							{
+								"code": "ve",
+								"name": "Venda"
+							},
+							{
+								"code": "vi",
+								"name": "Vietnamese"
+							},
+							{
+								"code": "vo",
+								"name": "Volapük"
+							},
+							{
+								"code": "wa",
+								"name": "Walloon"
+							},
+							{
+								"code": "wo",
+								"name": "Wolof"
+							},
+							{
+								"code": "xh",
+								"name": "Xhosa"
+							},
+							{
+								"code": "yi",
+								"name": "Yiddish"
+							},
+							{
+								"code": "yo",
+								"name": "Yoruba"
+							},
+							{
+								"code": "za",
+								"name": "Zhuang; Chuang"
+							},
+							{
+								"code": "zh",
+								"name": "Chinese"
+							},
+							{
+								"code": "zu",
+								"name": "Zulu"
+							}
+						]
+					},
+					"avatar": {
+						"type": "dref",
+						"index": 4
+					},
+					"license": {
+						"type": "dref",
+						"index": 5
+					},
+					"nsfw": {
+						"type": "bool",
+						"index": 6
+					},
+					"creatorItems": {
+						"type": "repeated dref",
+						"index": 7
+					},
+					"tagItems": {
+						"type": "repeated string",
+						"index": 8
+					},
+					"noteItems": {
+						"type": "repeated string",
+						"index": 9
+					},
+					"urlItems": {
+						"type": "repeated dref",
+						"index": 10
+					},
+					"citations": {
+						"type": "repeated dref",
+						"index": 11
+					},
+					"webUrl": {
+						"type": "string",
+						"index": 12
+					}
+				},
+				"fieldsInTemplateCount": 13,
+				"languageValues": [
+					{
+						"code": "aa",
+						"name": "Afar"
+					},
+					{
+						"code": "ab",
+						"name": "Abkhazian"
+					},
+					{
+						"code": "ae",
+						"name": "Avestan"
+					},
+					{
+						"code": "af",
+						"name": "Afrikaans"
+					},
+					{
+						"code": "ak",
+						"name": "Akan"
+					},
+					{
+						"code": "am",
+						"name": "Amharic"
+					},
+					{
+						"code": "an",
+						"name": "Aragonese"
+					},
+					{
+						"code": "ar",
+						"name": "Arabic"
+					},
+					{
+						"code": "as",
+						"name": "Assamese"
+					},
+					{
+						"code": "av",
+						"name": "Avaric"
+					},
+					{
+						"code": "ay",
+						"name": "Aymara"
+					},
+					{
+						"code": "az",
+						"name": "Azerbaijani"
+					},
+					{
+						"code": "ba",
+						"name": "Bashkir"
+					},
+					{
+						"code": "be",
+						"name": "Belarusian"
+					},
+					{
+						"code": "bg",
+						"name": "Bulgarian"
+					},
+					{
+						"code": "bh",
+						"name": "Bihari languages"
+					},
+					{
+						"code": "bi",
+						"name": "Bislama"
+					},
+					{
+						"code": "bm",
+						"name": "Bambara"
+					},
+					{
+						"code": "bn",
+						"name": "Bengali"
+					},
+					{
+						"code": "bo",
+						"name": "Tibetan"
+					},
+					{
+						"code": "br",
+						"name": "Breton"
+					},
+					{
+						"code": "bs",
+						"name": "Bosnian"
+					},
+					{
+						"code": "ca",
+						"name": "Catalan; Valencian"
+					},
+					{
+						"code": "ce",
+						"name": "Chechen"
+					},
+					{
+						"code": "ch",
+						"name": "Chamorro"
+					},
+					{
+						"code": "co",
+						"name": "Corsican"
+					},
+					{
+						"code": "cr",
+						"name": "Cree"
+					},
+					{
+						"code": "cs",
+						"name": "Czech"
+					},
+					{
+						"code": "cu",
+						"name": "Church Slavic; Old Slavonic; Church Slavonic; Old Bulgarian; Old Church Slavonic"
+					},
+					{
+						"code": "cv",
+						"name": "Chuvash"
+					},
+					{
+						"code": "cy",
+						"name": "Welsh"
+					},
+					{
+						"code": "da",
+						"name": "Danish"
+					},
+					{
+						"code": "de",
+						"name": "German"
+					},
+					{
+						"code": "dv",
+						"name": "Divehi; Dhivehi; Maldivian"
+					},
+					{
+						"code": "dz",
+						"name": "Dzongkha"
+					},
+					{
+						"code": "ee",
+						"name": "Ewe"
+					},
+					{
+						"code": "el",
+						"name": "Greek, Modern (1453-)"
+					},
+					{
+						"code": "en",
+						"name": "English"
+					},
+					{
+						"code": "eo",
+						"name": "Esperanto"
+					},
+					{
+						"code": "es",
+						"name": "Spanish; Castilian"
+					},
+					{
+						"code": "et",
+						"name": "Estonian"
+					},
+					{
+						"code": "eu",
+						"name": "Basque"
+					},
+					{
+						"code": "fa",
+						"name": "Persian"
+					},
+					{
+						"code": "ff",
+						"name": "Fulah"
+					},
+					{
+						"code": "fi",
+						"name": "Finnish"
+					},
+					{
+						"code": "fj",
+						"name": "Fijian"
+					},
+					{
+						"code": "fo",
+						"name": "Faroese"
+					},
+					{
+						"code": "fr",
+						"name": "French"
+					},
+					{
+						"code": "fy",
+						"name": "Western Frisian"
+					},
+					{
+						"code": "ga",
+						"name": "Irish"
+					},
+					{
+						"code": "gd",
+						"name": "Gaelic; Scomttish Gaelic"
+					},
+					{
+						"code": "gl",
+						"name": "Galician"
+					},
+					{
+						"code": "gn",
+						"name": "Guarani"
+					},
+					{
+						"code": "gu",
+						"name": "Gujarati"
+					},
+					{
+						"code": "gv",
+						"name": "Manx"
+					},
+					{
+						"code": "ha",
+						"name": "Hausa"
+					},
+					{
+						"code": "he",
+						"name": "Hebrew"
+					},
+					{
+						"code": "hi",
+						"name": "Hindi"
+					},
+					{
+						"code": "ho",
+						"name": "Hiri Motu"
+					},
+					{
+						"code": "hr",
+						"name": "Croatian"
+					},
+					{
+						"code": "ht",
+						"name": "Haitian; Haitian Creole"
+					},
+					{
+						"code": "hu",
+						"name": "Hungarian"
+					},
+					{
+						"code": "hy",
+						"name": "Armenian"
+					},
+					{
+						"code": "hz",
+						"name": "Herero"
+					},
+					{
+						"code": "ia",
+						"name": "Interlingua (International Auxiliary Language Association)"
+					},
+					{
+						"code": "id",
+						"name": "Indonesian"
+					},
+					{
+						"code": "ie",
+						"name": "Interlingue; Occidental"
+					},
+					{
+						"code": "ig",
+						"name": "Igbo"
+					},
+					{
+						"code": "ii",
+						"name": "Sichuan Yi; Nuosu"
+					},
+					{
+						"code": "ik",
+						"name": "Inupiaq"
+					},
+					{
+						"code": "io",
+						"name": "Ido"
+					},
+					{
+						"code": "is",
+						"name": "Icelandic"
+					},
+					{
+						"code": "it",
+						"name": "Italian"
+					},
+					{
+						"code": "iu",
+						"name": "Inuktitut"
+					},
+					{
+						"code": "ja",
+						"name": "Japanese"
+					},
+					{
+						"code": "jv",
+						"name": "Javanese"
+					},
+					{
+						"code": "ka",
+						"name": "Georgian"
+					},
+					{
+						"code": "kg",
+						"name": "Kongo"
+					},
+					{
+						"code": "ki",
+						"name": "Kikuyu; Gikuyu"
+					},
+					{
+						"code": "kj",
+						"name": "Kuanyama; Kwanyama"
+					},
+					{
+						"code": "kk",
+						"name": "Kazakh"
+					},
+					{
+						"code": "kl",
+						"name": "Kalaallisut; Greenlandic"
+					},
+					{
+						"code": "km",
+						"name": "Central Khmer"
+					},
+					{
+						"code": "kn",
+						"name": "Kannada"
+					},
+					{
+						"code": "ko",
+						"name": "Korean"
+					},
+					{
+						"code": "kr",
+						"name": "Kanuri"
+					},
+					{
+						"code": "ks",
+						"name": "Kashmiri"
+					},
+					{
+						"code": "ku",
+						"name": "Kurdish"
+					},
+					{
+						"code": "kv",
+						"name": "Komi"
+					},
+					{
+						"code": "kw",
+						"name": "Cornish"
+					},
+					{
+						"code": "ky",
+						"name": "Kirghiz; Kyrgyz"
+					},
+					{
+						"code": "la",
+						"name": "Latin"
+					},
+					{
+						"code": "lb",
+						"name": "Luxembourgish; Letzeburgesch"
+					},
+					{
+						"code": "lg",
+						"name": "Ganda"
+					},
+					{
+						"code": "li",
+						"name": "Limburgan; Limburger; Limburgish"
+					},
+					{
+						"code": "ln",
+						"name": "Lingala"
+					},
+					{
+						"code": "lo",
+						"name": "Lao"
+					},
+					{
+						"code": "lt",
+						"name": "Lithuanian"
+					},
+					{
+						"code": "lu",
+						"name": "Luba-Katanga"
+					},
+					{
+						"code": "lv",
+						"name": "Latvian"
+					},
+					{
+						"code": "mg",
+						"name": "Malagasy"
+					},
+					{
+						"code": "mh",
+						"name": "Marshallese"
+					},
+					{
+						"code": "mi",
+						"name": "Maori"
+					},
+					{
+						"code": "mk",
+						"name": "Macedonian"
+					},
+					{
+						"code": "ml",
+						"name": "Malayalam"
+					},
+					{
+						"code": "mn",
+						"name": "Mongolian"
+					},
+					{
+						"code": "mr",
+						"name": "Marathi"
+					},
+					{
+						"code": "ms",
+						"name": "Malay"
+					},
+					{
+						"code": "mt",
+						"name": "Maltese"
+					},
+					{
+						"code": "my",
+						"name": "Burmese"
+					},
+					{
+						"code": "na",
+						"name": "Nauru"
+					},
+					{
+						"code": "nb",
+						"name": "Bokmål, Norwegian; Norwegian Bokmål"
+					},
+					{
+						"code": "nd",
+						"name": "Ndebele, North; North Ndebele"
+					},
+					{
+						"code": "ne",
+						"name": "Nepali"
+					},
+					{
+						"code": "ng",
+						"name": "Ndonga"
+					},
+					{
+						"code": "nl",
+						"name": "Dutch; Flemish"
+					},
+					{
+						"code": "nn",
+						"name": "Norwegian Nynorsk; Nynorsk, Norwegian"
+					},
+					{
+						"code": "no",
+						"name": "Norwegian"
+					},
+					{
+						"code": "nr",
+						"name": "Ndebele, South; South Ndebele"
+					},
+					{
+						"code": "nv",
+						"name": "Navajo; Navaho"
+					},
+					{
+						"code": "ny",
+						"name": "Chichewa; Chewa; Nyanja"
+					},
+					{
+						"code": "oc",
+						"name": "Occitan (post 1500)"
+					},
+					{
+						"code": "oj",
+						"name": "Ojibwa"
+					},
+					{
+						"code": "om",
+						"name": "Oromo"
+					},
+					{
+						"code": "or",
+						"name": "Oriya"
+					},
+					{
+						"code": "os",
+						"name": "Ossetian; Ossetic"
+					},
+					{
+						"code": "pa",
+						"name": "Panjabi; Punjabi"
+					},
+					{
+						"code": "pi",
+						"name": "Pali"
+					},
+					{
+						"code": "pl",
+						"name": "Polish"
+					},
+					{
+						"code": "ps",
+						"name": "Pushto; Pashto"
+					},
+					{
+						"code": "pt",
+						"name": "Portuguese"
+					},
+					{
+						"code": "qu",
+						"name": "Quechua"
+					},
+					{
+						"code": "rm",
+						"name": "Romansh"
+					},
+					{
+						"code": "rn",
+						"name": "Rundi"
+					},
+					{
+						"code": "ro",
+						"name": "Romanian; Moldavian; Moldovan"
+					},
+					{
+						"code": "ru",
+						"name": "Russian"
+					},
+					{
+						"code": "rw",
+						"name": "Kinyarwanda"
+					},
+					{
+						"code": "sa",
+						"name": "Sanskrit"
+					},
+					{
+						"code": "sc",
+						"name": "Sardinian"
+					},
+					{
+						"code": "sd",
+						"name": "Sindhi"
+					},
+					{
+						"code": "se",
+						"name": "Northern Sami"
+					},
+					{
+						"code": "sg",
+						"name": "Sango"
+					},
+					{
+						"code": "si",
+						"name": "Sinhala; Sinhalese"
+					},
+					{
+						"code": "sk",
+						"name": "Slovak"
+					},
+					{
+						"code": "sl",
+						"name": "Slovenian"
+					},
+					{
+						"code": "sm",
+						"name": "Samoan"
+					},
+					{
+						"code": "sn",
+						"name": "Shona"
+					},
+					{
+						"code": "so",
+						"name": "Somali"
+					},
+					{
+						"code": "sq",
+						"name": "Albanian"
+					},
+					{
+						"code": "sr",
+						"name": "Serbian"
+					},
+					{
+						"code": "ss",
+						"name": "Swati"
+					},
+					{
+						"code": "st",
+						"name": "Sotho, Southern"
+					},
+					{
+						"code": "su",
+						"name": "Sundanese"
+					},
+					{
+						"code": "sv",
+						"name": "Swedish"
+					},
+					{
+						"code": "sw",
+						"name": "Swahili"
+					},
+					{
+						"code": "ta",
+						"name": "Tamil"
+					},
+					{
+						"code": "te",
+						"name": "Telugu"
+					},
+					{
+						"code": "tg",
+						"name": "Tajik"
+					},
+					{
+						"code": "th",
+						"name": "Thai"
+					},
+					{
+						"code": "ti",
+						"name": "Tigrinya"
+					},
+					{
+						"code": "tk",
+						"name": "Turkmen"
+					},
+					{
+						"code": "tl",
+						"name": "Tagalog"
+					},
+					{
+						"code": "tn",
+						"name": "Tswana"
+					},
+					{
+						"code": "to",
+						"name": "Tonga (Tonga Islands)"
+					},
+					{
+						"code": "tr",
+						"name": "Turkish"
+					},
+					{
+						"code": "ts",
+						"name": "Tsonga"
+					},
+					{
+						"code": "tt",
+						"name": "Tatar"
+					},
+					{
+						"code": "tw",
+						"name": "Twi"
+					},
+					{
+						"code": "ty",
+						"name": "Tahitian"
+					},
+					{
+						"code": "ug",
+						"name": "Uighur; Uyghur"
+					},
+					{
+						"code": "uk",
+						"name": "Ukrainian"
+					},
+					{
+						"code": "ur",
+						"name": "Urdu"
+					},
+					{
+						"code": "uz",
+						"name": "Uzbek"
+					},
+					{
+						"code": "ve",
+						"name": "Venda"
+					},
+					{
+						"code": "vi",
+						"name": "Vietnamese"
+					},
+					{
+						"code": "vo",
+						"name": "Volapük"
+					},
+					{
+						"code": "wa",
+						"name": "Walloon"
+					},
+					{
+						"code": "wo",
+						"name": "Wolof"
+					},
+					{
+						"code": "xh",
+						"name": "Xhosa"
+					},
+					{
+						"code": "yi",
+						"name": "Yiddish"
+					},
+					{
+						"code": "yo",
+						"name": "Yoruba"
+					},
+					{
+						"code": "za",
+						"name": "Zhuang; Chuang"
+					},
+					{
+						"code": "zh",
+						"name": "Chinese"
+					},
+					{
+						"code": "zu",
+						"name": "Zulu"
+					}
+				]
+			},
+			"oip": {
+				"didTx": "did:arweave:-9DirnjVO1FlbEW1lN8jITBESrTsQKEM_BoZ1ey_0mk",
+				"inArweaveBlock": 1580538,
+				"indexedAt": "2025-07-05T21:31:51.049Z",
+				"recordStatus": "original",
+				"ver": "0.8.0",
+				"creator": {
+					"didAddress": "iZq_A50yy5YpHNZZfQ5E5Xres3fhMa-buPOlotxbEtU",
+					"creatorSig": "H6SmnckdWeKJskm86DAaV0HiWRKJbhYzQoP8i8Yt0k/5YBf6t1Pe/gGidt7y9TS3djD/WmsV3ATdPuaoilvyzgbCokTmZwwwdkL9oNyU7hksGZ66fqu2hcqzH4R+8b2SSIhQgGjVgnEEEp5mDNxXH9HJYZdGycHCq0Khx2cPVZJOEzoMbUe4VvMRyyXHVZpe96xL6JwGrwVwl3NAdZ3aasKp2E0i9Jb+O7Mx8cpbp6+xP6FXs6zSUsk6ETa1MWv2TKOP/nkfGgbFwXOBN4P8gFZFvm6aYylOdUBfsS1NRK/yXQtU51ftMlsYK1QNNJqNYqnm+FdqA/HyjhLDCO6j4qEKCGSm2/g4iN+Nb3t2F9bTJDTZ5QxSa4SlHmhxvlWLlwofNHKHtO0zVaN3imnquvqE7Cjx9QSpUK0BmoHKIC2XX+MOjetirsXObWU7w4c+WZqRTjldAaco83QvdIDhWVQ3XA08OwEgUsNMhAYfT/thaxWAJ4gW3T972q7TiKyodyag+KOtOU1RPpnCSXV+tK5ptHNyyDFXCj44zCDZ6jKj4w2pYuliuMBL2KP1KNScDK20PV8xtojWn/jHLhB0tL4zj8EJ1EoL1L1qCWYVrxwghAp1hkh4kqnE9iXSxZkOi4Hi+i7BE7g97kG1bpi3aMeAwzG+g9/VkhP+fTfVCM8="
+				}
+			}
+		},
+		{
+			"data": {
+				"TxId": "RVuER8oDvBZGxfJsW4w_p-xuGOIxvnnXnKPnQ8iuUuY",
+				"template": "nutritionalInfo",
+				"fields": "{\"standard_amount\":\"float\",\"index_standard_amount\":0,\"standard_unit\":\"string\",\"index_standard_unit\":1,\"calories\":\"float\",\"index_calories\":2,\"protein_g\":\"float\",\"index_protein_g\":3,\"fat_g\":\"float\",\"index_fat_g\":4,\"saturated_fat_g\":\"float\",\"index_saturated_fat_g\":5,\"trans_fat_g\":\"float\",\"index_trans_fat_g\":6,\"cholesterol_mg\":\"float\",\"index_cholesterol_mg\":7,\"sodium_mg\":\"float\",\"index_sodium_mg\":8,\"carbohydrates_g\":\"float\",\"index_carbohydrates_g\":9,\"dietary_fiber_g\":\"float\",\"index_dietary_fiber_g\":10,\"sugars_g\":\"float\",\"index_sugars_g\":11,\"added_sugars_g\":\"float\",\"index_added_sugars_g\":12,\"vitamin_d_mcg\":\"float\",\"index_vitamin_d_mcg\":13,\"calcium_mg\":\"float\",\"index_calcium_mg\":14,\"iron_mg\":\"float\",\"index_iron_mg\":15,\"potassium_mg\":\"float\",\"index_potassium_mg\":16,\"vitamin_a_mcg\":\"float\",\"index_vitamin_a_mcg\":17,\"vitamin_c_mg\":\"float\",\"index_vitamin_c_mg\":18,\"allergens\":\"repeated string\",\"index_allergens\":19,\"gluten_free\":\"bool\",\"index_gluten_free\":20,\"organic\":\"bool\",\"index_organic\":21}",
+				"fieldsInTemplate": {
+					"standard_amount": {
+						"type": "float",
+						"index": 0
+					},
+					"standard_unit": {
+						"type": "string",
+						"index": 1
+					},
+					"calories": {
+						"type": "float",
+						"index": 2
+					},
+					"protein_g": {
+						"type": "float",
+						"index": 3
+					},
+					"fat_g": {
+						"type": "float",
+						"index": 4
+					},
+					"saturated_fat_g": {
+						"type": "float",
+						"index": 5
+					},
+					"trans_fat_g": {
+						"type": "float",
+						"index": 6
+					},
+					"cholesterol_mg": {
+						"type": "float",
+						"index": 7
+					},
+					"sodium_mg": {
+						"type": "float",
+						"index": 8
+					},
+					"carbohydrates_g": {
+						"type": "float",
+						"index": 9
+					},
+					"dietary_fiber_g": {
+						"type": "float",
+						"index": 10
+					},
+					"sugars_g": {
+						"type": "float",
+						"index": 11
+					},
+					"added_sugars_g": {
+						"type": "float",
+						"index": 12
+					},
+					"vitamin_d_mcg": {
+						"type": "float",
+						"index": 13
+					},
+					"calcium_mg": {
+						"type": "float",
+						"index": 14
+					},
+					"iron_mg": {
+						"type": "float",
+						"index": 15
+					},
+					"potassium_mg": {
+						"type": "float",
+						"index": 16
+					},
+					"vitamin_a_mcg": {
+						"type": "float",
+						"index": 17
+					},
+					"vitamin_c_mg": {
+						"type": "float",
+						"index": 18
+					},
+					"allergens": {
+						"type": "repeated string",
+						"index": 19
+					},
+					"gluten_free": {
+						"type": "bool",
+						"index": 20
+					},
+					"organic": {
+						"type": "bool",
+						"index": 21
+					}
+				},
+				"fieldsInTemplateCount": 22
+			},
+			"oip": {
+				"didTx": "did:arweave:RVuER8oDvBZGxfJsW4w_p-xuGOIxvnnXnKPnQ8iuUuY",
+				"inArweaveBlock": 1705144,
+				"indexedAt": "2025-07-05T22:04:32.723Z",
+				"recordStatus": "original",
+				"ver": "0.8.0",
+				"creator": {
+					"didAddress": "u4B6d5ddggsotOiG86D-KPkeW23qQNdqaXo_ZcdI3k0",
+					"creatorSig": "QHqFiZDtO04/w/4/XFuJ5ijdk7EzFedHD0Qw+Om10nZsEuPiU4ZKsUVHWu0wpvfJXFzSC26y9CXfAuIyvqewlw7thBPN7VsrGJ4y0c60t9mj0QZSuK1Qi+58jX+2KJmAEqfEAPmxShhIiW6AfNMiWI4xZEjna8PKpQ9PP/KAwaS3+7E0wt8HJy3dwkmsubfrNqfWjtDNzDwN+afsu+L9Agbirh/fsn0PhMJuoJ0qndK8gIvIADk8E6fYkuE8hOD8OHLvR726t5ZCYcPhFXdYaETxfB8eZqT9SRRJ9OHtszDUY6MqhmMKNbYztZ2AHf4W6+nLNGnOCsG0/XyASvIjAQqWUw/KZ71Q91NW3gUnZzTyo0sqPDgljHb4LFwGDM3h7BcmvGeLNFoUMyFIW/0LqsMPJpM9b/v73HADMYNp3xPD2yXtmE1HBgRM4Omosr4eIPx7hUFtxyRY5mCWfxJxSp39MWs3cErwg8fWiaBdFwk8mMLeGeLhxoruUjvED2NwuXTruaO63L4Wp08m1ToK54rpXnRyMoFd7JeybIJ5Zi7YzQhLSnE3BYZf2nDncvBXLZvlbTgNvwpUGlIM72dAx0XPYRiAeiIaG3EFwxZVA2Ja9qmX+YFRhZTG0G0HoFFz4Rc9adGMhXBMybZV/V/rRXLpxA78HEo79WxNwp2bE6E="
+				}
+			}
+		},
+		{
+			"data": {
+				"TxId": "cXvkv5t6Rbs_-KghLW1MePxbyKONOkfjag2q_RIz9Z8",
+				"template": "exercise",
+				"fields": "{\"instructions\":\"repeated string\",\"index_instructions\":0,\"muscleGroups\":\"repeated string\",\"index_muscleGroups\":1,\"difficulty\":\"enum\",\"difficultyValues\":[{\"code\":\"beginner\",\"name\":\"Beginner\"},{\"code\":\"intermediate\",\"name\":\"Intermediate\"},{\"code\":\"advanced\",\"name\":\"Advanced\"}],\"index_difficulty\":2,\"category\":\"enum\",\"categoryValues\":[{\"code\":\"strength\",\"name\":\"Strength\"},{\"code\":\"cardio\",\"name\":\"Cardio\"},{\"code\":\"flexibility\",\"name\":\"Flexibility\"}],\"index_category\":3,\"imageUrl\":\"string\",\"index_imageUrl\":4,\"videoUrl\":\"string\",\"index_videoUrl\":5,\"gitUrl\":\"string\",\"index_gitUrl\":6,\"equipmentRequired\":\"repeated string\",\"index_equipmentRequired\":7,\"alternativeEquipment\":\"repeated string\",\"index_alternativeEquipment\":8,\"isBodyweight\":\"bool\",\"index_isBodyweight\":9,\"exercise_type\":\"enum\",\"exercise_typeValues\":[{\"code\":\"warmup\",\"name\":\"Warm-Up\"},{\"code\":\"main\",\"name\":\"Main\"},{\"code\":\"cooldown\",\"name\":\"Cool-Down\"}],\"index_exercise_type\":10,\"duration_minutes\":\"uint32\",\"index_duration_minutes\":11,\"duration_target\":\"uint32\",\"index_duration_target\":12,\"recommended_sets\":\"uint32\",\"index_recommended_sets\":13,\"recommended_reps\":\"uint32\",\"index_recommended_reps\":14,\"goalTags\":\"repeated string\",\"index_goalTags\":15}",
+				"fieldsInTemplate": {
+					"instructions": {
+						"type": "repeated string",
+						"index": 0
+					},
+					"muscleGroups": {
+						"type": "repeated string",
+						"index": 1
+					},
+					"difficulty": {
+						"type": "enum",
+						"index": 2,
+						"enumValues": [
+							{
+								"code": "beginner",
+								"name": "Beginner"
+							},
+							{
+								"code": "intermediate",
+								"name": "Intermediate"
+							},
+							{
+								"code": "advanced",
+								"name": "Advanced"
+							}
+						]
+					},
+					"category": {
+						"type": "enum",
+						"index": 3,
+						"enumValues": [
+							{
+								"code": "strength",
+								"name": "Strength"
+							},
+							{
+								"code": "cardio",
+								"name": "Cardio"
+							},
+							{
+								"code": "flexibility",
+								"name": "Flexibility"
+							}
+						]
+					},
+					"imageUrl": {
+						"type": "string",
+						"index": 4
+					},
+					"videoUrl": {
+						"type": "string",
+						"index": 5
+					},
+					"gitUrl": {
+						"type": "string",
+						"index": 6
+					},
+					"equipmentRequired": {
+						"type": "repeated string",
+						"index": 7
+					},
+					"alternativeEquipment": {
+						"type": "repeated string",
+						"index": 8
+					},
+					"isBodyweight": {
+						"type": "bool",
+						"index": 9
+					},
+					"exercise_type": {
+						"type": "enum",
+						"index": 10,
+						"enumValues": [
+							{
+								"code": "warmup",
+								"name": "Warm-Up"
+							},
+							{
+								"code": "main",
+								"name": "Main"
+							},
+							{
+								"code": "cooldown",
+								"name": "Cool-Down"
+							}
+						]
+					},
+					"duration_minutes": {
+						"type": "uint32",
+						"index": 11
+					},
+					"duration_target": {
+						"type": "uint32",
+						"index": 12
+					},
+					"recommended_sets": {
+						"type": "uint32",
+						"index": 13
+					},
+					"recommended_reps": {
+						"type": "uint32",
+						"index": 14
+					},
+					"goalTags": {
+						"type": "repeated string",
+						"index": 15
+					}
+				},
+				"fieldsInTemplateCount": 16,
+				"difficultyValues": [
+					{
+						"code": "beginner",
+						"name": "Beginner"
+					},
+					{
+						"code": "intermediate",
+						"name": "Intermediate"
+					},
+					{
+						"code": "advanced",
+						"name": "Advanced"
+					}
+				],
+				"categoryValues": [
+					{
+						"code": "strength",
+						"name": "Strength"
+					},
+					{
+						"code": "cardio",
+						"name": "Cardio"
+					},
+					{
+						"code": "flexibility",
+						"name": "Flexibility"
+					}
+				],
+				"exercise_typeValues": [
+					{
+						"code": "warmup",
+						"name": "Warm-Up"
+					},
+					{
+						"code": "main",
+						"name": "Main"
+					},
+					{
+						"code": "cooldown",
+						"name": "Cool-Down"
+					}
+				]
+			},
+			"oip": {
+				"didTx": "did:arweave:cXvkv5t6Rbs_-KghLW1MePxbyKONOkfjag2q_RIz9Z8",
+				"inArweaveBlock": 1698045,
+				"indexedAt": "2025-07-05T21:58:02.827Z",
+				"recordStatus": "original",
+				"ver": "0.8.0",
+				"creator": {
+					"didAddress": "u4B6d5ddggsotOiG86D-KPkeW23qQNdqaXo_ZcdI3k0",
+					"creatorSig": "dRGG6LE+AaDAEq7WFnrlgOS16mZRZVCGDWuhe1v3pZBuIAD5mAQDoqNP6QdSSpAYrytestqecsoYNiKzPu/bryrcEKsMmO7SyPBz7JYKIpdtozLsrkhY3vpko4f/E5a2sz3Qt9kwvthPFOFPM0xLyMMrg4PaoFhRXAlakn9Xk5z0mbi6HCFrln1tU8PS/wMSoj9IDHtQM+Ta+QoV/Z+3olThKokDzWy8IGpl7KBuwvcc1mBAh2CXx/R0TGt33dk5jKHccWGpcBzveGvksaj09bXwUOTr95NmwpStJEz+95vF02qoz9VRq7jokmSwfJcV3G7y1nt48B1tsLfL7QJW4WYUaTGWRkT+xgttUWOfyHzj2WPKeVhQUTIH3kIHsL038Th/qAHrckr2eZHxUlhxzUK6EmGEjwhg7oII+Plc8yK/8NSDZGuScImABavXSVR3OgmCY676pD5czoy9zA473LIBF6LlnCP0Cdvq2ssMdkHm1Hj1hcBuy0fr+nlQXr74z/9J/sk5c4RY6OHHZpOuGl4vpBXzJxt5a53fhfkDGisPyavsSuIrF0zfe6uUjCmBD1nkaufq7kyMPhk5Q0LIl/AZG70Xd1KJIovU+W2QyhttIQsrf+IkfpKpv8B9Rp85y0tct/qd4bxuiY5OvdBgsveyKqoQjpmii7ZLdaKLoTw="
+				}
+			}
+		},
+		{
+			"data": {
+				"TxId": "SLsJ91-Z82rRBPkDrZlG87aIpbw6zOlmK96nh5uf6G4",
+				"template": "recipe",
+				"fields": "{\"prep_time_mins\":\"uint64\",\"index_prep_time_mins\":0,\"cook_time_mins\":\"uint64\",\"index_cook_time_mins\":1,\"total_time_mins\":\"uint64\",\"index_total_time_mins\":2,\"servings\":\"uint64\",\"index_servings\":3,\"ingredient_amount\":\"repeated float\",\"index_ingredient_amount\":4,\"ingredient_unit\":\"repeated string\",\"index_ingredient_unit\":5,\"ingredient\":\"repeated dref\",\"index_ingredient\":6,\"ingredient_comment\":\"string\",\"index_ingredient_comment\":7,\"instructions\":\"string\",\"index_instructions\":8,\"course\":\"enum\",\"courseValues\":[{\"code\":\"brk\",\"name\":\"Breakfast\"},{\"code\":\"lnc\",\"name\":\"Lunch\"},{\"code\":\"dnr\",\"name\":\"Dinner\"},{\"code\":\"snk\",\"name\":\"Snack\"},{\"code\":\"wrk\",\"name\":\"Workout Meal\"},{\"code\":\"bkt\",\"name\":\"Brunch\"},{\"code\":\"aft\",\"name\":\"Afternoon Snack\"},{\"code\":\"ntm\",\"name\":\"Nighttime Snack\"},{\"code\":\"pre\",\"name\":\"Pre-Workout Meal\"},{\"code\":\"pst\",\"name\":\"Post-Workout Meal\"}],\"index_course\":9,\"cuisine\":\"string\",\"index_cuisine\":10,\"notes\":\"string\",\"index_notes\":11,\"author\":\"string\",\"index_author\":12,\"authorDRef\":\"dref\",\"index_authorDRef\":13}",
+				"fieldsInTemplate": {
+					"prep_time_mins": {
+						"type": "uint64",
+						"index": 0
+					},
+					"cook_time_mins": {
+						"type": "uint64",
+						"index": 1
+					},
+					"total_time_mins": {
+						"type": "uint64",
+						"index": 2
+					},
+					"servings": {
+						"type": "uint64",
+						"index": 3
+					},
+					"ingredient_amount": {
+						"type": "repeated float",
+						"index": 4
+					},
+					"ingredient_unit": {
+						"type": "repeated string",
+						"index": 5
+					},
+					"ingredient": {
+						"type": "repeated dref",
+						"index": 6
+					},
+					"ingredient_comment": {
+						"type": "string",
+						"index": 7
+					},
+					"instructions": {
+						"type": "string",
+						"index": 8
+					},
+					"course": {
+						"type": "enum",
+						"index": 9,
+						"enumValues": [
+							{
+								"code": "brk",
+								"name": "Breakfast"
+							},
+							{
+								"code": "lnc",
+								"name": "Lunch"
+							},
+							{
+								"code": "dnr",
+								"name": "Dinner"
+							},
+							{
+								"code": "snk",
+								"name": "Snack"
+							},
+							{
+								"code": "wrk",
+								"name": "Workout Meal"
+							},
+							{
+								"code": "bkt",
+								"name": "Brunch"
+							},
+							{
+								"code": "aft",
+								"name": "Afternoon Snack"
+							},
+							{
+								"code": "ntm",
+								"name": "Nighttime Snack"
+							},
+							{
+								"code": "pre",
+								"name": "Pre-Workout Meal"
+							},
+							{
+								"code": "pst",
+								"name": "Post-Workout Meal"
+							}
+						]
+					},
+					"cuisine": {
+						"type": "string",
+						"index": 10
+					},
+					"notes": {
+						"type": "string",
+						"index": 11
+					},
+					"author": {
+						"type": "string",
+						"index": 12
+					},
+					"authorDRef": {
+						"type": "dref",
+						"index": 13
+					}
+				},
+				"fieldsInTemplateCount": 14,
+				"courseValues": [
+					{
+						"code": "brk",
+						"name": "Breakfast"
+					},
+					{
+						"code": "lnc",
+						"name": "Lunch"
+					},
+					{
+						"code": "dnr",
+						"name": "Dinner"
+					},
+					{
+						"code": "snk",
+						"name": "Snack"
+					},
+					{
+						"code": "wrk",
+						"name": "Workout Meal"
+					},
+					{
+						"code": "bkt",
+						"name": "Brunch"
+					},
+					{
+						"code": "aft",
+						"name": "Afternoon Snack"
+					},
+					{
+						"code": "ntm",
+						"name": "Nighttime Snack"
+					},
+					{
+						"code": "pre",
+						"name": "Pre-Workout Meal"
+					},
+					{
+						"code": "pst",
+						"name": "Post-Workout Meal"
+					}
+				]
+			},
+			"oip": {
+				"didTx": "did:arweave:SLsJ91-Z82rRBPkDrZlG87aIpbw6zOlmK96nh5uf6G4",
+				"inArweaveBlock": 1706710,
+				"indexedAt": "2025-07-07T15:30:07.223Z",
+				"recordStatus": "original",
+				"ver": "0.8.0",
+				"creator": {
+					"didAddress": "u4B6d5ddggsotOiG86D-KPkeW23qQNdqaXo_ZcdI3k0",
+					"creatorSig": "YCwdPa+b996qzjuTVg2RQOR34BEc+AfONlgQ7mXnnKJ8/guWbkUR7tNgyTukUd/mpx35Q4w9ul4p6t4cZJRtIzUrOYgyUaCIy/XyHUa6RYhBhZxcdZ/LSpGThd52XF18yM31icpq8nDn4OT1ebZcBOqbXg1sYDHEfEx3kypJAlb64DgDM0Jzj6vnQthqnmeqxbT9FYJ5IDAVqlfNBkJs/ikEDkdadmKXnFLK6Xlu03n95XUPKlB+aFx/r2MHvdkRjPT5TGyKGfLWBwAw5KXoS9p9TOs9U4P5CQXLDZDgKWXDKe2zl6Qnu4htHcddqdGwTuLgj3D+vlKVRMyZ5tk+foFaaABoneYXM+eGFKRttxCvyyx/d5Y3VxveXE+RUDW1+wBKNcjgCGNPKyTIKIWCvoKC9ZlxuD+QvI8eQ7Hxa0E6cZZzUFBgNTAdIhyzwky6zz48K7HVLWsB73meNEPGR2iF+g0z7cBaj95fjYyNtB/ecoWsd6D/R5bOhLg32jUBLSfAiVx6S1L+iCm3HwdaKXtj3aNnMgIFILB8oXRrc0CKyy9sNG3sP6tcVfOn6L5bl6j4D4FUREcbvvM6unuuj03Tn+G9mNxILZWfEbmKizBHDEijOzRLqDB7ZPyXdkP9fzy87AkothhTOfQxK82/Jqj6/RVDj1zqWlgJx3QEpHA="
+				}
+			}
+		},
+		{
+			"data": {
+				"TxId": "T_16JOpyRKt0dmuZikHPpDcIhwh4DR1ZspHU4BKa-qE",
+				"template": "workout",
+				"fields": "{\"total_duration_minutes\":\"uint64\",\"index_total_duration_minutes\":0,\"estimated_calories_burned\":\"uint64\",\"index_estimated_calories_burned\":1,\"includesWarmup\":\"bool\",\"index_includesWarmup\":2,\"includesMain\":\"bool\",\"index_includesMain\":3,\"includesCooldown\":\"bool\",\"index_includesCooldown\":4,\"nonStandardWorkout\":\"bool\",\"index_nonStandardWorkout\":5,\"exercise_amount\":\"repeated uint64\",\"index_exercise_amount\":6,\"exercise_unit\":\"repeated string\",\"index_exercise_unit\":7,\"exercise\":\"repeated dref\",\"index_exercise\":8,\"instructions\":\"string\",\"index_instructions\":9,\"goalTags\":\"repeated string\",\"index_goalTags\":10,\"author\":\"string\",\"index_author\":11,\"authorDRef\":\"dref\",\"index_authorDRef\":12,\"notes\":\"string\",\"index_notes\":13}",
+				"fieldsInTemplate": {
+					"total_duration_minutes": {
+						"type": "uint64",
+						"index": 0
+					},
+					"estimated_calories_burned": {
+						"type": "uint64",
+						"index": 1
+					},
+					"includesWarmup": {
+						"type": "bool",
+						"index": 2
+					},
+					"includesMain": {
+						"type": "bool",
+						"index": 3
+					},
+					"includesCooldown": {
+						"type": "bool",
+						"index": 4
+					},
+					"nonStandardWorkout": {
+						"type": "bool",
+						"index": 5
+					},
+					"exercise_amount": {
+						"type": "repeated uint64",
+						"index": 6
+					},
+					"exercise_unit": {
+						"type": "repeated string",
+						"index": 7
+					},
+					"exercise": {
+						"type": "repeated dref",
+						"index": 8
+					},
+					"instructions": {
+						"type": "string",
+						"index": 9
+					},
+					"goalTags": {
+						"type": "repeated string",
+						"index": 10
+					},
+					"author": {
+						"type": "string",
+						"index": 11
+					},
+					"authorDRef": {
+						"type": "dref",
+						"index": 12
+					},
+					"notes": {
+						"type": "string",
+						"index": 13
+					}
+				},
+				"fieldsInTemplateCount": 14
+			},
+			"oip": {
+				"didTx": "did:arweave:T_16JOpyRKt0dmuZikHPpDcIhwh4DR1ZspHU4BKa-qE",
+				"inArweaveBlock": 1698045,
+				"indexedAt": "2025-07-05T21:58:04.947Z",
+				"recordStatus": "original",
+				"ver": "0.8.0",
+				"creator": {
+					"didAddress": "u4B6d5ddggsotOiG86D-KPkeW23qQNdqaXo_ZcdI3k0",
+					"creatorSig": "lig8w+5/y3mIKIRdSyhFgKU/P/iPKVpmXe11uqpQBuxUeHmxw6XvLCW3lNBGEcLdP+p0qx2JMH+0flsBnjBkHyLWFM+HhUL5Z6P/Rh9edNI3tkMuBalEKBAvT61eHfrM7bLP34ppK9TlnTDk0rxFPA8T1ASfgYq/7u8IxZZpLOtl4W6wVt3E1mGOe2ZS9kdBYV361IfQh6oRaH/FtdtP1Yvj4DSt2UfTukJqh+SSQ5h7I5RDUCdsbWIxRiuqAIMXzds8ZmePcQlloYtoD1aou1kaGKDPdVYnIbwcmII1ejoUX00vdUY69Lo1hQG5rzW4vLCY+sZSR4RqJ7fYo193L+5HJ1MOLR1kI+yNxSjwWeaC+IIEHRrOmS1B4whDfEQ2N5Hmi7xJkd6kzg2NLatrbCixNqnm5BpYyD79trETwz7gIF5gHu3J+5doVbngbG/5MQ3EN6393rzbsDMo9BpibB6iNRoy85I4dWyForO3q9iL3QHl3eS7NTA89GBvu0525kAPOMHICCHHg9aE+TcTt1KslGln4ONA1vp4X/y3SaDU3XqlavojBorIFJDjas1ngpvcjBW4dJrsrK7pp9j0pM+uPsSjs2pYudXVE3CzPRUSiB1Q/ez0hXoejQsbjTPF/hwkFdicQm2Wokf4MbJYxtelv07kDXFZ4xLQlX2v2w0="
+				}
+			}
+		},
+		{
+			"data": {
+				"TxId": "JQ_gsZucnD5aM9V9ue748R5COGFyOZYstGVSm1iX7rU",
+				"template": "podcastShow",
+				"fields": "{\"hosts\":\"repeated dref\",\"index_hosts\":0,\"producers\":\"repeated dref\",\"index_producers\":1,\"network\":\"string\",\"index_network\":2,\"rssFeedUrl\":\"string\",\"index_rssFeedUrl\":3,\"defaultLicense\":\"dref\",\"index_defaultLicense\":4,\"defaultCopyright\":\"string\",\"index_defaultCopyright\":5,\"defaultArtwork\":\"dref\",\"index_defaultArtwork\":6,\"defaultSponsors\":\"repeated string\",\"index_defaultSponsors\":7,\"category\":\"string\",\"index_category\":8}",
+				"fieldsInTemplate": {
+					"hosts": {
+						"type": "repeated dref",
+						"index": 0
+					},
+					"producers": {
+						"type": "repeated dref",
+						"index": 1
+					},
+					"network": {
+						"type": "string",
+						"index": 2
+					},
+					"rssFeedUrl": {
+						"type": "string",
+						"index": 3
+					},
+					"defaultLicense": {
+						"type": "dref",
+						"index": 4
+					},
+					"defaultCopyright": {
+						"type": "string",
+						"index": 5
+					},
+					"defaultArtwork": {
+						"type": "dref",
+						"index": 6
+					},
+					"defaultSponsors": {
+						"type": "repeated string",
+						"index": 7
+					},
+					"category": {
+						"type": "string",
+						"index": 8
+					}
+				},
+				"fieldsInTemplateCount": 9
+			},
+			"oip": {
+				"didTx": "did:arweave:JQ_gsZucnD5aM9V9ue748R5COGFyOZYstGVSm1iX7rU",
+				"inArweaveBlock": 1705770,
+				"indexedAt": "2025-07-06T05:51:45.258Z",
+				"recordStatus": "original",
+				"ver": "0.8.0",
+				"creator": {
+					"didAddress": "u4B6d5ddggsotOiG86D-KPkeW23qQNdqaXo_ZcdI3k0",
+					"creatorSig": "LjaLpgxulFj/UNQMe/GwIY4xu0IoIcI81kSwP8cT883SvmIJzOClL4Fn0RPdBSl3AtMFB0qWkC4ttV9SEfI144ytrc/B8u7YZC24YDGjnwu+WMIaoumIVTqmxbPd4g9bNGMwC8+u5pwoAlGt5ktyaJLOjQb9jUmLlLBCmT1BLuodB7AGqnPMwra6PN0fMMpOEOYcfkTaP/LxzI9m5ilCVImEwBGa9QPx241BPdKzQFe9AEIoqsb+oVQel4pcCsSa0BiwDnYjbppyjGiRNE12OMHXhvyTiYTPmdk7ThtPodytjs+9Wz8JRzKMDCF3w698jQZcOMZIc7gnHFJXaMiQTpgfxN4+j2HSl4rRcVmGd8RhS6qtkoV9VX/VjLBo6LUVl2d0Yob4Vxz1Q90KJQoJ8oeCK5/2bR0nEmgXL7cJM46uJ+IdJ/YHZe84RKvD6QKoF62PxVKOoCWcyhHG4bDJzV2zlVjnlk6JluOnDN0mKWv3Oiq6Xv1xv1UOa718W3PRo95gZFLecqUjsMMXaBsudTD0ogEmzPtHCU1SKw0dZoARdzp2rSwZxaYUPNaHCZeoACRUqT0w7/0xTt4i4PD4NUghwISB+HIVFglAJbCyIC0H3IPjrYJy3KuEIG3Bd9LH0BKdNk2ukxOMKOLolcK2ScYgvtq/a3BDL2gukc/BLbA="
+				}
+			}
+		},
+		{
+			"data": {
+				"TxId": "suXNyDtfAY3ht99t2t8EuxCjM0v2-yEMyasBbNtGDKY",
+				"template": "aFourthTestTemplate",
+				"fields": "{\"someField\":\"repeated string\",\"index_someField\":0,\"anotherField\":\"repeated string\",\"index_anotherField\":1}",
+				"fieldsInTemplate": {
+					"someField": {
+						"type": "repeated string",
+						"index": 0
+					},
+					"anotherField": {
+						"type": "repeated string",
+						"index": 1
+					}
+				},
+				"fieldsInTemplateCount": 2
+			},
+			"oip": {
+				"didTx": "did:arweave:suXNyDtfAY3ht99t2t8EuxCjM0v2-yEMyasBbNtGDKY",
+				"inArweaveBlock": 1694587,
+				"indexedAt": "2025-07-05T21:58:01.789Z",
+				"recordStatus": "original",
+				"ver": "0.8.0",
+				"creator": {
+					"didAddress": "iZq_A50yy5YpHNZZfQ5E5Xres3fhMa-buPOlotxbEtU",
+					"creatorSig": "Co/Kj5W4zjpve9WMC5wmsW5+AG8/TgLoSFqjvASENtREh5ReNWDndbrIHslDPI3v4UOjVXluJhT1SiO8X6loy8s7IuOw5K1AGcNqnYhEPneUvGzQElbHHNBuh4/z7NjcxHnDqvPXgakrJde2oCKbHTe4aZCagvgSbM4tnU+zgmnA3u+q5StWRHAwpzhxiJ8S8ujCmGKRqMaJ3U1/5E4c0OR8IQWAdiOhjoSbiryiS4HXg2biAiFzzJdFokIcMAnjKpXsKsZW7V1MuzOrWE3wI9tMUjeW3xKta4ar4o5NKUFiyNVqW8rV/vI/nBLQjoFGi7jW7+rFpo3Vd7KfHo82341VrGBnbqfAcL6ofCb0C8K0Fbr0b7BxiCWBRmrqnM3SrqPjVGnOJJQKkUZQMkF/riic9MOGYOyajhm2s6u4GZP3fJmiClgUbW7r87TdMbuICYrDLbIbVMKKcI45iUDGgq6hBL2B8XSStxYcEfkIkTGiUqyQLeZyWN/w6L24mQ9QM43zjCoqMZn5WRx7BzfkNR05xDGBl1krQgKzBX1uypuJ0T4NPa20EW1y587NKUx04S0YZXN+k/WCmuBPNL+Hqxq6RffQQT31vWIRdNmWX45WTHS8Zz2gjxPXOEnxlfQJM6AHjLoTN3QL2LOeut93Im0YiZv4KkP/xiqpYxec8qQ="
+				}
+			}
+		},
+		{
+			"data": {
+				"TxId": "zEML8g9cKrda_wH5eDcI6FkYpx7LNUeYx_KZe1aoqhg",
+				"template": "nutritionalInfo",
+				"fields": "{\"standardAmount\":\"float\",\"index_standardAmount\":0,\"standardUnit\":\"string\",\"index_standardUnit\":1,\"calories\":\"float\",\"index_calories\":2,\"proteinG\":\"float\",\"index_proteinG\":3,\"fatG\":\"float\",\"index_fatG\":4,\"saturatedFatG\":\"float\",\"index_saturatedFatG\":5,\"transFatG\":\"float\",\"index_transFatG\":6,\"cholesterolMg\":\"float\",\"index_cholesterolMg\":7,\"sodiumMg\":\"float\",\"index_sodiumMg\":8,\"carbohydratesG\":\"float\",\"index_carbohydratesG\":9,\"dietaryFiberG\":\"float\",\"index_dietaryFiberG\":10,\"sugarsG\":\"float\",\"index_sugarsG\":11,\"addedSugarsG\":\"float\",\"index_addedSugarsG\":12,\"vitaminDMcg\":\"float\",\"index_vitaminDMcg\":13,\"calciumMg\":\"float\",\"index_calciumMg\":14,\"ironMg\":\"float\",\"index_ironMg\":15,\"potassiumMg\":\"float\",\"index_potassiumMg\":16,\"vitaminAMcg\":\"float\",\"index_vitaminAMcg\":17,\"vitaminCMg\":\"float\",\"index_vitaminCMg\":18,\"allergens\":\"repeated string\",\"index_allergens\":19,\"gluten_free\":\"bool\",\"index_glutenFree\":20,\"organic\":\"bool\",\"index_organic\":21}",
+				"fieldsInTemplate": {
+					"standardAmount": {
+						"type": "float",
+						"index": 0
+					},
+					"standardUnit": {
+						"type": "string",
+						"index": 1
+					},
+					"calories": {
+						"type": "float",
+						"index": 2
+					},
+					"proteinG": {
+						"type": "float",
+						"index": 3
+					},
+					"fatG": {
+						"type": "float",
+						"index": 4
+					},
+					"saturatedFatG": {
+						"type": "float",
+						"index": 5
+					},
+					"transFatG": {
+						"type": "float",
+						"index": 6
+					},
+					"cholesterolMg": {
+						"type": "float",
+						"index": 7
+					},
+					"sodiumMg": {
+						"type": "float",
+						"index": 8
+					},
+					"carbohydratesG": {
+						"type": "float",
+						"index": 9
+					},
+					"dietaryFiberG": {
+						"type": "float",
+						"index": 10
+					},
+					"sugarsG": {
+						"type": "float",
+						"index": 11
+					},
+					"addedSugarsG": {
+						"type": "float",
+						"index": 12
+					},
+					"vitaminDMcg": {
+						"type": "float",
+						"index": 13
+					},
+					"calciumMg": {
+						"type": "float",
+						"index": 14
+					},
+					"ironMg": {
+						"type": "float",
+						"index": 15
+					},
+					"potassiumMg": {
+						"type": "float",
+						"index": 16
+					},
+					"vitaminAMcg": {
+						"type": "float",
+						"index": 17
+					},
+					"vitaminCMg": {
+						"type": "float",
+						"index": 18
+					},
+					"allergens": {
+						"type": "repeated string",
+						"index": 19
+					},
+					"glutenFree": {
+						"index": 20
+					},
+					"organic": {
+						"type": "bool",
+						"index": 21
+					}
+				},
+				"fieldsInTemplateCount": 22
+			},
+			"oip": {
+				"didTx": "did:arweave:zEML8g9cKrda_wH5eDcI6FkYpx7LNUeYx_KZe1aoqhg",
+				"inArweaveBlock": 1705555,
+				"indexedAt": "2025-07-05T22:12:08.150Z",
+				"recordStatus": "pending confirmation in Arweave",
+				"ver": "0.8.0",
+				"creator": {
+					"didAddress": "u4B6d5ddggsotOiG86D-KPkeW23qQNdqaXo_ZcdI3k0",
+					"creatorSig": "qnGSb4gIu1c+L53+/MacxetBzWYiKiIMf17Sahxk3jcBbIGrJwYSbgcEqexnTd7Oqhiuat1OYlYaq/r0YbecqiDlvT/8REEcVbr1YVi4d0TlvxEFjtvVonfrurV8FInLA9Ots4XhLJtcEGNfXMdnkoKdUXE345GaEqRvvoufefgkEW9h9oUzhPhaB+jPKnhhJe5y/kVn9aI/t6GPXU+wrsf3OaRjVhmmpr7i0iA8NYS6Ep4eb0nclOaqRMCa1Mi/t01c7Zd6q1+XMRiZFtD5rVQu/o9nHnjMx2hEolA882PsrbSb+WzS26wFsG985EmIsPWQhJRgOxP59z+Q6QuM7JoGAnWGBA1UmFoL0mf8Me/r7QTqySHxAd9807evgQN52TkrBfk3k87j6hmjhgQfeIJATbCKy8xDRd5bOoBRuxIyBQD6slt+d02KDNT2H14OXfPvmszJvH2CcWVnu11u6f2JC49LSJYDgrJPPSSrf54SDkhgTgfw3gv8XhPSNCRhjsdzztAx0ivYgmRdwGi0RUbJGkdCsoTZfIw/iDRIrVySetO8hX7nL/DA+ngc4u0TqpCeB5c2dh+rJGZZ3qHmvpxUxBBV+a9SSQivceRM+xoPetpMkfFqhFJluk9KApi6MHjl2oKK/nsXTlghxmTTNIC7fBe/VKjgexSVGqj+w2I="
+				}
+			}
+		},
+		{
+			"data": {
+				"TxId": "SLsJ91-Z82rRBPkDrZlG87aIpbw6zOlmK96nh5uf6G4",
+				"template": "recipe",
+				"fields": "{\"prep_time_mins\":\"uint64\",\"index_prep_time_mins\":0,\"cook_time_mins\":\"uint64\",\"index_cook_time_mins\":1,\"total_time_mins\":\"uint64\",\"index_total_time_mins\":2,\"servings\":\"uint64\",\"index_servings\":3,\"ingredient_amount\":\"repeated float\",\"index_ingredient_amount\":4,\"ingredient_unit\":\"repeated string\",\"index_ingredient_unit\":5,\"ingredient\":\"repeated dref\",\"index_ingredient\":6,\"ingredient_comment\":\"string\",\"index_ingredient_comment\":7,\"instructions\":\"string\",\"index_instructions\":8,\"course\":\"enum\",\"courseValues\":[{\"code\":\"brk\",\"name\":\"Breakfast\"},{\"code\":\"lnc\",\"name\":\"Lunch\"},{\"code\":\"dnr\",\"name\":\"Dinner\"},{\"code\":\"snk\",\"name\":\"Snack\"},{\"code\":\"wrk\",\"name\":\"Workout Meal\"},{\"code\":\"bkt\",\"name\":\"Brunch\"},{\"code\":\"aft\",\"name\":\"Afternoon Snack\"},{\"code\":\"ntm\",\"name\":\"Nighttime Snack\"},{\"code\":\"pre\",\"name\":\"Pre-Workout Meal\"},{\"code\":\"pst\",\"name\":\"Post-Workout Meal\"}],\"index_course\":9,\"cuisine\":\"string\",\"index_cuisine\":10,\"notes\":\"string\",\"index_notes\":11,\"author\":\"string\",\"index_author\":12,\"authorDRef\":\"dref\",\"index_authorDRef\":13}",
+				"fieldsInTemplate": {
+					"prep_time_mins": {
+						"type": "uint64",
+						"index": 0
+					},
+					"cook_time_mins": {
+						"type": "uint64",
+						"index": 1
+					},
+					"total_time_mins": {
+						"type": "uint64",
+						"index": 2
+					},
+					"servings": {
+						"type": "uint64",
+						"index": 3
+					},
+					"ingredient_amount": {
+						"type": "repeated float",
+						"index": 4
+					},
+					"ingredient_unit": {
+						"type": "repeated string",
+						"index": 5
+					},
+					"ingredient": {
+						"type": "repeated dref",
+						"index": 6
+					},
+					"ingredient_comment": {
+						"type": "string",
+						"index": 7
+					},
+					"instructions": {
+						"type": "string",
+						"index": 8
+					},
+					"course": {
+						"type": "enum",
+						"index": 9,
+						"enumValues": [
+							{
+								"code": "brk",
+								"name": "Breakfast"
+							},
+							{
+								"code": "lnc",
+								"name": "Lunch"
+							},
+							{
+								"code": "dnr",
+								"name": "Dinner"
+							},
+							{
+								"code": "snk",
+								"name": "Snack"
+							},
+							{
+								"code": "wrk",
+								"name": "Workout Meal"
+							},
+							{
+								"code": "bkt",
+								"name": "Brunch"
+							},
+							{
+								"code": "aft",
+								"name": "Afternoon Snack"
+							},
+							{
+								"code": "ntm",
+								"name": "Nighttime Snack"
+							},
+							{
+								"code": "pre",
+								"name": "Pre-Workout Meal"
+							},
+							{
+								"code": "pst",
+								"name": "Post-Workout Meal"
+							}
+						]
+					},
+					"cuisine": {
+						"type": "string",
+						"index": 10
+					},
+					"notes": {
+						"type": "string",
+						"index": 11
+					},
+					"author": {
+						"type": "string",
+						"index": 12
+					},
+					"authorDRef": {
+						"type": "dref",
+						"index": 13
+					}
+				},
+				"fieldsInTemplateCount": 14
+			},
+			"oip": {
+				"didTx": "did:arweave:SLsJ91-Z82rRBPkDrZlG87aIpbw6zOlmK96nh5uf6G4",
+				"inArweaveBlock": 1706704,
+				"indexedAt": "2025-07-07T15:09:25.935Z",
+				"recordStatus": "pending confirmation in Arweave",
+				"ver": "0.8.0",
+				"creator": {
+					"didAddress": "u4B6d5ddggsotOiG86D-KPkeW23qQNdqaXo_ZcdI3k0",
+					"creatorSig": "YCwdPa+b996qzjuTVg2RQOR34BEc+AfONlgQ7mXnnKJ8/guWbkUR7tNgyTukUd/mpx35Q4w9ul4p6t4cZJRtIzUrOYgyUaCIy/XyHUa6RYhBhZxcdZ/LSpGThd52XF18yM31icpq8nDn4OT1ebZcBOqbXg1sYDHEfEx3kypJAlb64DgDM0Jzj6vnQthqnmeqxbT9FYJ5IDAVqlfNBkJs/ikEDkdadmKXnFLK6Xlu03n95XUPKlB+aFx/r2MHvdkRjPT5TGyKGfLWBwAw5KXoS9p9TOs9U4P5CQXLDZDgKWXDKe2zl6Qnu4htHcddqdGwTuLgj3D+vlKVRMyZ5tk+foFaaABoneYXM+eGFKRttxCvyyx/d5Y3VxveXE+RUDW1+wBKNcjgCGNPKyTIKIWCvoKC9ZlxuD+QvI8eQ7Hxa0E6cZZzUFBgNTAdIhyzwky6zz48K7HVLWsB73meNEPGR2iF+g0z7cBaj95fjYyNtB/ecoWsd6D/R5bOhLg32jUBLSfAiVx6S1L+iCm3HwdaKXtj3aNnMgIFILB8oXRrc0CKyy9sNG3sP6tcVfOn6L5bl6j4D4FUREcbvvM6unuuj03Tn+G9mNxILZWfEbmKizBHDEijOzRLqDB7ZPyXdkP9fzy87AkothhTOfQxK82/Jqj6/RVDj1zqWlgJx3QEpHA="
+				}
+			}
+		},
+		{
+			"data": {
+				"TxId": "JQ_gsZucnD5aM9V9ue748R5COGFyOZYstGVSm1iX7rU",
+				"template": "podcastShow",
+				"fields": "{\"hosts\":\"repeated dref\",\"index_hosts\":0,\"producers\":\"repeated dref\",\"index_producers\":1,\"network\":\"string\",\"index_network\":2,\"rssFeedUrl\":\"string\",\"index_rssFeedUrl\":3,\"defaultLicense\":\"dref\",\"index_defaultLicense\":4,\"defaultCopyright\":\"string\",\"index_defaultCopyright\":5,\"defaultArtwork\":\"dref\",\"index_defaultArtwork\":6,\"defaultSponsors\":\"repeated string\",\"index_defaultSponsors\":7,\"category\":\"string\",\"index_category\":8}",
+				"fieldsInTemplate": {
+					"hosts": {
+						"type": "repeated dref",
+						"index": 0
+					},
+					"producers": {
+						"type": "repeated dref",
+						"index": 1
+					},
+					"network": {
+						"type": "string",
+						"index": 2
+					},
+					"rssFeedUrl": {
+						"type": "string",
+						"index": 3
+					},
+					"defaultLicense": {
+						"type": "dref",
+						"index": 4
+					},
+					"defaultCopyright": {
+						"type": "string",
+						"index": 5
+					},
+					"defaultArtwork": {
+						"type": "dref",
+						"index": 6
+					},
+					"defaultSponsors": {
+						"type": "repeated string",
+						"index": 7
+					},
+					"category": {
+						"type": "string",
+						"index": 8
+					}
+				},
+				"fieldsInTemplateCount": 9
+			},
+			"oip": {
+				"didTx": "did:arweave:JQ_gsZucnD5aM9V9ue748R5COGFyOZYstGVSm1iX7rU",
+				"inArweaveBlock": 1705767,
+				"indexedAt": "2025-07-06T05:40:04.313Z",
+				"recordStatus": "pending confirmation in Arweave",
+				"ver": "0.8.0",
+				"creator": {
+					"didAddress": "u4B6d5ddggsotOiG86D-KPkeW23qQNdqaXo_ZcdI3k0",
+					"creatorSig": "LjaLpgxulFj/UNQMe/GwIY4xu0IoIcI81kSwP8cT883SvmIJzOClL4Fn0RPdBSl3AtMFB0qWkC4ttV9SEfI144ytrc/B8u7YZC24YDGjnwu+WMIaoumIVTqmxbPd4g9bNGMwC8+u5pwoAlGt5ktyaJLOjQb9jUmLlLBCmT1BLuodB7AGqnPMwra6PN0fMMpOEOYcfkTaP/LxzI9m5ilCVImEwBGa9QPx241BPdKzQFe9AEIoqsb+oVQel4pcCsSa0BiwDnYjbppyjGiRNE12OMHXhvyTiYTPmdk7ThtPodytjs+9Wz8JRzKMDCF3w698jQZcOMZIc7gnHFJXaMiQTpgfxN4+j2HSl4rRcVmGd8RhS6qtkoV9VX/VjLBo6LUVl2d0Yob4Vxz1Q90KJQoJ8oeCK5/2bR0nEmgXL7cJM46uJ+IdJ/YHZe84RKvD6QKoF62PxVKOoCWcyhHG4bDJzV2zlVjnlk6JluOnDN0mKWv3Oiq6Xv1xv1UOa718W3PRo95gZFLecqUjsMMXaBsudTD0ogEmzPtHCU1SKw0dZoARdzp2rSwZxaYUPNaHCZeoACRUqT0w7/0xTt4i4PD4NUghwISB+HIVFglAJbCyIC0H3IPjrYJy3KuEIG3Bd9LH0BKdNk2ukxOMKOLolcK2ScYgvtq/a3BDL2gukc/BLbA="
+				}
+			}
+		},
+		{
+			"data": {
+				"TxId": "_xuiAaVKxPL1Dsp-AceCpXqnc0C_WwHC-Ws1vN-cBUs",
+				"template": "nutritionalInfo",
+				"fields": "{\"standardAmount\":\"float\",\"index_standardAmount\":0,\"standardUnit\":\"string\",\"index_standardUnit\":1,\"calories\":\"float\",\"index_calories\":2,\"proteinG\":\"float\",\"index_proteinG\":3,\"fatG\":\"float\",\"index_fatG\":4,\"saturatedFatG\":\"float\",\"index_saturatedFatG\":5,\"transFatG\":\"float\",\"index_transFatG\":6,\"cholesterolMg\":\"float\",\"index_cholesterolMg\":7,\"sodiumMg\":\"float\",\"index_sodiumMg\":8,\"carbohydratesG\":\"float\",\"index_carbohydratesG\":9,\"dietaryFiberG\":\"float\",\"index_dietaryFiberG\":10,\"sugarsG\":\"float\",\"index_sugarsG\":11,\"addedSugarsG\":\"float\",\"index_addedSugarsG\":12,\"vitaminDMcg\":\"float\",\"index_vitaminDMcg\":13,\"calciumMg\":\"float\",\"index_calciumMg\":14,\"ironMg\":\"float\",\"index_ironMg\":15,\"potassiumMg\":\"float\",\"index_potassiumMg\":16,\"vitaminAMcg\":\"float\",\"index_vitaminAMcg\":17,\"vitaminCMg\":\"float\",\"index_vitaminCMg\":18,\"allergens\":\"repeated string\",\"index_allergens\":19,\"glutenFree\":\"bool\",\"index_glutenFree\":20,\"organic\":\"bool\",\"index_organic\":21}",
+				"fieldsInTemplate": {
+					"standardAmount": {
+						"type": "float",
+						"index": 0
+					},
+					"standardUnit": {
+						"type": "string",
+						"index": 1
+					},
+					"calories": {
+						"type": "float",
+						"index": 2
+					},
+					"proteinG": {
+						"type": "float",
+						"index": 3
+					},
+					"fatG": {
+						"type": "float",
+						"index": 4
+					},
+					"saturatedFatG": {
+						"type": "float",
+						"index": 5
+					},
+					"transFatG": {
+						"type": "float",
+						"index": 6
+					},
+					"cholesterolMg": {
+						"type": "float",
+						"index": 7
+					},
+					"sodiumMg": {
+						"type": "float",
+						"index": 8
+					},
+					"carbohydratesG": {
+						"type": "float",
+						"index": 9
+					},
+					"dietaryFiberG": {
+						"type": "float",
+						"index": 10
+					},
+					"sugarsG": {
+						"type": "float",
+						"index": 11
+					},
+					"addedSugarsG": {
+						"type": "float",
+						"index": 12
+					},
+					"vitaminDMcg": {
+						"type": "float",
+						"index": 13
+					},
+					"calciumMg": {
+						"type": "float",
+						"index": 14
+					},
+					"ironMg": {
+						"type": "float",
+						"index": 15
+					},
+					"potassiumMg": {
+						"type": "float",
+						"index": 16
+					},
+					"vitaminAMcg": {
+						"type": "float",
+						"index": 17
+					},
+					"vitaminCMg": {
+						"type": "float",
+						"index": 18
+					},
+					"allergens": {
+						"type": "repeated string",
+						"index": 19
+					},
+					"glutenFree": {
+						"type": "bool",
+						"index": 20
+					},
+					"organic": {
+						"type": "bool",
+						"index": 21
+					}
+				},
+				"fieldsInTemplateCount": 22
+			},
+			"oip": {
+				"didTx": "did:arweave:_xuiAaVKxPL1Dsp-AceCpXqnc0C_WwHC-Ws1vN-cBUs",
+				"inArweaveBlock": 1708275,
+				"indexedAt": "2025-07-09T21:39:21.266Z",
+				"recordStatus": "pending confirmation in Arweave",
+				"ver": "0.8.0",
+				"creator": {
+					"didAddress": "u4B6d5ddggsotOiG86D-KPkeW23qQNdqaXo_ZcdI3k0",
+					"creatorSig": "vqkDxtiInxY2SqL4/S7hhCPAo+3ehbD9741gHgvtxgdcDHfPJPjgwunqCAwi1eVqiJCIG6+3cr/0P0t0r/FwUvtyuXFVGSuiDp/cvdLzACnXk/Vrjf5szeXMpwIvQPKLwHCapYq5vYRsQdqntg2cOc4IM67NbODGn0YUJ8PZnA3O4j3K7fr/6mY+9DC6c7610aDIYuv/PBtpgpcXmj7j+PHHF7dQBef0SNNvWqaLYyaijqiqzgepmYNdacDebF3L6CtzofKtNg+TXejE/4jXrnXXCsy03JFZs7KIR+TcgAWYIT2D1zoYcBpgn+53HYcp1Lz0XH9pWsY2AQYwxx+FtilO3zJQTJW0IPTeOfWxCClJPUeRTiUTdsTolHWpRfXcPiaAi8gbsICmC4e7HJR4NDqQ8UsW/rAV6o4zzT+dEtdHX2Pmy6+4DHaAn3PCng2ZOq6VYNy2HK1LpuaRW/gNKQtG0SSJ6VZRn3vKbpSYgcOurSk6K+5pw4ecpqsNP8f8Ah0FtwSlAPS/V58ELoOAbKoD/pTUKAIG5EV25P/3NDrtsqKGHXEnMV97j24gPH6TYEbouH3rgBAr4+wmyZe/5NRoqcPTp06dGLEGVOTt5hP52fTKeIZBZG3M39hHIR5epd9ettoDqcTb0bu3ypqH/mOelNUZ5sFaxiRt39fPW8U="
+				}
+			}
+		},
+		{
+			"data": {
+				"TxId": "_xuiAaVKxPL1Dsp-AceCpXqnc0C_WwHC-Ws1vN-cBUs",
+				"template": "nutritionalInfo",
+				"fields": "{\"standardAmount\":\"float\",\"index_standardAmount\":0,\"standardUnit\":\"string\",\"index_standardUnit\":1,\"calories\":\"float\",\"index_calories\":2,\"proteinG\":\"float\",\"index_proteinG\":3,\"fatG\":\"float\",\"index_fatG\":4,\"saturatedFatG\":\"float\",\"index_saturatedFatG\":5,\"transFatG\":\"float\",\"index_transFatG\":6,\"cholesterolMg\":\"float\",\"index_cholesterolMg\":7,\"sodiumMg\":\"float\",\"index_sodiumMg\":8,\"carbohydratesG\":\"float\",\"index_carbohydratesG\":9,\"dietaryFiberG\":\"float\",\"index_dietaryFiberG\":10,\"sugarsG\":\"float\",\"index_sugarsG\":11,\"addedSugarsG\":\"float\",\"index_addedSugarsG\":12,\"vitaminDMcg\":\"float\",\"index_vitaminDMcg\":13,\"calciumMg\":\"float\",\"index_calciumMg\":14,\"ironMg\":\"float\",\"index_ironMg\":15,\"potassiumMg\":\"float\",\"index_potassiumMg\":16,\"vitaminAMcg\":\"float\",\"index_vitaminAMcg\":17,\"vitaminCMg\":\"float\",\"index_vitaminCMg\":18,\"allergens\":\"repeated string\",\"index_allergens\":19,\"glutenFree\":\"bool\",\"index_glutenFree\":20,\"organic\":\"bool\",\"index_organic\":21}",
+				"fieldsInTemplate": {
+					"standardAmount": {
+						"type": "float",
+						"index": 0
+					},
+					"standardUnit": {
+						"type": "string",
+						"index": 1
+					},
+					"calories": {
+						"type": "float",
+						"index": 2
+					},
+					"proteinG": {
+						"type": "float",
+						"index": 3
+					},
+					"fatG": {
+						"type": "float",
+						"index": 4
+					},
+					"saturatedFatG": {
+						"type": "float",
+						"index": 5
+					},
+					"transFatG": {
+						"type": "float",
+						"index": 6
+					},
+					"cholesterolMg": {
+						"type": "float",
+						"index": 7
+					},
+					"sodiumMg": {
+						"type": "float",
+						"index": 8
+					},
+					"carbohydratesG": {
+						"type": "float",
+						"index": 9
+					},
+					"dietaryFiberG": {
+						"type": "float",
+						"index": 10
+					},
+					"sugarsG": {
+						"type": "float",
+						"index": 11
+					},
+					"addedSugarsG": {
+						"type": "float",
+						"index": 12
+					},
+					"vitaminDMcg": {
+						"type": "float",
+						"index": 13
+					},
+					"calciumMg": {
+						"type": "float",
+						"index": 14
+					},
+					"ironMg": {
+						"type": "float",
+						"index": 15
+					},
+					"potassiumMg": {
+						"type": "float",
+						"index": 16
+					},
+					"vitaminAMcg": {
+						"type": "float",
+						"index": 17
+					},
+					"vitaminCMg": {
+						"type": "float",
+						"index": 18
+					},
+					"allergens": {
+						"type": "repeated string",
+						"index": 19
+					},
+					"glutenFree": {
+						"type": "bool",
+						"index": 20
+					},
+					"organic": {
+						"type": "bool",
+						"index": 21
+					}
+				},
+				"fieldsInTemplateCount": 22
+			},
+			"oip": {
+				"didTx": "did:arweave:_xuiAaVKxPL1Dsp-AceCpXqnc0C_WwHC-Ws1vN-cBUs",
+				"inArweaveBlock": 1708280,
+				"indexedAt": "2025-07-09T21:54:53.044Z",
+				"recordStatus": "original",
+				"ver": "0.8.0",
+				"creator": {
+					"didAddress": "u4B6d5ddggsotOiG86D-KPkeW23qQNdqaXo_ZcdI3k0",
+					"creatorSig": "vqkDxtiInxY2SqL4/S7hhCPAo+3ehbD9741gHgvtxgdcDHfPJPjgwunqCAwi1eVqiJCIG6+3cr/0P0t0r/FwUvtyuXFVGSuiDp/cvdLzACnXk/Vrjf5szeXMpwIvQPKLwHCapYq5vYRsQdqntg2cOc4IM67NbODGn0YUJ8PZnA3O4j3K7fr/6mY+9DC6c7610aDIYuv/PBtpgpcXmj7j+PHHF7dQBef0SNNvWqaLYyaijqiqzgepmYNdacDebF3L6CtzofKtNg+TXejE/4jXrnXXCsy03JFZs7KIR+TcgAWYIT2D1zoYcBpgn+53HYcp1Lz0XH9pWsY2AQYwxx+FtilO3zJQTJW0IPTeOfWxCClJPUeRTiUTdsTolHWpRfXcPiaAi8gbsICmC4e7HJR4NDqQ8UsW/rAV6o4zzT+dEtdHX2Pmy6+4DHaAn3PCng2ZOq6VYNy2HK1LpuaRW/gNKQtG0SSJ6VZRn3vKbpSYgcOurSk6K+5pw4ecpqsNP8f8Ah0FtwSlAPS/V58ELoOAbKoD/pTUKAIG5EV25P/3NDrtsqKGHXEnMV97j24gPH6TYEbouH3rgBAr4+wmyZe/5NRoqcPTp06dGLEGVOTt5hP52fTKeIZBZG3M39hHIR5epd9ettoDqcTb0bu3ypqH/mOelNUZ5sFaxiRt39fPW8U="
+				}
+			}
+		},
+		{
+			"data": {
+				"TxId": "XVu78TY-4LX6-vOajc7AKAk9jn1amFSC87XMTGTz4Mw",
+				"template": "exercise",
+				"fields": "{\"instructions\":\"repeated string\",\"index_instructions\":0,\"muscleGroups\":\"repeated string\",\"index_muscleGroups\":1,\"difficulty\":\"enum\",\"difficultyValues\":[{\"code\":\"beginner\",\"name\":\"Beginner\"},{\"code\":\"intermediate\",\"name\":\"Intermediate\"},{\"code\":\"advanced\",\"name\":\"Advanced\"}],\"index_difficulty\":2,\"category\":\"enum\",\"categoryValues\":[{\"code\":\"strength\",\"name\":\"Strength\"},{\"code\":\"cardio\",\"name\":\"Cardio\"},{\"code\":\"flexibility\",\"name\":\"Flexibility\"}],\"index_category\":3,\"imageUrl\":\"string\",\"index_imageUrl\":4,\"videoUrl\":\"string\",\"index_videoUrl\":5,\"gitUrl\":\"string\",\"index_gitUrl\":6,\"equipmentRequired\":\"repeated string\",\"index_equipmentRequired\":7,\"alternativeEquipment\":\"repeated string\",\"index_alternativeEquipment\":8,\"isBodyweight\":\"bool\",\"index_isBodyweight\":9,\"exercise_type\":\"enum\",\"exercise_typeValues\":[{\"code\":\"warmup\",\"name\":\"Warm-Up\"},{\"code\":\"main\",\"name\":\"Main\"},{\"code\":\"cooldown\",\"name\":\"Cool-Down\"}],\"index_exercise_type\":10,\"measurement_type\":\"enum\",\"measurement_typeValues\":[{\"code\":\"reps\",\"name\":\"Reps\"},{\"code\":\"timed\",\"name\":\"Timed\"},{\"code\":\"hold\",\"name\":\"Hold\"},{\"code\":\"maxdur\",\"name\":\"Maximum Duration\"}],\"index_measurement_type\":11,\"est_duration_minutes\":\"uint32\",\"index_est_duration_minutes\":12,\"target_duration_seconds\":\"uint32\",\"index_target_duration_seconds\":13,\"recommended_sets\":\"uint32\",\"index_recommended_sets\":14,\"recommended_reps\":\"uint32\",\"index_recommended_reps\":15}",
+				"fieldsInTemplate": {
+					"instructions": {
+						"type": "repeated string",
+						"index": 0
+					},
+					"muscleGroups": {
+						"type": "repeated string",
+						"index": 1
+					},
+					"difficulty": {
+						"type": "enum",
+						"index": 2,
+						"enumValues": [
+							{
+								"code": "beginner",
+								"name": "Beginner"
+							},
+							{
+								"code": "intermediate",
+								"name": "Intermediate"
+							},
+							{
+								"code": "advanced",
+								"name": "Advanced"
+							}
+						]
+					},
+					"category": {
+						"type": "enum",
+						"index": 3,
+						"enumValues": [
+							{
+								"code": "strength",
+								"name": "Strength"
+							},
+							{
+								"code": "cardio",
+								"name": "Cardio"
+							},
+							{
+								"code": "flexibility",
+								"name": "Flexibility"
+							}
+						]
+					},
+					"imageUrl": {
+						"type": "string",
+						"index": 4
+					},
+					"videoUrl": {
+						"type": "string",
+						"index": 5
+					},
+					"gitUrl": {
+						"type": "string",
+						"index": 6
+					},
+					"equipmentRequired": {
+						"type": "repeated string",
+						"index": 7
+					},
+					"alternativeEquipment": {
+						"type": "repeated string",
+						"index": 8
+					},
+					"isBodyweight": {
+						"type": "bool",
+						"index": 9
+					},
+					"exercise_type": {
+						"type": "enum",
+						"index": 10,
+						"enumValues": [
+							{
+								"code": "warmup",
+								"name": "Warm-Up"
+							},
+							{
+								"code": "main",
+								"name": "Main"
+							},
+							{
+								"code": "cooldown",
+								"name": "Cool-Down"
+							}
+						]
+					},
+					"measurement_type": {
+						"type": "enum",
+						"index": 11,
+						"enumValues": [
+							{
+								"code": "reps",
+								"name": "Reps"
+							},
+							{
+								"code": "timed",
+								"name": "Timed"
+							},
+							{
+								"code": "hold",
+								"name": "Hold"
+							},
+							{
+								"code": "maxdur",
+								"name": "Maximum Duration"
+							}
+						]
+					},
+					"est_duration_minutes": {
+						"type": "uint32",
+						"index": 12
+					},
+					"target_duration_seconds": {
+						"type": "uint32",
+						"index": 13
+					},
+					"recommended_sets": {
+						"type": "uint32",
+						"index": 14
+					},
+					"recommended_reps": {
+						"type": "uint32",
+						"index": 15
+					}
+				},
+				"fieldsInTemplateCount": 16
+			},
+			"oip": {
+				"didTx": "did:arweave:XVu78TY-4LX6-vOajc7AKAk9jn1amFSC87XMTGTz4Mw",
+				"inArweaveBlock": 1709154,
+				"indexedAt": "2025-07-11T04:51:08.412Z",
+				"recordStatus": "pending confirmation in Arweave",
+				"ver": "0.8.0",
+				"creator": {
+					"didAddress": "u4B6d5ddggsotOiG86D-KPkeW23qQNdqaXo_ZcdI3k0",
+					"creatorSig": "j2G2RHt/MA41g9gdtuxb1fqyTAMsggKK1P6LyZuSWRB2wgGzktTXxPR5gyc/OC/0dCRNsjzE5ry8q/RmdyR0TstDpZsrrwHe2rQnSLL0ae0O7gFP3QrR38yifoz46F3lTcaml24fyHn/rgfusKUhDulgiXrFcNB72OiCJlydsKUBq6P2wNzD3vOoE9ehn3VJXVAUiWlMnCcDgLRPQ+9PK3Q1uHpiz4lVVd/hgdGo0FM+9zcU4eVocViflO9TTGJwwY/nFNphA5F93f7CNXKoejZhf+y0YeGd0bGsXgUM10l1UFuJ37AithhWNrW7g0l/eo5bS5A78j8e4faO7ZdWVCNu+icINoK0nE38b71BgLnea0pyYB/LiRlE/ycCYpHUwBB8v+Nr417aCrM/USTXWfq+0qbVF6smdTbaoyZjnOjFR7LBTCFiRN3aKZN851bZalHtyW5RVJdI4AGqBPyUztxvVQW+8kIvUl70s+CBQAlfsDZyNx4qMV2v2Aav7jTDUKhE3BSEMwo/aEqE2/FY0a92GosnV5GfSfAtGIug88MkX7k4DCLDYYpBNhfNx4qvf1h+qyO7HoeO/Y/0ANUF5pv2Xow34Sx2tUk1NxqGX8dc/0LyZ8hcfg6Fs1a/8k65336lV2EairZnefTe9Uht8ted2YpjH6SE3pO6FjVOdkA="
+				}
+			}
+		},
+		{
+			"data": {
+				"TxId": "XVu78TY-4LX6-vOajc7AKAk9jn1amFSC87XMTGTz4Mw",
+				"template": "exercise",
+				"fields": "{\"instructions\":\"repeated string\",\"index_instructions\":0,\"muscleGroups\":\"repeated string\",\"index_muscleGroups\":1,\"difficulty\":\"enum\",\"difficultyValues\":[{\"code\":\"beginner\",\"name\":\"Beginner\"},{\"code\":\"intermediate\",\"name\":\"Intermediate\"},{\"code\":\"advanced\",\"name\":\"Advanced\"}],\"index_difficulty\":2,\"category\":\"enum\",\"categoryValues\":[{\"code\":\"strength\",\"name\":\"Strength\"},{\"code\":\"cardio\",\"name\":\"Cardio\"},{\"code\":\"flexibility\",\"name\":\"Flexibility\"}],\"index_category\":3,\"imageUrl\":\"string\",\"index_imageUrl\":4,\"videoUrl\":\"string\",\"index_videoUrl\":5,\"gitUrl\":\"string\",\"index_gitUrl\":6,\"equipmentRequired\":\"repeated string\",\"index_equipmentRequired\":7,\"alternativeEquipment\":\"repeated string\",\"index_alternativeEquipment\":8,\"isBodyweight\":\"bool\",\"index_isBodyweight\":9,\"exercise_type\":\"enum\",\"exercise_typeValues\":[{\"code\":\"warmup\",\"name\":\"Warm-Up\"},{\"code\":\"main\",\"name\":\"Main\"},{\"code\":\"cooldown\",\"name\":\"Cool-Down\"}],\"index_exercise_type\":10,\"measurement_type\":\"enum\",\"measurement_typeValues\":[{\"code\":\"reps\",\"name\":\"Reps\"},{\"code\":\"timed\",\"name\":\"Timed\"},{\"code\":\"hold\",\"name\":\"Hold\"},{\"code\":\"maxdur\",\"name\":\"Maximum Duration\"}],\"index_measurement_type\":11,\"est_duration_minutes\":\"uint32\",\"index_est_duration_minutes\":12,\"target_duration_seconds\":\"uint32\",\"index_target_duration_seconds\":13,\"recommended_sets\":\"uint32\",\"index_recommended_sets\":14,\"recommended_reps\":\"uint32\",\"index_recommended_reps\":15}",
+				"fieldsInTemplate": {
+					"instructions": {
+						"type": "repeated string",
+						"index": 0
+					},
+					"muscleGroups": {
+						"type": "repeated string",
+						"index": 1
+					},
+					"difficulty": {
+						"type": "enum",
+						"index": 2,
+						"enumValues": [
+							{
+								"code": "beginner",
+								"name": "Beginner"
+							},
+							{
+								"code": "intermediate",
+								"name": "Intermediate"
+							},
+							{
+								"code": "advanced",
+								"name": "Advanced"
+							}
+						]
+					},
+					"category": {
+						"type": "enum",
+						"index": 3,
+						"enumValues": [
+							{
+								"code": "strength",
+								"name": "Strength"
+							},
+							{
+								"code": "cardio",
+								"name": "Cardio"
+							},
+							{
+								"code": "flexibility",
+								"name": "Flexibility"
+							}
+						]
+					},
+					"imageUrl": {
+						"type": "string",
+						"index": 4
+					},
+					"videoUrl": {
+						"type": "string",
+						"index": 5
+					},
+					"gitUrl": {
+						"type": "string",
+						"index": 6
+					},
+					"equipmentRequired": {
+						"type": "repeated string",
+						"index": 7
+					},
+					"alternativeEquipment": {
+						"type": "repeated string",
+						"index": 8
+					},
+					"isBodyweight": {
+						"type": "bool",
+						"index": 9
+					},
+					"exercise_type": {
+						"type": "enum",
+						"index": 10,
+						"enumValues": [
+							{
+								"code": "warmup",
+								"name": "Warm-Up"
+							},
+							{
+								"code": "main",
+								"name": "Main"
+							},
+							{
+								"code": "cooldown",
+								"name": "Cool-Down"
+							}
+						]
+					},
+					"measurement_type": {
+						"type": "enum",
+						"index": 11,
+						"enumValues": [
+							{
+								"code": "reps",
+								"name": "Reps"
+							},
+							{
+								"code": "timed",
+								"name": "Timed"
+							},
+							{
+								"code": "hold",
+								"name": "Hold"
+							},
+							{
+								"code": "maxdur",
+								"name": "Maximum Duration"
+							}
+						]
+					},
+					"est_duration_minutes": {
+						"type": "uint32",
+						"index": 12
+					},
+					"target_duration_seconds": {
+						"type": "uint32",
+						"index": 13
+					},
+					"recommended_sets": {
+						"type": "uint32",
+						"index": 14
+					},
+					"recommended_reps": {
+						"type": "uint32",
+						"index": 15
+					}
+				},
+				"fieldsInTemplateCount": 16,
+				"difficultyValues": [
+					{
+						"code": "beginner",
+						"name": "Beginner"
+					},
+					{
+						"code": "intermediate",
+						"name": "Intermediate"
+					},
+					{
+						"code": "advanced",
+						"name": "Advanced"
+					}
+				],
+				"categoryValues": [
+					{
+						"code": "strength",
+						"name": "Strength"
+					},
+					{
+						"code": "cardio",
+						"name": "Cardio"
+					},
+					{
+						"code": "flexibility",
+						"name": "Flexibility"
+					}
+				],
+				"exercise_typeValues": [
+					{
+						"code": "warmup",
+						"name": "Warm-Up"
+					},
+					{
+						"code": "main",
+						"name": "Main"
+					},
+					{
+						"code": "cooldown",
+						"name": "Cool-Down"
+					}
+				],
+				"measurement_typeValues": [
+					{
+						"code": "reps",
+						"name": "Reps"
+					},
+					{
+						"code": "timed",
+						"name": "Timed"
+					},
+					{
+						"code": "hold",
+						"name": "Hold"
+					},
+					{
+						"code": "maxdur",
+						"name": "Maximum Duration"
+					}
+				]
+			},
+			"oip": {
+				"didTx": "did:arweave:XVu78TY-4LX6-vOajc7AKAk9jn1amFSC87XMTGTz4Mw",
+				"inArweaveBlock": 1709158,
+				"indexedAt": "2025-07-11T05:06:16.207Z",
+				"recordStatus": "original",
+				"ver": "0.8.0",
+				"creator": {
+					"didAddress": "u4B6d5ddggsotOiG86D-KPkeW23qQNdqaXo_ZcdI3k0",
+					"creatorSig": "j2G2RHt/MA41g9gdtuxb1fqyTAMsggKK1P6LyZuSWRB2wgGzktTXxPR5gyc/OC/0dCRNsjzE5ry8q/RmdyR0TstDpZsrrwHe2rQnSLL0ae0O7gFP3QrR38yifoz46F3lTcaml24fyHn/rgfusKUhDulgiXrFcNB72OiCJlydsKUBq6P2wNzD3vOoE9ehn3VJXVAUiWlMnCcDgLRPQ+9PK3Q1uHpiz4lVVd/hgdGo0FM+9zcU4eVocViflO9TTGJwwY/nFNphA5F93f7CNXKoejZhf+y0YeGd0bGsXgUM10l1UFuJ37AithhWNrW7g0l/eo5bS5A78j8e4faO7ZdWVCNu+icINoK0nE38b71BgLnea0pyYB/LiRlE/ycCYpHUwBB8v+Nr417aCrM/USTXWfq+0qbVF6smdTbaoyZjnOjFR7LBTCFiRN3aKZN851bZalHtyW5RVJdI4AGqBPyUztxvVQW+8kIvUl70s+CBQAlfsDZyNx4qMV2v2Aav7jTDUKhE3BSEMwo/aEqE2/FY0a92GosnV5GfSfAtGIug88MkX7k4DCLDYYpBNhfNx4qvf1h+qyO7HoeO/Y/0ANUF5pv2Xow34Sx2tUk1NxqGX8dc/0LyZ8hcfg6Fs1a/8k65336lV2EairZnefTe9Uht8ted2YpjH6SE3pO6FjVOdkA="
+				}
+			}
+		},
+		{
+			"data": {
+				"TxId": "yxguXXKD_YSnCjC1ILYFBmQ6F20F5dKOoA6hxuqhNUk",
+				"template": "workout",
+				"fields": "{\"total_duration_minutes\":\"uint64\",\"index_total_duration_minutes\":0,\"estimated_calories_burned\":\"uint64\",\"index_estimated_calories_burned\":1,\"includesWarmup\":\"bool\",\"index_includesWarmup\":2,\"includesMain\":\"bool\",\"index_includesMain\":3,\"includesCooldown\":\"bool\",\"index_includesCooldown\":4,\"nonStandardWorkout\":\"bool\",\"index_nonStandardWorkout\":5,\"exercise_amount\":\"repeated uint64\",\"index_exercise_amount\":6,\"exercise_unit\":\"repeated string\",\"index_exercise_unit\":7,\"exercise\":\"repeated dref\",\"index_exercise\":8,\"exercise_comment\":\"repeated string\",\"index_exercise_comment\":9,\"instructions\":\"string\",\"index_instructions\":10,\"goalTags\":\"repeated string\",\"index_goalTags\":11,\"author\":\"string\",\"index_author\":12,\"authorDRef\":\"dref\",\"index_authorDRef\":13,\"notes\":\"string\",\"index_notes\":14}",
+				"fieldsInTemplate": {
+					"total_duration_minutes": {
+						"type": "uint64",
+						"index": 0
+					},
+					"estimated_calories_burned": {
+						"type": "uint64",
+						"index": 1
+					},
+					"includesWarmup": {
+						"type": "bool",
+						"index": 2
+					},
+					"includesMain": {
+						"type": "bool",
+						"index": 3
+					},
+					"includesCooldown": {
+						"type": "bool",
+						"index": 4
+					},
+					"nonStandardWorkout": {
+						"type": "bool",
+						"index": 5
+					},
+					"exercise_amount": {
+						"type": "repeated uint64",
+						"index": 6
+					},
+					"exercise_unit": {
+						"type": "repeated string",
+						"index": 7
+					},
+					"exercise": {
+						"type": "repeated dref",
+						"index": 8
+					},
+					"exercise_comment": {
+						"type": "repeated string",
+						"index": 9
+					},
+					"instructions": {
+						"type": "string",
+						"index": 10
+					},
+					"goalTags": {
+						"type": "repeated string",
+						"index": 11
+					},
+					"author": {
+						"type": "string",
+						"index": 12
+					},
+					"authorDRef": {
+						"type": "dref",
+						"index": 13
+					},
+					"notes": {
+						"type": "string",
+						"index": 14
+					}
+				},
+				"fieldsInTemplateCount": 15
+			},
+			"oip": {
+				"didTx": "did:arweave:yxguXXKD_YSnCjC1ILYFBmQ6F20F5dKOoA6hxuqhNUk",
+				"inArweaveBlock": 1711624,
+				"indexedAt": "2025-07-14T20:20:56.565Z",
+				"recordStatus": "pending confirmation in Arweave",
+				"ver": "0.8.0",
+				"creator": {
+					"didAddress": "u4B6d5ddggsotOiG86D-KPkeW23qQNdqaXo_ZcdI3k0",
+					"creatorSig": "eEgwRKocDnKQg778ajypejuvacVNHPBQZTur8YusaedwJUpKdMZ7cDvnPUUuo2EmRxcNB7oxEWMfHLwATwRdAATI7RDN9n1iJeJURKm/fnJr8kHzPadtfGtVSA8cv2LmfQxeK+ug1PT3EvWRrQynFLZcCQZj1ewvV3082THyVDdhhq9xYXUNOw8QaVKuGRhDW9Zs4abugKdRMXOo1o0zunM/PHlofZ4Jpl9ZykdCQGynLAXJyRgPoW29ISntNrz63sRWEaVrgkb5619Hnw2b3J56qeS+K7aZ5e2erVi9RX8Hx7nNSMsG0H4o0pd/YGHAYDm98K65gumN+g5pSr+KP1TIYILHuqqhccVIdLe0gUwDfclOYkyq204GEIUdGK9odi3+KGX/ONLVQ6UKR6M2NVyVmQR3nAaMgkWVgrNdaBSVpDOaNE06d/eUCc8F7j/UFmxKCFZD7Z6jeT2X8zriygCh+aJIE8Q9ef3Bet1sbJ59zousg2d2/CwWryyhdevZxyWsqTi4qN4ZOm/HerxEh3m+VaDh2sDjiPv5eo81lFZJ8Xn9+yb0oGksVp+tph2tLbPS6fv1cheDl/eQuRWDzVKeGMEB/5V2R2NnU2dzEkRBY3Uj3Yi9nFFc1QQDIJDvjDEMaXBeZJ9GaJ/UjE75vulyLylMFkrJFjSolPcZr3w="
+				}
+			}
+		},
+		{
+			"data": {
+				"TxId": "yxguXXKD_YSnCjC1ILYFBmQ6F20F5dKOoA6hxuqhNUk",
+				"template": "workout",
+				"fields": "{\"total_duration_minutes\":\"uint64\",\"index_total_duration_minutes\":0,\"estimated_calories_burned\":\"uint64\",\"index_estimated_calories_burned\":1,\"includesWarmup\":\"bool\",\"index_includesWarmup\":2,\"includesMain\":\"bool\",\"index_includesMain\":3,\"includesCooldown\":\"bool\",\"index_includesCooldown\":4,\"nonStandardWorkout\":\"bool\",\"index_nonStandardWorkout\":5,\"exercise_amount\":\"repeated uint64\",\"index_exercise_amount\":6,\"exercise_unit\":\"repeated string\",\"index_exercise_unit\":7,\"exercise\":\"repeated dref\",\"index_exercise\":8,\"exercise_comment\":\"repeated string\",\"index_exercise_comment\":9,\"instructions\":\"string\",\"index_instructions\":10,\"goalTags\":\"repeated string\",\"index_goalTags\":11,\"author\":\"string\",\"index_author\":12,\"authorDRef\":\"dref\",\"index_authorDRef\":13,\"notes\":\"string\",\"index_notes\":14}",
+				"fieldsInTemplate": {
+					"total_duration_minutes": {
+						"type": "uint64",
+						"index": 0
+					},
+					"estimated_calories_burned": {
+						"type": "uint64",
+						"index": 1
+					},
+					"includesWarmup": {
+						"type": "bool",
+						"index": 2
+					},
+					"includesMain": {
+						"type": "bool",
+						"index": 3
+					},
+					"includesCooldown": {
+						"type": "bool",
+						"index": 4
+					},
+					"nonStandardWorkout": {
+						"type": "bool",
+						"index": 5
+					},
+					"exercise_amount": {
+						"type": "repeated uint64",
+						"index": 6
+					},
+					"exercise_unit": {
+						"type": "repeated string",
+						"index": 7
+					},
+					"exercise": {
+						"type": "repeated dref",
+						"index": 8
+					},
+					"exercise_comment": {
+						"type": "repeated string",
+						"index": 9
+					},
+					"instructions": {
+						"type": "string",
+						"index": 10
+					},
+					"goalTags": {
+						"type": "repeated string",
+						"index": 11
+					},
+					"author": {
+						"type": "string",
+						"index": 12
+					},
+					"authorDRef": {
+						"type": "dref",
+						"index": 13
+					},
+					"notes": {
+						"type": "string",
+						"index": 14
+					}
+				},
+				"fieldsInTemplateCount": 15
+			},
+			"oip": {
+				"didTx": "did:arweave:yxguXXKD_YSnCjC1ILYFBmQ6F20F5dKOoA6hxuqhNUk",
+				"inArweaveBlock": 1711627,
+				"indexedAt": "2025-07-14T20:28:57.266Z",
+				"recordStatus": "original",
+				"ver": "0.8.0",
+				"creator": {
+					"didAddress": "u4B6d5ddggsotOiG86D-KPkeW23qQNdqaXo_ZcdI3k0",
+					"creatorSig": "eEgwRKocDnKQg778ajypejuvacVNHPBQZTur8YusaedwJUpKdMZ7cDvnPUUuo2EmRxcNB7oxEWMfHLwATwRdAATI7RDN9n1iJeJURKm/fnJr8kHzPadtfGtVSA8cv2LmfQxeK+ug1PT3EvWRrQynFLZcCQZj1ewvV3082THyVDdhhq9xYXUNOw8QaVKuGRhDW9Zs4abugKdRMXOo1o0zunM/PHlofZ4Jpl9ZykdCQGynLAXJyRgPoW29ISntNrz63sRWEaVrgkb5619Hnw2b3J56qeS+K7aZ5e2erVi9RX8Hx7nNSMsG0H4o0pd/YGHAYDm98K65gumN+g5pSr+KP1TIYILHuqqhccVIdLe0gUwDfclOYkyq204GEIUdGK9odi3+KGX/ONLVQ6UKR6M2NVyVmQR3nAaMgkWVgrNdaBSVpDOaNE06d/eUCc8F7j/UFmxKCFZD7Z6jeT2X8zriygCh+aJIE8Q9ef3Bet1sbJ59zousg2d2/CwWryyhdevZxyWsqTi4qN4ZOm/HerxEh3m+VaDh2sDjiPv5eo81lFZJ8Xn9+yb0oGksVp+tph2tLbPS6fv1cheDl/eQuRWDzVKeGMEB/5V2R2NnU2dzEkRBY3Uj3Yi9nFFc1QQDIJDvjDEMaXBeZJ9GaJ/UjE75vulyLylMFkrJFjSolPcZr3w="
+				}
+			}
+		}
+	]
+}
