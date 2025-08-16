@@ -1,17 +1,44 @@
 {
 	"name": "oip-arweave-types",
-	"version": "0.0.1",
+	"version": "0.0.2",
+	"description": "Generate TypeScript types from OIP Arweave templates",
+	"main": "./dist/index.js",
 	"bin": {
 		"oip-arweave-types": "./dist/index.js"
 	},
 	"scripts": {
 		"build": "tsc",
-		"prepublishOnly": "npm run build"
+		"prepublishOnly": "npm run build",
+		"changeset": "changeset",
+		"changeset:version": "changeset version",
+		"changeset:publish": "changeset publish",
+		"release": "npm run build && changeset publish"
 	},
-	"keywords": [],
+	"keywords": [
+		"typescript",
+		"types",
+		"arweave",
+		"oip",
+		"cli",
+		"codegen"
+	],
 	"author": "Andrew Mingst",
 	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/amingst/oip-arweave-types.git"
+	},
+	"homepage": "https://github.com/amingst/oip-arweave-types#readme",
+	"bugs": {
+		"url": "https://github.com/amingst/oip-arweave-types/issues"
+	},
+	"files": [
+		"dist/**/*",
+		"README.md",
+		"CHANGELOG.md"
+	],
 	"devDependencies": {
+		"@changesets/cli": "^2.29.5",
 		"@types/node": "^20.0.0",
 		"typescript": "^5.0.0"
 	},
