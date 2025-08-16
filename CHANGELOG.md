@@ -1,5 +1,11 @@
 # oip-arweave-types
 
+## 0.0.3
+
+### Patch Changes
+
+- add readme
+
 ## 1.0.0
 
 ### Major Changes

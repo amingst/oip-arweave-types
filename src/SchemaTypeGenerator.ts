@@ -1,28 +1,133 @@
+/// <reference path="./index.d.ts" />
+import { readFileSync, readdirSync } from 'fs';
+import { join, extname } from 'path';
+
 class SchemaTypeGenerator {
-	private mapOipTypeToTypeScript(oipType: string): string {
+	// Field name to template type mapping for drefs
+	private getDrefTemplateType(fieldName: string): string | null {
+		const drefMapping: Record<string, string> = {
+			// Text content
+			articleText: 'TextTemplate',
+			transcript: 'TextTemplate',
+			chapters: 'TextTemplate',
+			instructions: 'TextTemplate',
+
+			// Images
+			featuredImage: 'ImageTemplate',
+			avatar: 'ImageTemplate',
+			podcastArtwork: 'ImageTemplate',
+			thumbnails: 'ImageTemplate',
+			episodeArtwork: 'ImageTemplate',
+
+			// Audio/Video content
+			audioItems: 'AudioTemplate',
+			videoItems: 'VideoTemplate',
+			imageItems: 'ImageTemplate',
+
+			// Self-references and other templates
+			replyTo: 'PostTemplate',
+			authorDRef: 'CreatorRegistrationTemplate',
+			exercise: 'ExerciseTemplate',
+		};
+
+		return drefMapping[fieldName] || null;
+	}
+
+	// Field name to creator reference mapping
+	private isCreatorField(fieldName: string): boolean {
+		const creatorFields = ['creator'];
+		return creatorFields.includes(fieldName);
+	}
+
+	// Read all type definition files from src/types directory
+	private readTypeDefinitions(): string {
+		try {
+			// Navigate from dist/ back to src/types/
+			const typesDir = join(__dirname, '..', 'src', 'types');
+			const files = readdirSync(typesDir);
+			const typeDefinitions: string[] = [];
+
+			for (const file of files) {
+				if (extname(file) === '.ts') {
+					const filePath = join(typesDir, file);
+					const content = readFileSync(filePath, 'utf-8');
+					typeDefinitions.push(content.trim());
+				}
+			}
+
+			return typeDefinitions.length > 0
+				? typeDefinitions.join('\n\n') + '\n\n'
+				: '';
+		} catch (error) {
+			// If types directory doesn't exist or can't be read, return empty string
+			return '';
+		}
+	}
+
+	private mapOipTypeToTypeScript(
+		oipType: string,
+		enumValues?: any[],
+		fieldName?: string
+	): string {
+		// Handle creator fields (string type fields that should use CreatorReference)
+		if (
+			fieldName &&
+			this.isCreatorField(fieldName) &&
+			oipType === 'string'
+		) {
+			return 'CreatorReference';
+		}
+
+		// Handle special dref types first
+		if (oipType === 'dref' || oipType === 'repeated dref') {
+			// Check for template type mappings
+			const templateType = fieldName
+				? this.getDrefTemplateType(fieldName)
+				: null;
+			const baseType = templateType
+				? `string | ${templateType}`
+				: 'string';
+			return oipType === 'repeated dref' ? `(${baseType})[]` : baseType;
+		}
+
 		const typeMapping: Record<string, string> = {
 			string: 'string',
-			dref: 'string', // Data reference - DID string format (did:arweave:$transactionId)
 			'repeated string': 'string[]',
-			'repeated dref': 'string[]',
 			number: 'number',
 			integer: 'number',
 			uint64: 'number',
+			uint32: 'number',
 			long: 'number',
 			float: 'number',
 			'repeated float': 'number[]',
 			'repeated uint64': 'number[]',
+			'repeated uint32': 'number[]',
 			boolean: 'boolean',
 			bool: 'boolean',
 			enum: 'string', // Enums will be handled specially
 		};
+
+		// If we have enum values, create a union type
+		if (enumValues && enumValues.length > 0) {
+			// Handle both simple strings and objects with code property
+			const values = enumValues.map((val) => {
+				if (typeof val === 'string') {
+					return `"${val}"`;
+				} else if (val && typeof val === 'object' && val.code) {
+					return `"${val.code}"`;
+				}
+				return `"${String(val)}"`;
+			});
+			return values.join(' | ');
+		}
 
 		return typeMapping[oipType] || 'unknown';
 	}
 
 	private generateInterface(
 		interfaceName: string,
-		fields: Record<string, FieldDefinition>
+		fields: Record<string, FieldDefinition>,
+		templateData: any
 	): string {
 		const fieldLines: string[] = [];
 
@@ -32,8 +137,17 @@ class SchemaTypeGenerator {
 		);
 
 		for (const [fieldName, fieldDef] of sortedFields) {
-			const tsType = this.mapOipTypeToTypeScript(fieldDef.type);
-			fieldLines.push(`  ${fieldName}: ${tsType};`);
+			// Check for corresponding typeValues - pattern is fieldName + "Values"
+			const enumKey = `${fieldName}Values`;
+			const enumValues = templateData[enumKey];
+
+			const tsType = this.mapOipTypeToTypeScript(
+				fieldDef.type,
+				enumValues,
+				fieldName
+			);
+			const optional = fieldDef.required === false ? '?' : '';
+			fieldLines.push(`  ${fieldName}${optional}: ${tsType};`);
 		}
 
 		return `export interface ${interfaceName} {
@@ -97,7 +211,7 @@ ${fieldLines.join('\n')}
 			const { fieldsInTemplate } = template.data;
 
 			// Handle different field structures for the same template name
-			let interfaceName = this.toPascalCase(templateName);
+			let interfaceName = `${this.toPascalCase(templateName)}Template`;
 			const existingWithSameFields = Array.from(
 				templateMap.values()
 			).filter((t) => t !== templateInfo && t.fieldsHash === fieldsHash);
@@ -118,13 +232,16 @@ ${fieldLines.join('\n')}
 					// Version this one since it has different field structure
 					const count = duplicateCount.get(templateName) || 1;
 					duplicateCount.set(templateName, count + 1);
-					interfaceName = `${interfaceName}V${count + 1}`;
+					interfaceName = `${this.toPascalCase(
+						templateName
+					)}TemplateV${count + 1}`;
 				}
 			}
 
 			const interfaceDefinition = this.generateInterface(
 				interfaceName,
-				fieldsInTemplate
+				fieldsInTemplate,
+				template.data
 			);
 			interfaces.push(interfaceDefinition);
 		}
@@ -152,18 +269,21 @@ ${fieldLines.join('\n')}
 			seenTemplates.add(templateKey);
 
 			// Handle different versions of the same template name
-			let interfaceName = this.toPascalCase(templateName);
+			let interfaceName = `${this.toPascalCase(templateName)}Template`;
 			if (duplicateCount.has(templateName)) {
 				const count = duplicateCount.get(templateName)! + 1;
 				duplicateCount.set(templateName, count);
-				interfaceName = `${interfaceName}V${count}`;
+				interfaceName = `${this.toPascalCase(
+					templateName
+				)}TemplateV${count}`;
 			} else {
 				duplicateCount.set(templateName, 1);
 			}
 
 			const interfaceDefinition = this.generateInterface(
 				interfaceName,
-				fieldsInTemplate
+				fieldsInTemplate,
+				template.data
 			);
 			interfaces.push(interfaceDefinition);
 		}
@@ -176,13 +296,14 @@ ${fieldLines.join('\n')}
 		keepVersions: boolean = false
 	): string {
 		const interfaces = this.parseTemplates(jsonData, keepVersions);
+		const typeDefinitions = this.readTypeDefinitions();
 
 		const header = `// Auto-generated TypeScript types from OIP Arweave templates
 // Generated on ${new Date().toISOString()}
 
 `;
 
-		return header + interfaces.join('\n\n') + '\n';
+		return header + typeDefinitions + interfaces.join('\n\n') + '\n';
 	}
 }
 
