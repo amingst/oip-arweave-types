@@ -1,8 +1,9 @@
 {
 	"name": "oip-arweave-types",
 	"version": "0.0.3",
-	"description": "Generate TypeScript types from OIP Arweave templates",
-	"main": "./dist/index.js",
+	"description": "TypeScript types for OIP Arweave templates with optional CLI generator",
+	"main": "./types/index.d.ts",
+	"types": "./types/index.d.ts",
 	"bin": {
 		"oip-arweave-types": "./dist/index.js"
 	},
@@ -20,8 +21,8 @@
 		"types",
 		"arweave",
 		"oip",
-		"cli",
-		"codegen"
+		"type-definitions",
+		"cli"
 	],
 	"author": "Andrew Mingst",
 	"license": "MIT",
@@ -35,6 +36,7 @@
 	},
 	"files": [
 		"dist/**/*",
+		"types/**/*",
 		"README.md",
 		"CHANGELOG.md"
 	],

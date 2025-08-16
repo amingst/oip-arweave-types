@@ -56,10 +56,14 @@ export async function fetchOipTemplates(
 		let finalOutputPath: string;
 		if (outputPath) {
 			finalOutputPath = path.resolve(outputPath);
+			// Ensure parent directory exists for custom output paths
+			const parentDir = path.dirname(finalOutputPath);
+			if (!fs.existsSync(parentDir)) {
+				fs.mkdirSync(parentDir, { recursive: true });
+			}
 		} else {
-			// Default to oip folder in project root
-			const projectRoot = path.resolve(__dirname, '..');
-			const oipDir = path.join(projectRoot, 'oip');
+			// Default to oip folder in the user's current working directory
+			const oipDir = path.join(process.cwd(), 'oip');
 
 			// Create oip directory if it doesn't exist
 			if (!fs.existsSync(oipDir)) {

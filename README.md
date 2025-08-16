@@ -1,31 +1,23 @@
 # OIP Arweave Types
 
-> Generate TypeScript types from OIP Arweave templates
+> TypeScript types for OIP Arweave templates with optional CLI generator
 
-A CLI tool that fetches template definitions from the OIP Arweave API and generates clean TypeScript interfaces for type-safe development.
+This package provides automatically updated TypeScript types for OIP Arweave templates. Types are generated during installation, with an optional CLI for advanced usage.
 
 ## Features
 
--   🌐 **Live API Integration** - Fetches templates directly from OIP Arweave API
--   🎯 **Clean Type Generation** - Creates readable TypeScript interfaces
--   🔄 **Version Control** - Option to include all template versions or latest only
--   🎨 **Colorized Output** - Beautiful CLI experience with progress indicators
--   ⚡ **Fast & Lightweight** - Built with modern tools for optimal performance
--   🛠️ **Extensible** - Commander.js foundation for easy feature additions
+-   🎯 **Automatic Types** - Types generated automatically during installation
+-   🌐 **Live API Integration** - Fetches latest templates from OIP Arweave API
+-   🔄 **Always Up-to-Date** - Gets the latest template definitions on install
+-   🎨 **Clean Interfaces** - Readable TypeScript interfaces with proper typing
+-   ⚡ **Zero Configuration** - Works out of the box, no setup required
+-   🛠️ **Optional CLI** - Advanced CLI available for custom workflows
 
 ## Installation
 
-```bash
-# Global installation
-npm install -g oip-arweave-types
+### For TypeScript Projects (Recommended)
 
-# Or use directly with npx
-npx oip-arweave-types
-```
-
-### Automatic Type Generation
-
-When you install this package as a dependency in your project, it will automatically generate the latest OIP Arweave types during installation:
+Simply install as a dependency to get automatic types:
 
 ```bash
 # Install as a project dependency
@@ -34,11 +26,29 @@ npm install oip-arweave-types
 pnpm add oip-arweave-types
 ```
 
-The types will be automatically generated at `node_modules/oip-arweave-types/types/oip-arweave-types.d.ts` and can be imported in your TypeScript projects:
+Types are automatically available in your TypeScript projects:
 
 ```typescript
-// Your types are automatically available
-import type { Album, Artwork } from 'oip-arweave-types';
+// Import the types you need
+import type { Album, Artwork, Person, Basic } from 'oip-arweave-types';
+
+// Use them in your code
+const album: Album = {
+	albumTitle: 'My Album',
+	artist: 'Artist Name',
+};
+```
+
+### For CLI Usage
+
+If you want to use the CLI tool for custom workflows:
+
+```bash
+# Global installation for CLI usage
+npm install -g oip-arweave-types
+
+# Or use directly with npx
+npx oip-arweave-types generate
 ```
 
 > **Note**: If the automatic generation fails during installation (e.g., no internet connection), you can manually generate types later using the CLI commands below.
