@@ -25,39 +25,49 @@ async function postInstall() {
 
 		console.log('🌐 OIP Arweave Types - Fetching latest types...');
 
-		// Import the fetchOipTemplates function
-		const { fetchOipTemplates } = require('./templates');
+		try {
+			// Import the fetchOipTemplates function
+			const templatesModule = require('./templates');
+			const fetchOipTemplates = templatesModule.fetchOipTemplates;
 
-		// Generate types in the consuming project's node_modules directory
-		const typesDir = path.join(__dirname, '..', 'types');
+			if (!fetchOipTemplates) {
+				throw new Error('fetchOipTemplates function not found. This might indicate a build issue.');
+			}
 
-		// Ensure types directory exists
-		if (!fs.existsSync(typesDir)) {
-			fs.mkdirSync(typesDir, { recursive: true });
+			// Generate types in the consuming project's node_modules directory
+			const typesDir = path.join(__dirname, '..', 'types');
+
+			// Ensure types directory exists
+			if (!fs.existsSync(typesDir)) {
+				fs.mkdirSync(typesDir, { recursive: true });
+			}
+
+			const outputPath = path.join(typesDir, 'oip-arweave-types.d.ts');
+
+			// Fetch and generate types
+			await fetchOipTemplates({
+				output: outputPath,
+				// Only using the output parameter now
+			});
+
+			console.log('✅ OIP Arweave types generated successfully!');
+			console.log(
+				`📁 Types available at: node_modules/oip-arweave-types/types/oip-arweave-types.d.ts`
+			);
+		} catch (error) {
+			console.warn(
+				'⚠️  Failed to generate OIP Arweave types during installation:'
+			);
+			console.warn(
+				`   ${error instanceof Error ? error.message : String(error)}`
+			);
+			console.warn(
+				'   You can manually generate types later with: npx oip-arweave-types generate'
+			);
 		}
-
-		const outputPath = path.join(typesDir, 'oip-arweave-types.d.ts');
-
-		// Fetch and generate types
-		await fetchOipTemplates({
-			output: outputPath,
-			// Only using the output parameter now
-		});
-
-		console.log('✅ OIP Arweave types generated successfully!');
-		console.log(
-			`📁 Types available at: node_modules/oip-arweave-types/types/oip-arweave-types.d.ts`
-		);
 	} catch (error) {
-		console.warn(
-			'⚠️  Failed to generate OIP Arweave types during installation:'
-		);
-		console.warn(
-			`   ${error instanceof Error ? error.message : String(error)}`
-		);
-		console.warn(
-			'   You can manually generate types later with: npx oip-arweave-types generate'
-		);
+		console.warn('⚠️  Error in postinstall script:');
+		console.warn(`   ${error instanceof Error ? error.message : String(error)}`);
 	}
 }
 

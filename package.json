@@ -15,7 +15,7 @@
 		"changeset:version": "changeset version",
 		"changeset:publish": "changeset publish",
 		"release": "pnpm run build && changeset publish",
-		"prepare-publish": "pnpm run build && pnpm install"
+		"prepare-publish": "pnpm install && pnpm run build"
 	},
 	"keywords": [
 		"typescript",
