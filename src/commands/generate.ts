@@ -7,15 +7,20 @@ export function createGenerateCommand(): Command {
 		.description('Generate TypeScript types from API templates')
 		.option(
 			'-o, --output <path>',
-			'Output path for generated types',
-			'oip/generated-types.ts'
+			'Output directory or file path for generated types',
+			'oip'
+		)
+		.option(
+			'--single-file',
+			'Generate all types in a single file (default: separate files)',
+			false
 		)
 		.action(async (options) => {
 			console.log(chalk.blue.bold('🌐 OIP Arweave Type Generator'));
 
 			await fetchOipTemplates({
 				output: options.output,
-				// keepVersions and useApiTypes are removed as they're now always the default
+				singleFile: options.singleFile,
 			});
 		});
 }
