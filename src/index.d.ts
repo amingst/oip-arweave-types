@@ -30,6 +30,10 @@ type ApiResponse = {
 	}>;
 };
 
+type ApiTypeScriptResponse = {
+	typeScript: string;
+};
+
 type CreatorReference =
 	| string
 	| {

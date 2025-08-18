@@ -2,30 +2,27 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import chalk from 'chalk';
-import SchemaTypeGenerator from './SchemaTypeGenerator';
 
 export async function fetchOipTemplates(
-	options?: { output?: string; keepVersions?: boolean } | string,
-	legacyKeepVersions?: boolean
+	options?: { output?: string } | string
 ): Promise<void> {
 	// Handle both new options object and legacy parameter format
 	let outputPath: string | undefined;
-	let keepVersions: boolean;
 
 	if (typeof options === 'string') {
-		// Legacy format: fetchOipTemplates(outputPath, keepVersions)
+		// Legacy format: fetchOipTemplates(outputPath)
 		outputPath = options;
-		keepVersions = legacyKeepVersions ?? false;
 	} else {
-		// New format: fetchOipTemplates({ output, keepVersions })
+		// New format: fetchOipTemplates({ output })
 		outputPath = options?.output;
-		keepVersions = options?.keepVersions ?? false;
 	}
 	console.log(chalk.cyan('🚀 Fetching templates from OIP API...'));
-	console.log(chalk.gray('   https://api.oip.onl/api/templates'));
+
+	// Always use API types
+	const apiUrl = 'https://api.oip.onl/api/templates?typeScriptTypes=true';
 
 	try {
-		const response = await fetch('https://api.oip.onl/api/templates');
+		const response = await fetch(apiUrl);
 
 		if (!response.ok) {
 			throw new Error(`HTTP error! status: ${response.status}`);
@@ -33,24 +30,23 @@ export async function fetchOipTemplates(
 
 		console.log(chalk.green('✅ Successfully fetched templates'));
 
-		const data: ApiResponse = (await response.json()) as ApiResponse;
+		const data = await response.json();
 
-		console.log(
-			chalk.blue(`📦 Processing ${data.templates.length} templates...`)
-		);
-
-		if (keepVersions) {
-			console.log(chalk.yellow('   Keeping all template versions'));
-		} else {
-			console.log(chalk.gray('   Using most recent versions only'));
+		if (!data.typeScript) {
+			throw new Error('API response missing TypeScript content');
 		}
 
-		const generator = new SchemaTypeGenerator();
-		const typeScriptContent = generator.generateTypeScriptFile(
-			data,
-			keepVersions
-		);
-		const interfaces = generator.parseTemplates(data, keepVersions);
+		const typeScriptContent = data.typeScript;
+
+		// Count interfaces by simple regex matching
+		const interfaceMatches =
+			typeScriptContent.match(/export interface [A-Za-z0-9_]+/g) || [];
+		const typeMatches =
+			typeScriptContent.match(/export type [A-Za-z0-9_]+/g) || [];
+		const interfaceCount = interfaceMatches.length + typeMatches.length;
+
+		// Always using most recent versions only
+		console.log(chalk.gray('   Using most recent versions only'));
 
 		// Default output path logic
 		let finalOutputPath: string;
@@ -77,9 +73,7 @@ export async function fetchOipTemplates(
 
 		console.log(chalk.green('🎉 TypeScript types generated successfully!'));
 		console.log(chalk.cyan(`📁 Output: ${finalOutputPath}`));
-		console.log(
-			chalk.yellow(`🔧 Generated ${interfaces.length} interfaces`)
-		);
+		console.log(chalk.yellow(`🔧 Retrieved ${interfaceCount} interfaces`));
 
 		// Show some stats
 		const fileSize = fs.statSync(finalOutputPath).size;
@@ -89,7 +83,7 @@ export async function fetchOipTemplates(
 		console.log(chalk.red('❌ Failed to fetch templates from API'));
 		console.log(
 			chalk.red(
-				`� Error: ${
+				`Error: ${
 					error instanceof Error ? error.message : String(error)
 				}`
 			)

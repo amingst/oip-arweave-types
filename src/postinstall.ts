@@ -41,7 +41,7 @@ async function postInstall() {
 		// Fetch and generate types
 		await fetchOipTemplates({
 			output: outputPath,
-			keepVersions: false,
+			// Only using the output parameter now
 		});
 
 		console.log('✅ OIP Arweave types generated successfully!');

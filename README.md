@@ -63,19 +63,13 @@ Generate TypeScript types from all available templates:
 npx oip-arweave-types generate
 ```
 
-This creates `oip/generated-types.ts` with interfaces for the latest version of each template.
+This creates `oip/generated-types.ts` with interfaces for all templates.
 
 ### Options
 
 ```bash
 # Custom output path
 npx oip-arweave-types generate --output ./src/types/oip.ts
-
-# Include all template versions (not just latest)
-npx oip-arweave-types generate --keep-versions
-
-# Combine options
-npx oip-arweave-types generate --output ./types.ts --keep-versions
 ```
 
 ### Help
@@ -93,7 +87,6 @@ npx oip-arweave-types generate --help
 The tool generates clean TypeScript interfaces like:
 
 ```typescript
-// Latest versions only (default)
 export interface Album {
 	albumTitle: string;
 	artist: string;
@@ -111,30 +104,11 @@ export interface Artwork {
 }
 ```
 
-With `--keep-versions`, you get versioned interfaces:
-
-```typescript
-// All versions included
-export interface AlbumV1 {
-	albumTitle: string;
-	artist: string;
-}
-
-export interface AlbumV2 {
-	albumTitle: string;
-	artist: string;
-	company?: string;
-	type?: string;
-	year?: number;
-}
-
-// Latest version alias
-export type Album = AlbumV2;
-```
+The types are always generated using the most recent version of each template, ensuring compatibility with the API.
 
 ## API Reference
 
-The tool connects to the OIP Arweave API at `https://api.oip.onl/api/templates` to fetch template definitions. Templates are automatically deduplicated based on their Arweave block timestamps to ensure you get the most recent version of each template.
+The tool connects to the OIP Arweave API at `https://api.oip.onl/api/templates` to fetch template definitions. Templates are automatically fetched with pre-generated TypeScript types to ensure you get the most accurate type definitions.
 
 ## Type Mappings
 

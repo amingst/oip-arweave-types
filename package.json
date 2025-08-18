@@ -1,6 +1,6 @@
 {
 	"name": "oip-arweave-types",
-	"version": "0.0.3",
+	"version": "0.2.0",
 	"description": "TypeScript types for OIP Arweave templates with optional CLI generator",
 	"main": "./types/index.d.ts",
 	"types": "./types/index.d.ts",

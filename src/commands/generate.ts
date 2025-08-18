@@ -10,17 +10,12 @@ export function createGenerateCommand(): Command {
 			'Output path for generated types',
 			'oip/generated-types.ts'
 		)
-		.option(
-			'--keep-versions',
-			'Keep all template versions (creates versioned interfaces)',
-			false
-		)
 		.action(async (options) => {
 			console.log(chalk.blue.bold('🌐 OIP Arweave Type Generator'));
 
 			await fetchOipTemplates({
 				output: options.output,
-				keepVersions: options.keepVersions,
+				// keepVersions and useApiTypes are removed as they're now always the default
 			});
 		});
 }
