@@ -8,6 +8,15 @@ const fs = require('fs');
 
 async function postInstall() {
 	try {
+		// Check if dist/templates.js exists
+		const templatesPath = path.join(__dirname, 'templates.js');
+		if (!fs.existsSync(templatesPath)) {
+			console.warn('⚠️  Cannot run postinstall: dist/templates.js not found');
+			console.warn('   This likely means the package has not been built yet.');
+			console.warn('   Run "pnpm build" first, then "node dist/postinstall.js"');
+			return;
+		}
+
 		// Check if we're in a development environment (this package's own directory)
 		const packageJson = path.join(__dirname, '..', 'package.json');
 		let isDevEnvironment = false;
@@ -70,6 +79,13 @@ async function postInstall() {
 		console.warn(`   ${error instanceof Error ? error.message : String(error)}`);
 	}
 }
+
+// Only run if this script is executed directly (not required)
+if (require.main === module) {
+	postInstall();
+}
+
+module.exports = { postInstall };
 
 // Only run if this script is executed directly (not required)
 if (require.main === module) {

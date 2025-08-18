@@ -10,12 +10,14 @@
 	"scripts": {
 		"build": "tsc",
 		"prepublishOnly": "pnpm run build",
-		"postinstall": "node dist/postinstall.js",
+		"postinstall": "node -e \"try { require('./dist/postinstall.js') } catch(e) { console.warn('Skipping postinstall - dist directory not ready yet') }\"",
+		"postinstall:manual": "node dist/postinstall.js",
 		"changeset": "changeset",
 		"changeset:version": "changeset version",
 		"changeset:publish": "changeset publish",
 		"release": "pnpm run build && changeset publish",
-		"prepare-publish": "pnpm install && pnpm run build"
+		"prepare-publish": "pnpm install --ignore-scripts && pnpm run build && pnpm run postinstall:manual",
+		"ci-build": "pnpm install --ignore-scripts && pnpm run build && pnpm run postinstall:manual"
 	},
 	"keywords": [
 		"typescript",
