@@ -2,7 +2,7 @@ import { Command } from 'commander';
 import chalk from 'chalk';
 import { fetchOipTemplates } from '../templates';
 
-export function createGenerateCommand(): Command {
+export function generateCommand(): Command {
 	return new Command('generate')
 		.description('Generate TypeScript types from API templates')
 		.option(

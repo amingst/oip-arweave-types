@@ -2,7 +2,7 @@
 
 import { Command } from 'commander';
 import chalk from 'chalk';
-import { createGenerateCommand } from './commands/index';
+import commands from './commands';
 
 const program = new Command();
 
@@ -15,6 +15,6 @@ program
 	.version('0.0.1');
 
 // Add commands
-program.addCommand(createGenerateCommand());
+commands.forEach((command) => program.addCommand(command));
 
 program.parse();
