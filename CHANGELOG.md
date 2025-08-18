@@ -1,5 +1,18 @@
 # oip-arweave-types
 
+## 0.3.0
+
+### Minor Changes
+
+- 572c037: Generate types from new api route for typegen
+- 4e86db4: add config for installs with npm
+
+### Patch Changes
+
+- 8a75ea0: update build step
+- 97fdf70: update config and workflow
+- ca25867: update ci
+
 ## 0.1.0
 
 ### Minor Changes
