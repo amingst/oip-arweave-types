@@ -13,6 +13,14 @@ export function generateCommand(): Command {
 			'--single-file',
 			'Generate all types in a single file (default: from config or separate files)'
 		)
+		.option(
+			'--no-jsdoc',
+			'Disable JSDoc comments in generated types (default: enabled)'
+		)
+		.option(
+			'--jsdoc-examples',
+			'Include usage examples in JSDoc comments (default: enabled)'
+		)
 		.action(async (options) => {
 			logger.header('🌐 OIP Arweave Type Generator');
 
@@ -20,6 +28,12 @@ export function generateCommand(): Command {
 			await generator.generateTypes({
 				output: options.output,
 				singleFile: options.singleFile,
+				includeJSDoc: !options.noJsdoc, // Use the negated flag properly
+				jsDocOptions: {
+					includeExamples: options.jsdocExamples !== false,
+					includeAuthors: true,
+					includeVersion: true,
+				},
 			});
 		});
 }

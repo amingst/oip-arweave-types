@@ -2,8 +2,15 @@ import * as path from 'path';
 import { ApiClient } from './api-client';
 import { FileSystemUtils, UserPrompts } from './file-utils';
 import { TemplateExtractor } from './template-extractor';
+import { JSDocEnhancer, JSDocOptions } from './jsdoc-enhancer';
 import { ConfigManager, ResolvedConfig } from './config';
 import { logger } from '../logger';
+
+export interface AddTemplateOptions {
+	force?: boolean;
+	includeJSDoc?: boolean;
+	jsDocOptions?: JSDocOptions;
+}
 
 export class TemplateService {
 	private config: ResolvedConfig;
@@ -16,17 +23,17 @@ export class TemplateService {
 
 	async addTemplate(
 		templateName: string,
-		options: { force?: boolean } = {}
+		options: AddTemplateOptions = {}
 	): Promise<void> {
 		try {
 			// Check for template-specific config overrides
 			const templateConfig = this.config.templates[templateName] || {};
 			const force = options.force ?? templateConfig.force ?? false;
+			const includeJSDoc = options.includeJSDoc ?? true; // Default to true
+			const jsDocOptions = options.jsDocOptions || {};
 
 			// 1. Fetch the schema from API
-			const fullContent = await this.apiClient.fetchTemplate(
-				templateName
-			);
+			let fullContent = await this.apiClient.fetchTemplate(templateName);
 			if (!fullContent) {
 				return; // Error already logged in ApiClient
 			}
@@ -53,7 +60,7 @@ export class TemplateService {
 			}
 
 			// 3. Extract only the relevant parts for this specific template
-			const extractedContent = TemplateExtractor.extractTemplateContent(
+			let extractedContent = TemplateExtractor.extractTemplateContent(
 				fullContent,
 				expectedInterfaceName
 			);
@@ -66,7 +73,15 @@ export class TemplateService {
 				return;
 			}
 
-			// 4. Determine output path - use template-specific config if available
+			// 4. Enhance with JSDoc comments if requested
+			if (includeJSDoc) {
+				extractedContent = await JSDocEnhancer.enhanceWithJSDoc(
+					extractedContent,
+					jsDocOptions
+				);
+			}
+
+			// 5. Determine output path - use template-specific config if available
 			let outputPath: string;
 			if (templateConfig.outputPath) {
 				// Use absolute or relative path from config
@@ -89,10 +104,10 @@ export class TemplateService {
 				}
 			}
 
-			// 5. Check if file already exists
+			// 6. Check if file already exists
 			const fileExists = FileSystemUtils.fileExists(outputPath);
 
-			// 6. Handle file overwrite logic
+			// 7. Handle file overwrite logic
 			if (fileExists && !force) {
 				const shouldOverwrite = await UserPrompts.promptOverwrite(
 					outputPath
@@ -103,7 +118,7 @@ export class TemplateService {
 				}
 			}
 
-			// 7. Write the file
+			// 8. Write the file
 			if (templateConfig.outputPath) {
 				// Custom path - write directly
 				FileSystemUtils.writeFile(outputPath, extractedContent);
@@ -115,7 +130,7 @@ export class TemplateService {
 				);
 			}
 
-			// 8. Success feedback
+			// 9. Success feedback
 			logger.success('🎉 Template schema added successfully!');
 			logger.info(`📁 Output: ${outputPath}`, { outputPath });
 		} catch (error) {

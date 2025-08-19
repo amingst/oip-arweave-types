@@ -3,12 +3,15 @@ import { FileSystemUtils } from './file-utils';
 import { PathResolver } from './path-resolver';
 import { TypeAnalyzer } from './type-analyzer';
 import { FileSplitter } from './file-splitter';
+import { JSDocEnhancer, JSDocOptions } from './jsdoc-enhancer';
 import { ConfigManager, ResolvedConfig } from './config';
 import { logger } from '../logger';
 
 export interface GenerateOptions {
 	output?: string;
 	singleFile?: boolean;
+	includeJSDoc?: boolean;
+	jsDocOptions?: JSDocOptions;
 }
 
 export class TypeGenerator {
@@ -24,10 +27,20 @@ export class TypeGenerator {
 		// Use config defaults when options are not provided
 		const output = options.output || this.config.outputDir;
 		const singleFile = options.singleFile ?? this.config.defaultSingleFile;
+		const includeJSDoc = options.includeJSDoc ?? true; // Default to true
+		const jsDocOptions = options.jsDocOptions || {};
 
 		try {
 			// Fetch all templates from API
-			const typeScriptContent = await this.apiClient.fetchAllTemplates();
+			let typeScriptContent = await this.apiClient.fetchAllTemplates();
+
+			// Enhance with JSDoc comments if requested
+			if (includeJSDoc) {
+				typeScriptContent = await JSDocEnhancer.enhanceWithJSDoc(
+					typeScriptContent,
+					jsDocOptions
+				);
+			}
 
 			// Analyze the types
 			const analysis = TypeAnalyzer.analyzeTypes(typeScriptContent);

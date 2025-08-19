@@ -24,9 +24,6 @@ program
 				logger.info(
 					'📦 Generate TypeScript types from OIP Arweave templates'
 				);
-				logger.info(
-					'⚙️  Supports custom configuration via oip.config.json'
-				);
 				console.log('');
 
 				logger.info('📋 Available Commands:');

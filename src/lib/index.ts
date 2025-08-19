@@ -9,6 +9,7 @@ export { TypeGenerator } from './type-generator';
 export { TemplateService } from './template-service';
 export { ConfigManager } from './config';
 export { VersionChecker } from './version-checker';
+export { JSDocEnhancer } from './jsdoc-enhancer';
 
 // Re-export types
 export type { OutputConfig } from './path-resolver';
@@ -18,3 +19,4 @@ export type { GenerateOptions } from './type-generator';
 export type { TemplateResponse } from './api-client';
 export type { OipConfig, ResolvedConfig } from './config';
 export type { VersionInfo } from './version-checker';
+export type { JSDocOptions } from './jsdoc-enhancer';
