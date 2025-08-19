@@ -20,6 +20,12 @@ export class FileSystemUtils {
 		return fs.existsSync(filePath);
 	}
 
+	static deleteFile(filePath: string): void {
+		if (fs.existsSync(filePath)) {
+			fs.unlinkSync(filePath);
+		}
+	}
+
 	static getFileSize(filePath: string): number {
 		return fs.statSync(filePath).size;
 	}

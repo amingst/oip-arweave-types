@@ -78,8 +78,9 @@ export class TemplateExtractor {
 		allContent.push(...headerLines, '');
 
 		// Add dependencies first (avoid duplicates)
+		const processedTypes = new Set<string>();
 		for (const dep of dependencies) {
-			if (!addedDependencies.has(dep)) {
+			if (!addedDependencies.has(dep) && !processedTypes.has(dep)) {
 				const depContent = this.extractDependencyContent(
 					fullContent,
 					dep
@@ -87,6 +88,7 @@ export class TemplateExtractor {
 				if (depContent) {
 					allContent.push(depContent, '');
 					addedDependencies.add(dep);
+					processedTypes.add(dep);
 				}
 			}
 		}
@@ -102,6 +104,7 @@ export class TemplateExtractor {
 		dependencyName: string
 	): string | null {
 		const lines = fullContent.split('\n');
+		const foundDefinitions: string[] = [];
 
 		for (let i = 0; i < lines.length; i++) {
 			const line = lines[i];
@@ -138,7 +141,13 @@ export class TemplateExtractor {
 					}
 				}
 
-				return depLines.join('\n');
+				const definition = depLines.join('\n');
+				
+				// Check if we've already found this exact definition
+				if (!foundDefinitions.includes(definition)) {
+					foundDefinitions.push(definition);
+					return definition; // Return the first unique occurrence
+				}
 			}
 		}
 

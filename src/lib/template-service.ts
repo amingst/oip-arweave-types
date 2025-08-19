@@ -118,7 +118,13 @@ export class TemplateService {
 				}
 			}
 
-			// 8. Write the file
+			// 8. If force is used and file exists, delete it first for clean overwrite
+			if (force && fileExists) {
+				FileSystemUtils.deleteFile(outputPath);
+				logger.debug(`🗑️ Removed existing file for clean overwrite: ${outputPath}`);
+			}
+
+			// 9. Write the file
 			if (templateConfig.outputPath) {
 				// Custom path - write directly
 				FileSystemUtils.writeFile(outputPath, extractedContent);
@@ -130,7 +136,7 @@ export class TemplateService {
 				);
 			}
 
-			// 9. Success feedback
+			// 10. Success feedback
 			logger.success('🎉 Template schema added successfully!');
 			logger.info(`📁 Output: ${outputPath}`, { outputPath });
 		} catch (error) {
