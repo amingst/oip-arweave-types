@@ -7,13 +7,11 @@ export function generateCommand(): Command {
 		.description('Generate TypeScript types from API templates')
 		.option(
 			'-o, --output <path>',
-			'Output directory or file path for generated types',
-			'oip'
+			'Output directory or file path for generated types'
 		)
 		.option(
 			'--single-file',
-			'Generate all types in a single file (default: separate files)',
-			false
+			'Generate all types in a single file (default: from config or separate files)'
 		)
 		.action(async (options) => {
 			logger.header('🌐 OIP Arweave Type Generator');

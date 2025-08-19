@@ -5,12 +5,18 @@ export interface TemplateResponse {
 }
 
 export class ApiClient {
-	private readonly baseUrl = 'https://api.oip.onl/api/templates';
+	private readonly baseUrl: string;
+
+	constructor(apiRoot: string = 'https://api.oip.onl/api/templates') {
+		this.baseUrl = apiRoot;
+	}
 
 	async fetchAllTemplates(): Promise<string> {
 		const apiUrl = `${this.baseUrl}?typeScriptTypes=true`;
 
-		logger.info('🚀 Fetching templates from OIP API...');
+		logger.info('🚀 Fetching templates from OIP API...', {
+			apiUrl: this.baseUrl,
+		});
 
 		try {
 			const response = await fetch(apiUrl);
@@ -31,9 +37,10 @@ export class ApiClient {
 		} catch (error) {
 			logger.error('❌ Failed to fetch templates from API', {
 				error: error instanceof Error ? error.message : String(error),
+				apiUrl: this.baseUrl,
 			});
 			logger.warn(
-				'🌐 Please check your internet connection and try again.'
+				'🌐 Please check your internet connection and API configuration'
 			);
 			throw error;
 		}
@@ -47,6 +54,7 @@ export class ApiClient {
 		try {
 			logger.info(`🔍 Fetching schema for template: ${templateName}`, {
 				templateName,
+				apiUrl: this.baseUrl,
 			});
 
 			const response = await fetch(apiUrl);
@@ -56,6 +64,7 @@ export class ApiClient {
 					logger.error(`❌ Template "${templateName}" not found`, {
 						templateName,
 						status: response.status,
+						apiUrl: this.baseUrl,
 					});
 					return null;
 				}
@@ -82,6 +91,7 @@ export class ApiClient {
 					templateName,
 					error:
 						error instanceof Error ? error.message : String(error),
+					apiUrl: this.baseUrl,
 				}
 			);
 			return null;

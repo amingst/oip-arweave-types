@@ -3,6 +3,7 @@ import { FileSystemUtils } from './file-utils';
 import { PathResolver } from './path-resolver';
 import { TypeAnalyzer } from './type-analyzer';
 import { FileSplitter } from './file-splitter';
+import { ConfigManager, ResolvedConfig } from './config';
 import { logger } from '../logger';
 
 export interface GenerateOptions {
@@ -11,10 +12,18 @@ export interface GenerateOptions {
 }
 
 export class TypeGenerator {
-	private apiClient = new ApiClient();
+	private config: ResolvedConfig;
+	private apiClient: ApiClient;
+
+	constructor(config?: ResolvedConfig) {
+		this.config = config || ConfigManager.loadConfig();
+		this.apiClient = new ApiClient(this.config.apiRoot);
+	}
 
 	async generateTypes(options: GenerateOptions = {}): Promise<void> {
-		const { output, singleFile = false } = options;
+		// Use config defaults when options are not provided
+		const output = options.output || this.config.outputDir;
+		const singleFile = options.singleFile ?? this.config.defaultSingleFile;
 
 		try {
 			// Fetch all templates from API

@@ -7,6 +7,7 @@ export { FileSplitter } from './file-splitter';
 export { TemplateExtractor } from './template-extractor';
 export { TypeGenerator } from './type-generator';
 export { TemplateService } from './template-service';
+export { ConfigManager } from './config';
 
 // Re-export types
 export type { OutputConfig } from './path-resolver';
@@ -14,3 +15,4 @@ export type { TypeAnalysis } from './type-analyzer';
 export type { SplitResult } from './file-splitter';
 export type { GenerateOptions } from './type-generator';
 export type { TemplateResponse } from './api-client';
+export type { OipConfig, ResolvedConfig } from './config';

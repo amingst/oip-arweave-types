@@ -1,0 +1,5 @@
+{
+	"apiRoot": "https://api.oip.onl/api/templates",
+	"outputDir": "oip",
+	"defaultSingleFile": false
+}
