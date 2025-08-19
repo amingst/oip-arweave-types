@@ -1,0 +1,83 @@
+import { ApiClient } from './api-client';
+import { FileSystemUtils } from './file-utils';
+import { PathResolver } from './path-resolver';
+import { TypeAnalyzer } from './type-analyzer';
+import { FileSplitter } from './file-splitter';
+import { logger } from '../logger';
+
+export interface GenerateOptions {
+	output?: string;
+	singleFile?: boolean;
+}
+
+export class TypeGenerator {
+	private apiClient = new ApiClient();
+
+	async generateTypes(options: GenerateOptions = {}): Promise<void> {
+		const { output, singleFile = false } = options;
+
+		try {
+			// Fetch all templates from API
+			const typeScriptContent = await this.apiClient.fetchAllTemplates();
+
+			// Analyze the types
+			const analysis = TypeAnalyzer.analyzeTypes(typeScriptContent);
+
+			// Resolve output paths
+			const { finalOutputPath, outputDir } =
+				PathResolver.resolveOutputPaths(output, singleFile);
+
+			// Ensure output directory exists
+			FileSystemUtils.ensureDirectoryExists(outputDir);
+
+			if (singleFile) {
+				// Write everything to a single file
+				FileSystemUtils.writeFile(finalOutputPath, typeScriptContent);
+
+				logger.success('🎉 TypeScript types generated successfully!');
+				logger.info(`📁 Output: ${finalOutputPath}`, {
+					outputPath: finalOutputPath,
+				});
+				logger.info(
+					`🔧 Retrieved ${analysis.interfaceCount} interfaces`,
+					{
+						interfaceCount: analysis.interfaceCount,
+					}
+				);
+			} else {
+				// Split into separate files
+				const { files, indexContent } =
+					FileSplitter.splitTypeScriptIntoFiles(typeScriptContent);
+
+				// Write individual files
+				for (const [filename, content] of Object.entries(files)) {
+					const filePath = outputDir + '/' + filename;
+					FileSystemUtils.writeFile(filePath, content as string);
+				}
+
+				// Write index file that exports everything
+				FileSystemUtils.writeFile(finalOutputPath, indexContent);
+
+				logger.success('🎉 TypeScript types generated successfully!');
+				logger.info(`📁 Output directory: ${outputDir}`, { outputDir });
+				logger.info(
+					`🔧 Generated ${
+						Object.keys(files).length
+					} separate files + index.ts`,
+					{
+						fileCount: Object.keys(files).length,
+					}
+				);
+				logger.info(
+					`🔧 Retrieved ${analysis.interfaceCount} interfaces`,
+					{
+						interfaceCount: analysis.interfaceCount,
+					}
+				);
+			}
+		} catch (error) {
+			// ApiClient already handles logging errors
+			process.exit(1);
+		}
+	}
+}

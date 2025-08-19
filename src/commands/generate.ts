@@ -1,6 +1,6 @@
 import { Command } from 'commander';
-import { fetchOipTemplates } from '../templates';
 import { logger } from '../logger';
+import { TypeGenerator } from '../lib';
 
 export function generateCommand(): Command {
 	return new Command('generate')
@@ -18,7 +18,8 @@ export function generateCommand(): Command {
 		.action(async (options) => {
 			logger.header('🌐 OIP Arweave Type Generator');
 
-			await fetchOipTemplates({
+			const generator = new TypeGenerator();
+			await generator.generateTypes({
 				output: options.output,
 				singleFile: options.singleFile,
 			});
