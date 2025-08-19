@@ -2,6 +2,7 @@ import { Command } from 'commander';
 import chalk from 'chalk';
 import * as fs from 'fs';
 import * as path from 'path';
+import { logger } from '../logger';
 
 // Function to fetch a specific template schema from the API
 async function fetchTemplateSchema(
@@ -12,18 +13,18 @@ async function fetchTemplateSchema(
 	)}`;
 
 	try {
-		console.log(
-			chalk.cyan(`🔍 Fetching schema for template: ${templateName}`)
-		);
-		console.log(chalk.gray(`   ${apiUrl}`));
+		logger.info(`🔍 Fetching schema for template: ${templateName}`, {
+			templateName,
+		});
 
 		const response = await fetch(apiUrl);
 
 		if (!response.ok) {
 			if (response.status === 404) {
-				console.log(
-					chalk.red(`❌ Template "${templateName}" not found`)
-				);
+				logger.error(`❌ Template "${templateName}" not found`, {
+					templateName,
+					status: response.status,
+				});
 				return null;
 			}
 			throw new Error(`HTTP error! status: ${response.status}`);
@@ -48,15 +49,12 @@ async function fetchTemplateSchema(
 			typeScriptContent.includes(`export type ${expectedInterfaceName}`);
 
 		if (!hasInterface) {
-			console.log(
-				chalk.red(
-					`❌ Template "${templateName}" not found in API response`
-				)
-			);
-			console.log(
-				chalk.gray(
-					`   Expected to find: export interface ${expectedInterfaceName} or export type ${expectedInterfaceName}`
-				)
+			logger.error(
+				`❌ Template "${templateName}" not found in API response`,
+				{
+					templateName,
+					expectedInterfaceName,
+				}
 			);
 			return null;
 		}
@@ -68,30 +66,24 @@ async function fetchTemplateSchema(
 		);
 
 		if (!extractedContent) {
-			console.log(
-				chalk.red(
-					`❌ Failed to extract content for template "${templateName}"`
-				)
+			logger.error(
+				`❌ Failed to extract content for template "${templateName}"`,
+				{ templateName }
 			);
 			return null;
 		}
 
-		console.log(
-			chalk.green(`✅ Successfully fetched schema for "${templateName}"`)
-		);
+		logger.success(`✅ Successfully fetched schema for "${templateName}"`, {
+			templateName,
+		});
 		return extractedContent;
 	} catch (error) {
-		console.log(
-			chalk.red(
-				`❌ Failed to fetch template schema for "${templateName}"`
-			)
-		);
-		console.log(
-			chalk.red(
-				`Error: ${
-					error instanceof Error ? error.message : String(error)
-				}`
-			)
+		logger.error(
+			`❌ Failed to fetch template schema for "${templateName}"`,
+			{
+				templateName,
+				error: error instanceof Error ? error.message : String(error),
+			}
 		);
 		return null;
 	}
@@ -283,7 +275,7 @@ async function promptOverwrite(filePath: string): Promise<boolean> {
 	});
 
 	return new Promise((resolve) => {
-		console.log(chalk.yellow(`⚠️  File already exists: ${filePath}`));
+		logger.warn(`⚠️  File already exists: ${filePath}`, { filePath });
 		rl.question(
 			chalk.cyan('Do you want to overwrite it? (y/N): '),
 			(answer: string) => {
@@ -318,7 +310,7 @@ export function addCommand(): Command {
 		.argument('<name>', 'Name of the template to fetch and add')
 		.option('--force', 'Overwrite existing file without prompting', false)
 		.action(async (name, options) => {
-			console.log(chalk.blue.bold('🌐 OIP Template Fetcher'));
+			logger.header('🌐 OIP Template Fetcher');
 
 			try {
 				// 1. Fetch the schema from API
@@ -334,7 +326,7 @@ export function addCommand(): Command {
 				if (existingFile && !options.force) {
 					const shouldOverwrite = await promptOverwrite(existingFile);
 					if (!shouldOverwrite) {
-						console.log(chalk.gray('Operation cancelled.'));
+						logger.muted('Operation cancelled.');
 						return;
 					}
 				}
@@ -343,26 +335,13 @@ export function addCommand(): Command {
 				const outputPath = writeTemplateFile(name, schemaContent);
 
 				// 5. Success feedback
-				console.log(
-					chalk.green('🎉 Template schema added successfully!')
-				);
-				console.log(chalk.cyan(`📁 Output: ${outputPath}`));
-
-				// Show file stats
-				const fileSize = fs.statSync(outputPath).size;
-				const fileSizeKB = (fileSize / 1024).toFixed(2);
-				console.log(chalk.gray(`📊 File size: ${fileSizeKB} KB`));
+				logger.success('🎉 Template schema added successfully!');
+				logger.info(`📁 Output: ${outputPath}`, { outputPath });
 			} catch (error) {
-				console.log(chalk.red('❌ Failed to add template schema'));
-				console.log(
-					chalk.red(
-						`Error: ${
-							error instanceof Error
-								? error.message
-								: String(error)
-						}`
-					)
-				);
+				logger.error('❌ Failed to add template schema', {
+					error:
+						error instanceof Error ? error.message : String(error),
+				});
 				process.exit(1);
 			}
 		});

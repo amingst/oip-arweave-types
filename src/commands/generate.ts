@@ -1,6 +1,6 @@
 import { Command } from 'commander';
-import chalk from 'chalk';
 import { fetchOipTemplates } from '../templates';
+import { logger } from '../logger';
 
 export function generateCommand(): Command {
 	return new Command('generate')
@@ -16,7 +16,7 @@ export function generateCommand(): Command {
 			false
 		)
 		.action(async (options) => {
-			console.log(chalk.blue.bold('🌐 OIP Arweave Type Generator'));
+			logger.header('🌐 OIP Arweave Type Generator');
 
 			await fetchOipTemplates({
 				output: options.output,

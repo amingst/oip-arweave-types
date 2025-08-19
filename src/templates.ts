@@ -2,6 +2,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import chalk from 'chalk';
+import { logger } from './logger';
 
 // Function to split TypeScript content into separate files
 function splitTypeScriptIntoFiles(content: string): {
@@ -189,7 +190,7 @@ export async function fetchOipTemplates(
 		outputPath = options?.output;
 		singleFile = options?.singleFile ?? false;
 	}
-	console.log(chalk.cyan('🚀 Fetching templates from OIP API...'));
+	logger.info('🚀 Fetching templates from OIP API...');
 
 	// Always use API types
 	const apiUrl = 'https://api.oip.onl/api/templates?typeScriptTypes=true';
@@ -201,7 +202,7 @@ export async function fetchOipTemplates(
 			throw new Error(`HTTP error! status: ${response.status}`);
 		}
 
-		console.log(chalk.green('✅ Successfully fetched templates'));
+		logger.success('✅ Successfully fetched templates');
 
 		const data = await response.json();
 
@@ -217,9 +218,6 @@ export async function fetchOipTemplates(
 		const typeMatches =
 			typeScriptContent.match(/export type [A-Za-z0-9_]+/g) || [];
 		const interfaceCount = interfaceMatches.length + typeMatches.length;
-
-		// Always using most recent versions only
-		console.log(chalk.gray('   Using most recent versions only'));
 
 		// Default output path logic
 		let finalOutputPath: string;
@@ -261,18 +259,13 @@ export async function fetchOipTemplates(
 			// Write everything to a single file (current behavior)
 			fs.writeFileSync(finalOutputPath, typeScriptContent);
 
-			console.log(
-				chalk.green('🎉 TypeScript types generated successfully!')
-			);
-			console.log(chalk.cyan(`📁 Output: ${finalOutputPath}`));
-			console.log(
-				chalk.yellow(`🔧 Retrieved ${interfaceCount} interfaces`)
-			);
-
-			// Show some stats
-			const fileSize = fs.statSync(finalOutputPath).size;
-			const fileSizeKB = (fileSize / 1024).toFixed(2);
-			console.log(chalk.gray(`📊 File size: ${fileSizeKB} KB`));
+			logger.success('🎉 TypeScript types generated successfully!');
+			logger.info(`📁 Output: ${finalOutputPath}`, {
+				outputPath: finalOutputPath,
+			});
+			logger.info(`🔧 Retrieved ${interfaceCount} interfaces`, {
+				interfaceCount,
+			});
 		} else {
 			// Split into separate files
 			const { files, indexContent } =
@@ -287,49 +280,25 @@ export async function fetchOipTemplates(
 			// Write index file that exports everything
 			fs.writeFileSync(finalOutputPath, indexContent);
 
-			console.log(
-				chalk.green('🎉 TypeScript types generated successfully!')
+			logger.success('🎉 TypeScript types generated successfully!');
+			logger.info(`📁 Output directory: ${outputDir}`, { outputDir });
+			logger.info(
+				`🔧 Generated ${
+					Object.keys(files).length
+				} separate files + index.ts`,
+				{
+					fileCount: Object.keys(files).length,
+				}
 			);
-			console.log(chalk.cyan(`📁 Output directory: ${outputDir}`));
-			console.log(
-				chalk.yellow(
-					`🔧 Generated ${
-						Object.keys(files).length
-					} separate files + index.ts`
-				)
-			);
-			console.log(
-				chalk.yellow(`🔧 Retrieved ${interfaceCount} interfaces`)
-			);
-
-			// Show directory stats
-			const totalSize =
-				Object.values(files).reduce(
-					(sum, content) => sum + (content as string).length,
-					0
-				) + indexContent.length;
-			const totalSizeKB = (totalSize / 1024).toFixed(2);
-			console.log(chalk.gray(`📊 Total size: ${totalSizeKB} KB`));
+			logger.info(`🔧 Retrieved ${interfaceCount} interfaces`, {
+				interfaceCount,
+			});
 		}
 	} catch (error) {
-		console.log(chalk.red('❌ Failed to fetch templates from API'));
-		console.log(
-			chalk.red(
-				`Error: ${
-					error instanceof Error ? error.message : String(error)
-				}`
-			)
-		);
-		console.log(
-			chalk.yellow(
-				'🌐 Please check your internet connection and try again.'
-			)
-		);
-		console.log(
-			chalk.gray(
-				'   If the issue persists, the API may be temporarily unavailable.'
-			)
-		);
+		logger.error('❌ Failed to fetch templates from API', {
+			error: error instanceof Error ? error.message : String(error),
+		});
+		logger.warn('🌐 Please check your internet connection and try again.');
 		process.exit(1);
 	}
 }
@@ -343,18 +312,18 @@ async function fetchTemplateSchema(
 	)}`;
 
 	try {
-		console.log(
-			chalk.cyan(`🔍 Fetching schema for template: ${templateName}`)
-		);
-		console.log(chalk.gray(`   ${apiUrl}`));
+		logger.info(`🔍 Fetching schema for template: ${templateName}`, {
+			templateName,
+		});
 
 		const response = await fetch(apiUrl);
 
 		if (!response.ok) {
 			if (response.status === 404) {
-				console.log(
-					chalk.red(`❌ Template "${templateName}" not found`)
-				);
+				logger.error(`❌ Template "${templateName}" not found`, {
+					templateName,
+					status: response.status,
+				});
 				return null;
 			}
 			throw new Error(`HTTP error! status: ${response.status}`);
@@ -366,22 +335,17 @@ async function fetchTemplateSchema(
 			throw new Error('API response missing TypeScript content');
 		}
 
-		console.log(
-			chalk.green(`✅ Successfully fetched schema for "${templateName}"`)
-		);
+		logger.success(`✅ Successfully fetched schema for "${templateName}"`, {
+			templateName,
+		});
 		return data.typeScript;
 	} catch (error) {
-		console.log(
-			chalk.red(
-				`❌ Failed to fetch template schema for "${templateName}"`
-			)
-		);
-		console.log(
-			chalk.red(
-				`Error: ${
-					error instanceof Error ? error.message : String(error)
-				}`
-			)
+		logger.error(
+			`❌ Failed to fetch template schema for "${templateName}"`,
+			{
+				templateName,
+				error: error instanceof Error ? error.message : String(error),
+			}
 		);
 		return null;
 	}
