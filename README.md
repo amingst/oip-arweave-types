@@ -1,19 +1,20 @@
 # OIP Arweave Types
 
-> TypeScript types for OIP Arweave templates with optional CLI generator
+> 🌐 TypeScript types for OIP Arweave templates with powerful CLI generator
 
-This package provides automatically updated TypeScript types for OIP Arweave templates. Types are generated during installation, with an optional CLI for advanced usage.
+This package provides automatically updated TypeScript types for OIP Arweave templates with a comprehensive CLI for advanced workflows and configuration management.
 
-## Features
+## ✨ Features
 
 -   🎯 **Automatic Types** - Types generated automatically during installation
 -   🌐 **Live API Integration** - Fetches latest templates from OIP Arweave API
 -   🔄 **Always Up-to-Date** - Gets the latest template definitions on install
--   🎨 **Clean Interfaces** - Readable TypeScript interfaces with proper typing
--   ⚡ **Zero Configuration** - Works out of the box, no setup required
--   🛠️ **Optional CLI** - Advanced CLI available for custom workflows
+-   ⚙️ **Flexible Configuration** - Customizable via `oip.config.json`
+-   🚀 **Professional UX** - Emoji-rich output and intuitive commands
+-   📦 **Version Management** - Smart update notifications and version checking
+-   🔧 **Distributed System Support** - Configurable API endpoints for custom deployments
 
-## Installation
+## 📦 Installation
 
 ### For TypeScript Projects (Recommended)
 
@@ -47,42 +48,132 @@ If you want to use the CLI tool for custom workflows:
 # Global installation for CLI usage
 npm install -g oip-arweave-types
 
-# Or use directly with npx
+# Or use directly with npx (recommended)
 npx oip-arweave-types generate
 ```
 
 > **Note**: If the automatic generation fails during installation (e.g., no internet connection), you can manually generate types later using the CLI commands below.
 
-## Usage
+## 🚀 CLI Usage
 
-### Basic Usage
-
-Generate TypeScript types from all available templates:
+### Quick Start
 
 ```bash
+# Generate all types with beautiful output
+npx oip-arweave-types generate
+
+# Get help with emoji-rich formatting
+npx oip-arweave-types --help
+
+# Check version and updates
+npx oip-arweave-types --version
+```
+
+### 📋 Available Commands
+
+#### 🚀 Generate Types
+
+```bash
+# Generate all types to default location
+npx oip-arweave-types generate
+
+# Custom output path
+npx oip-arweave-types generate --output ./src/types/oip.ts
+
+# Generate as single file
+npx oip-arweave-types generate --single-file
+```
+
+#### ➕ Add Specific Templates
+
+```bash
+# Add a specific template type
+npx oip-arweave-types add Audio
+
+# Force overwrite existing files
+npx oip-arweave-types add Video --force
+```
+
+#### ⚙️ Configuration Management
+
+```bash
+# Create a sample configuration file
+npx oip-arweave-types config init
+
+# Show current configuration
+npx oip-arweave-types config show
+```
+
+## ⚙️ Configuration
+
+Create an `oip.config.json` file in your project root to customize behavior:
+
+```json
+{
+	"apiRoot": "https://api.oip.onl/api",
+	"outputDir": "./src/types",
+	"defaultSingleFile": true,
+	"templates": {
+		"Audio": {
+			"outputPath": "./src/types/audio.ts"
+		},
+		"Video": {
+			"singleFile": false
+		}
+	}
+}
+```
+
+### Configuration Options
+
+| Option              | Type      | Default                     | Description                               |
+| ------------------- | --------- | --------------------------- | ----------------------------------------- |
+| `apiRoot`           | `string`  | `"https://api.oip.onl/api"` | API endpoint for distributed systems      |
+| `outputDir`         | `string`  | `"./oip"`                   | Default directory for generated types     |
+| `defaultSingleFile` | `boolean` | `false`                     | Generate all types in one file by default |
+| `templates`         | `object`  | `{}`                        | Per-template configuration overrides      |
+
+### Supported Configuration Files
+
+-   `oip.config.json`
+-   `oip.config.js`
+-   `.oiprc`
+-   `.oiprc.json`
+
+## 📖 Examples
+
+### Basic Generation
+
+```bash
+# Simple generation with default settings
 npx oip-arweave-types generate
 ```
 
-This creates `oip/generated-types.ts` with interfaces for all templates.
-
-### Options
+### Custom Workflow
 
 ```bash
-# Custom output path
-npx oip-arweave-types generate --output ./src/types/oip.ts
+# 1. Initialize configuration
+npx oip-arweave-types config init
+
+# 2. Edit oip.config.json to your needs
+# 3. Generate with your settings
+npx oip-arweave-types generate
+
+# 4. Add specific templates as needed
+npx oip-arweave-types add Recipe --force
 ```
 
-### Help
+### Distributed System Usage
 
-```bash
-# General help
-npx oip-arweave-types --help
-
-# Command-specific help
-npx oip-arweave-types generate --help
+```json
+{
+	"apiRoot": "https://my-custom-oip-api.com/api",
+	"outputDir": "./types",
+	"defaultSingleFile": true
+}
 ```
 
-## Generated Output
+## 🔧 Generated Output
 
 The tool generates clean TypeScript interfaces like:
 
@@ -104,13 +195,30 @@ export interface Artwork {
 }
 ```
 
-The types are always generated using the most recent version of each template, ensuring compatibility with the API.
+### Output Modes
 
-## API Reference
+**Separate Files** (default):
 
-The tool connects to the OIP Arweave API at `https://api.oip.onl/api/templates` to fetch template definitions. Templates are automatically fetched with pre-generated TypeScript types to ensure you get the most accurate type definitions.
+```
+oip/
+├── Album.ts
+├── Artwork.ts
+├── Audio.ts
+└── index.ts
+```
 
-## Type Mappings
+**Single File** (`--single-file`):
+
+```
+oip/
+└── generated-types.ts  # All interfaces in one file
+```
+
+## 🌐 API Reference
+
+The tool connects to the OIP Arweave API to fetch template definitions. The default endpoint is `https://api.oip.onl/api/templates`, but this can be customized for distributed systems via configuration.
+
+### Type Mappings
 
 OIP field types are mapped to TypeScript as follows:
 
@@ -122,7 +230,7 @@ OIP field types are mapped to TypeScript as follows:
 
 Optional fields (not marked as required in OIP templates) are generated with the `?` optional operator.
 
-## Development
+## 🛠️ Development
 
 ```bash
 # Clone the repository
@@ -137,9 +245,13 @@ pnpm run build
 
 # Test locally
 npx . generate
+
+# Test with configuration
+npx . config init
+npx . generate --single-file
 ```
 
-## Contributing
+## 🤝 Contributing
 
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/amazing-feature`)
@@ -147,15 +259,15 @@ npx . generate
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## Changelog
+## 📝 Changelog
 
 See [CHANGELOG.md](./CHANGELOG.md) for version history and changes.
 
-## License
+## 📄 License
 
 MIT © [Andrew Mingst](https://github.com/amingst)
 
-## Related
+## 🔗 Related
 
 -   [OIP (Open Index Protocol)](https://oip.wiki/)
 -   [Arweave](https://arweave.org/)
